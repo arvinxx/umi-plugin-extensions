@@ -1,7 +1,7 @@
 import type { IApi } from 'umi';
 
 import GenerateJsonPlugin from 'generate-json-webpack-plugin';
-import type { ExtensionManifest } from './types';
+import type { IExtensionPluginConfig } from './types/PluginConfig';
 import { getCSPScript } from './utils';
 
 /**
@@ -10,8 +10,13 @@ import { getCSPScript } from './utils';
  */
 export default (api: IApi) => {
   api.chainWebpack((config) => {
-    const { contentSecurityPolicy, background, options_ui, ...manifest } = api
-      .config.extension as ExtensionManifest;
+    const {
+      manifest_version,
+      contentSecurityPolicy,
+      background,
+      options_ui,
+      ...manifest
+    } = api.config.extension as IExtensionPluginConfig;
 
     const { inlineScript, nonce, url } = contentSecurityPolicy;
 
@@ -20,15 +25,18 @@ export default (api: IApi) => {
       nonce,
       url,
     });
-    const backgrounStr = background.scripts.length > 0 ? background : undefined;
 
-    const optionsUIStr = !options_ui.page ? undefined : options_ui;
+    const backgroundStr =
+      background && background.scripts.length > 0 ? background : undefined;
+
+    const optionsUIStr = !options_ui?.page ? undefined : options_ui;
 
     config.plugin('toJSON').use(GenerateJsonPlugin, [
       'manifest.json',
       {
         ...manifest,
-        background: backgrounStr,
+        manifest_version,
+        background: backgroundStr,
         options_ui: optionsUIStr,
         content_security_policy,
       },

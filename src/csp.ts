@@ -2,7 +2,7 @@ import type { IApi } from 'umi';
 import { join } from 'path';
 import fse from 'fs-extra';
 import { extractInlineScript, getScriptSHA } from './utils';
-import { ExtensionManifest } from './types';
+import { IExtensionPluginConfig } from './types/PluginConfig';
 
 /**
  * 处理 Chrome 的内容安全政策(CSP)相关的问题
@@ -24,7 +24,7 @@ export default (api: IApi) => {
 
   // 在配置项中注入该钩子字符串
   api.modifyConfig((config) => {
-    const { contentSecurityPolicy } = config.extension as ExtensionManifest;
+    const { contentSecurityPolicy } = config.extension as IExtensionPluginConfig;
     contentSecurityPolicy.inlineScript.push(__TO_REPLACE_INLINE_SCRIPT__);
     return config;
   });
