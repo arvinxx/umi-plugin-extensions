@@ -1,5 +1,5 @@
 {
-  "name": "umi-plugin-crx",
+  "name": "umi-plugin-extension",
   "version": "1.0.0",
   "main": "lib/index.js",
   "description": "build extension",
@@ -7,13 +7,15 @@
     "name": "Arvin Xu",
     "email": "arvinx@foxmail.com"
   },
-  "repository": "/umi-plugin-crx",
+  "repository": "/umi-plugin-extension",
   "scripts": {
-    "start": "cross-env APP_ROOT=example umi dev",
+    "start": "yarn build && yarn example:dev",
+    "dev": "father-build -w",
     "build": "father-build",
-    "build:watch": "father-build -w",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
+    "example:dev": "cross-env APP_ROOT=example umi dev",
+    "example:build": "cross-env APP_ROOT=example umi build",
     "test:update": "umi-test --updateSnapshot",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
@@ -37,6 +39,7 @@
     "@umijs/test": "^3.0.10",
     "@umijs/test-utils": "^1.0.0",
     "body-parser": "^1.18.2",
+    "concurrently": "^5.3.0",
     "cross-env": "^6.0.3",
     "express": "^4.15.3",
     "father-build": "^1.17.2",

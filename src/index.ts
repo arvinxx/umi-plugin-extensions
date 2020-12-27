@@ -1,17 +1,20 @@
 import type { IApi } from 'umi';
-import DevHtmlGenerator from './devHTML';
-import ManifestGenerator from './manifest';
-import DevExtensionGenerator from './base';
-import Csp from './csp';
+import DevHTML from './devHTML';
+import Manifest from './manifest';
+import Base from './base';
+import PluginConfig from './pluginConfig';
+import CSP from './csp';
 
 export * from './types';
 
 export default (api: IApi) => {
-  DevExtensionGenerator(api);
+  PluginConfig(api);
 
-  DevHtmlGenerator(api);
+  Base(api);
 
-  Csp(api);
+  DevHTML(api);
 
-  ManifestGenerator(api);
+  Manifest(api);
+
+  CSP(api);
 };

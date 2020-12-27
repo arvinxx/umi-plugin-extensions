@@ -1,7 +1,7 @@
-# umi-plugin-crx
+# umi-plugin-extension
 
-[![NPM version](https://img.shields.io/npm/v/umi-plugin-crx.svg?style=flat)](https://npmjs.org/package/umi-plugin-crx)
-[![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-crx.svg?style=flat)](https://npmjs.org/package/umi-plugin-crx)
+[![NPM version](https://img.shields.io/npm/v/umi-plugin-extension.svg?style=flat)](https://npmjs.org/package/umi-plugin-extension)
+[![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extension.svg?style=flat)](https://npmjs.org/package/umi-plugin-extension)
 
 build extension
 
