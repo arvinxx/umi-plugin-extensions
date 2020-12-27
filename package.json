@@ -1,0 +1,67 @@
+{
+  "name": "umi-plugin-crx",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "description": "build extension",
+  "authors": {
+    "name": "Arvin Xu",
+    "email": "arvinx@foxmail.com"
+  },
+  "repository": "/umi-plugin-crx",
+  "scripts": {
+    "start": "cross-env APP_ROOT=example umi dev",
+    "build": "father-build",
+    "build:watch": "father-build -w",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "test:update": "umi-test --updateSnapshot",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
+  },
+  "lint-staged": {
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write",
+      "git add"
+    ],
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/fs-extra": "^9.0.6",
+    "@types/generate-json-webpack-plugin": "^0.3.2",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^13.7.7",
+    "@umijs/test": "^3.0.10",
+    "@umijs/test-utils": "^1.0.0",
+    "body-parser": "^1.18.2",
+    "cross-env": "^6.0.3",
+    "express": "^4.15.3",
+    "father-build": "^1.17.2",
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.0.8",
+    "npm-run-all": "^4.1.5",
+    "pify": "^5.0.0",
+    "prettier": "^2.2.1",
+    "puppeteer": "^1.20.0",
+    "query-string": "^6.11.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-test-renderer": "^16.9.0",
+    "test-umi-plugin": "^0.1.0",
+    "umi": "^3.1.0",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "generate-json-webpack-plugin": "^1.0.0"
+  }
+}
