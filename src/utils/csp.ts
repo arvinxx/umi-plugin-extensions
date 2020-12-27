@@ -4,8 +4,26 @@ import { IContentSecurityPolicy } from '../types';
 /**
  * 从 html 提取 script 并生成 sha 代码
  */
-export const getScriptSha = (script: string) => {
+export const getScriptSHA = (script: string) => {
   return createHash('sha256').update(script, 'utf8').digest('base64');
+};
+
+export const inlineScriptSHAList: string[] = [];
+
+/**
+ * 从 HTML 中提取 Inline Script
+ * @param html
+ */
+export const extractInlineScript = (html: string) => {
+  const regex = /(?<=<script>)(?<script>.*\n\s*.*\s*)(?=<\/script>)/gm;
+  const res = html.match(regex);
+  const arr: string[] = [];
+  if (res && res.length > 0) {
+    res.forEach((script) => {
+      arr.push(script);
+    });
+  }
+  return arr;
 };
 
 /**
@@ -29,7 +47,3 @@ export const getCSPScript = ({
 
   return `script-src 'self'${nonceStr}${inlineScriptStr}${urlStr}; object-src 'self'`;
 };
-
-export const getNonce = () => randomBytes(8).toString('hex');
-
-export const nonceList = [...new Array(3).keys()].map(getNonce);

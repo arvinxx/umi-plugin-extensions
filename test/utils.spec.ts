@@ -1,4 +1,34 @@
-import { getCSPScript } from '../src/utils';
+import fse from 'fs-extra';
+import * as path from 'path';
+
+import { getCSPScript, getScriptSHA, extractInlineScript } from '../src/utils';
+
+test('getScriptSHA', () => {
+  expect(
+    getScriptSHA('\n' + '      window.routerBase = "/";\n' + '    '),
+  ).toEqual('YM8uI2F+VfHULiDF1T+UCYmPwssvvWleyz5k2gtmTQo=');
+});
+test('getScriptSHA2', () => {
+  expect(
+    getScriptSHA(`
+      //! umi version: 3.3.3
+    `),
+  ).toEqual('g3hjaXGjDuIE5N9wBAzFtJfpVSr27ys0zwyijmBdiL0=');
+});
+
+test('extractInlineScript', () => {
+  const html = fse.readFileSync(path.join(__dirname, './test.html'), {
+    encoding: 'utf8',
+  });
+  expect(extractInlineScript(html)).toEqual([
+    `
+      window.routerBase = "/";
+    `,
+    `
+      //! umi version: 3.3.3
+    `,
+  ]);
+});
 
 describe('getCSPScript', () => {
   it('空对象', () => {

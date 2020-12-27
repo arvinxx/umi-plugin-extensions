@@ -2,7 +2,7 @@ node_modules
 .changelog
 .umi
 .umi-test
-.umi-production
+.umi-pr oduction
 .DS_Store
 /lib
 dist
