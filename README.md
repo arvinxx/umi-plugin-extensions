@@ -18,8 +18,6 @@ yarn add -D umi-plugin-extensions
 
 ## 使用方式
 
-
-
 ## 开发
 
 ```bash
@@ -29,6 +27,9 @@ $ yarn start
 ## Options
 
 TODO
+
+- [ ] 说明文档
+- [ ] 补齐单元测试
 
 ## License
 
