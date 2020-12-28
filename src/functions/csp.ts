@@ -4,7 +4,7 @@ import { uniq } from 'lodash';
 
 import fse from 'fs-extra';
 import { extractInlineScript, getScriptSHA, UIPageKeyMap } from '../utils';
-import { IExtensionPluginConfig } from '../types/PluginConfig';
+import type { IExtensionPluginConfig } from '../types/PluginConfig';
 
 /**
  * 处理 Chrome 的内容安全政策(CSP)相关的问题

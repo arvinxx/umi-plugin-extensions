@@ -18,27 +18,29 @@ export default (api: IApi) => {
 
     const extension = <IExtensionPluginConfig>config.extension;
 
-    const { optionsUI, popupUI } = extension;
+    if (extension) {
+      const { optionsUI, popupUI } = extension;
 
-    // 插入 routes
-    const optionRoute = getRouteFromConfig(optionsUI, '/option');
-    const popUpRoute = getRouteFromConfig(popupUI, '/');
+      // 插入 routes
+      const optionRoute = getRouteFromConfig(optionsUI, '/option');
+      const popUpRoute = getRouteFromConfig(popupUI, '/');
 
-    const extensionRoutes = [optionRoute, popUpRoute].filter(
-      (i) => i,
-    ) as IRoute[];
+      const extensionRoutes = [optionRoute, popUpRoute].filter(
+        (i) => i,
+      ) as IRoute[];
 
-    if (config.routes) {
-      config.routes = config.routes.concat(extensionRoutes);
-    } else {
-      config.routes = extensionRoutes;
-    }
-    // 为替换 manifest 的 page 做准备
-    if (optionRoute) {
-      UIPageKeyMap.option.output = 'option.html';
-    }
-    if (popUpRoute) {
-      UIPageKeyMap.popup.output = 'index.html';
+      if (config.routes) {
+        config.routes = config.routes.concat(extensionRoutes);
+      } else {
+        config.routes = extensionRoutes;
+      }
+      // 为替换 manifest 的 page 做准备
+      if (optionRoute) {
+        UIPageKeyMap.option.output = 'option.html';
+      }
+      if (popUpRoute) {
+        UIPageKeyMap.popup.output = 'index.html';
+      }
     }
 
     config.devServer = {

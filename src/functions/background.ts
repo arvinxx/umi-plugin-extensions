@@ -13,6 +13,8 @@ export default (api: IApi) => {
   const { paths } = api.service;
 
   api.chainWebpack((config) => {
+    if (!api.config.extension) return config;
+
     const { background } = <IExtensionPluginConfig>api.config.extension;
 
     // 如果没有 background 就直接结束
