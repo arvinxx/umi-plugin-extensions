@@ -11,6 +11,7 @@ module.exports = {
     'import/named': 0,
     'no-param-reassign': 0,
     'consistent-return': 0,
+    'no-useless-return': 0,
     'no-restricted-globals': 0,
     'no-continue': 0,
     'no-shadow': 'warn',

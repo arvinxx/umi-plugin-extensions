@@ -1,4 +1,4 @@
-import { IRoute } from 'umi';
+import type { IRoute } from 'umi';
 
 /**
  * 从插件的配置项中提取 Route

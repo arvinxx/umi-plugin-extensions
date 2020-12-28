@@ -29,8 +29,6 @@ export default (api: IApi) => {
         },
         content_scripts: [],
         icons: {},
-        popupUI: {},
-        optionsUI: {},
         contentSecurityPolicy: {
           nonce: [],
           inlineScript: [],
@@ -41,7 +39,7 @@ export default (api: IApi) => {
        * 校验器
        * @param joi
        */
-      schema: function (joi) {
+      schema(joi) {
         const iconSchema = joi.alternatives(
           joi.string(),
           joi.object().keys({
