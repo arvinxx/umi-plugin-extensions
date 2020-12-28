@@ -3,7 +3,7 @@ import { defineConfig } from 'umi';
 export default defineConfig({
   plugins: [require.resolve('../lib')],
 
-  extension: {
+  extensions: {
     name: 'Umi Chrome Extension Template',
     description: '基于 Umi 的 Chrome 插件开发脚手架',
     manifestVersion: 2,

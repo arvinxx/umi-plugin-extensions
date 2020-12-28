@@ -14,7 +14,7 @@ export default (api: IApi) => {
 
   //  manifest 结构
   api.describe({
-    key: 'extension',
+    key: 'extensions',
     config: {
       default: {
         name: pkg.name || 'umi extension template',

@@ -1,13 +1,13 @@
 {
-  "name": "umi-plugin-extension",
+  "name": "umi-plugin-extensions",
   "version": "1.0.0",
   "main": "lib/index.js",
-  "description": "build extension",
+  "description": "build extensions",
   "authors": {
     "name": "Arvin Xu",
     "email": "arvinx@foxmail.com"
   },
-  "repository": "/umi-plugin-extension",
+  "repository": "/umi-plugin-extensions",
   "scripts": {
     "start": "yarn build && yarn example:dev",
     "dev": "father-build -w",

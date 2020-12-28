@@ -1,6 +1,6 @@
 declare module 'umi' {
   interface BaseIConfig {
-    extension: IExtensionPluginConfig;
+    extensions: IExtensionPluginConfig;
   }
 }
 export type BaseManifest = Pick<

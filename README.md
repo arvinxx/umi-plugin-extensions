@@ -1,9 +1,9 @@
-# umi-plugin-extension
+# umi-plugin-extensions
 
-[![NPM version](https://img.shields.io/npm/v/umi-plugin-extension.svg?style=flat)](https://npmjs.org/package/umi-plugin-extension)
-[![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extension.svg?style=flat)](https://npmjs.org/package/umi-plugin-extension)
+[![NPM version](https://img.shields.io/npm/v/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
+[![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
 
-build extension
+build extensions
 
 ## Install
 
