@@ -7,5 +7,5 @@ export default async ({ page, host }) => {
   const text = await page.evaluate(
     () => document.querySelector('h1')?.innerHTML,
   );
-  expect(text).toEqual('hello umi plugin');
+  expect(text).toEqual('hello umi');
 };

@@ -64,6 +64,7 @@
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.9.0",
     "test-umi-plugin": "^0.1.0",
+    "ts-jest": "^26.4.4",
     "umi": "^3.1.0",
     "yorkie": "^2.0.0"
   },

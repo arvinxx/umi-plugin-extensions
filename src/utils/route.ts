@@ -8,25 +8,21 @@ import { IRoute } from 'umi';
 export const getRouteFromConfig = (
   config: string | { page: string },
   url: string,
-) => {
-  let route: IRoute = {};
+): IRoute | undefined => {
   switch (typeof config) {
     case 'string':
-      route = {
+      return {
         path: url,
         exact: true,
         component: config,
       };
-      break;
     case 'object':
-      route = {
+      return {
         path: url,
         exact: true,
         component: config.page,
       };
-      break;
     default:
+      return;
   }
-
-  return route;
 };

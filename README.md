@@ -2,24 +2,18 @@
 
 [![NPM version](https://img.shields.io/npm/v/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions) [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
 
-a umi plugin to build extensions
+用于开发 Chrome 插件的 umi 插件
 
 ## 安装
 
 ```bash
-$ npm install
+$ npm i -D umi-plugin-extensions
 ```
 
 或
 
 ```bash
-$ yarn
-```
-
-## 启动
-
-```bash
-$ yarn start
+$ yarn add -D umi-plugin-extensions
 ```
 
 ## 使用方式
@@ -30,6 +24,12 @@ $ yarn start
 export default {
   plugins: ['umi-plugin-extensions'],
 };
+```
+
+## 开发
+
+```bash
+$ yarn start
 ```
 
 ## Options

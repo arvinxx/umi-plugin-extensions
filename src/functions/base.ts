@@ -21,10 +21,12 @@ export default (api: IApi) => {
     const { optionsUI, popupUI } = extension;
 
     // 插入 routes
-    const optionRoute: IRoute = getRouteFromConfig(optionsUI, '/option');
-    const popUpRoute: IRoute = getRouteFromConfig(popupUI, '/');
+    const optionRoute = getRouteFromConfig(optionsUI, '/option');
+    const popUpRoute = getRouteFromConfig(popupUI, '/');
 
-    const extensionRoutes = [optionRoute, popUpRoute].filter((i) => i);
+    const extensionRoutes = [optionRoute, popUpRoute].filter(
+      (i) => i,
+    ) as IRoute[];
 
     if (config.routes) {
       config.routes = config.routes.concat(extensionRoutes);
