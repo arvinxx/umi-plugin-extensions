@@ -27,7 +27,7 @@
     "example:build": "cross-env APP_ROOT=example umi build",
     "test:update": "umi-test --updateSnapshot",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "clean": "rm -rf example/dist"
+    "clean": "rm -rf es lib example/dist example/.umi*/ build coverage .eslintcache"
   },
   "lint-staged": {
     "*.ts?(x)": [
