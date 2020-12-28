@@ -23,7 +23,7 @@ export default (api: IApi) => {
 
   // 在配置项中注入该钩子字符串
   api.modifyConfig((config) => {
-    const { contentSecurityPolicy } = <IExtensionPluginConfig>config.extension;
+    const { contentSecurityPolicy } = <IExtensionPluginConfig>config.extensions;
     contentSecurityPolicy.inlineScript.push(__TO_REPLACE_INLINE_SCRIPT__);
     return config;
   });

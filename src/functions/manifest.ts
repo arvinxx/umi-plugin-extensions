@@ -10,10 +10,8 @@ import type { IExtensionPluginConfig } from '../types/PluginConfig';
  */
 export default (api: IApi) => {
   api.chainWebpack((config) => {
-    if (!api.config.extension) return config;
-
     const manifest = generateManifestFromConfig(
-      <IExtensionPluginConfig>api.config.extension,
+      <IExtensionPluginConfig>api.config.extensions,
     );
 
     config

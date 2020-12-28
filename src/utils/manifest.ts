@@ -1,5 +1,16 @@
-import { IExtensionPluginConfig } from '../types/PluginConfig';
+import type { IExtensionPluginConfig } from '../types/PluginConfig';
 import { getCSPScript } from './csp';
+
+export const UIPageKeyMap = {
+  popup: {
+    key: '__TO_REPLACE_POPUP__',
+    output: '',
+  },
+  option: {
+    key: '__TO_REPLACE_OPTION__',
+    output: '',
+  },
+};
 
 export const generateManifestFromConfig = (
   config: IExtensionPluginConfig,
@@ -72,17 +83,5 @@ export const generateManifestFromConfig = (
     minimum_chrome_version,
   };
 };
-
-export const UIPageKeyMap = {
-  popup: {
-    key: '__TO_REPLACE_POPUP__',
-    output: '',
-  },
-  option: {
-    key: '__TO_REPLACE_OPTION__',
-    output: '',
-  },
-};
-
 
 // export const

@@ -2,7 +2,7 @@ import { join } from 'path';
 import fse from 'fs-extra';
 import type { IApi } from 'umi';
 
-import { IExtensionPluginConfig } from '../types/PluginConfig';
+import type { IExtensionPluginConfig } from '../types/PluginConfig';
 
 /**
  *  将 background 添加到打包对象中
@@ -13,9 +13,7 @@ export default (api: IApi) => {
   const { paths } = api.service;
 
   api.chainWebpack((config) => {
-    if (!api.config.extension) return config;
-
-    const { background } = <IExtensionPluginConfig>api.config.extension;
+    const { background } = <IExtensionPluginConfig>api.config.extensions;
 
     // 如果没有 background 就直接结束
     if (!background || background?.scripts.length === 0) {
