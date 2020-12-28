@@ -1,20 +1,35 @@
 import type { IApi } from 'umi';
-import DevHTML from './devHTML';
-import Manifest from './manifest';
-import Base from './base';
-import PluginConfig from './pluginConfig';
-import CSP from './csp';
+import {
+  DevHTML,
+  ConfigSchema,
+  CSP,
+  ManifestGenerator,
+  Base,
+  UIPath,
+  Background,
+} from './functions';
 
 export * from './types/PluginConfig';
 
 export default (api: IApi) => {
-  PluginConfig(api);
-
+  // 将 umi 的基础配置修改成适配插件开发的模式
   Base(api);
 
+  // 配置 config 的 schema
+  ConfigSchema(api);
+
+  // 生成开发所需的 html 文件
   DevHTML(api);
 
-  Manifest(api);
+  // 生成 manifest 配置文件
+  ManifestGenerator(api);
 
+  // 处理 CSP 的问题
   CSP(api);
+
+  // 将 manifest 中 UI 的中间路径替换成最终生成的路径
+  UIPath(api);
+
+  // 处理 background 脚本
+  Background(api);
 };

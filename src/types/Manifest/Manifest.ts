@@ -13,7 +13,7 @@ declare namespace chromeExtension {
      * As of Chrome 18, developers should specify 2 (without quotes)
      * @see https://developer.chrome.com/docs/extensions/mv2/manifest/manifest_version/
      */
-    manifest_version: 1 | 2 | 3;
+    manifest_version: ManifestVersion;
     /**
      * Specifies the subdirectory of `_locales` that
      * contains the default strings for this extension.
@@ -100,8 +100,8 @@ declare namespace chromeExtension {
      *
      * @see https://developer.chrome.com/docs/extensions/reference/commands/
      */
-    commands: Commands;
-    content_capabilities: string;
+    commands?: Commands;
+    content_capabilities?: string;
     /**
      * Content scripts are files that run in the context of web pages.
      * By using the standard Document Object Model (DOM),
@@ -109,7 +109,7 @@ declare namespace chromeExtension {
      * make changes to them and pass information to their parent extension.
      * @see https://developer.chrome.com/docs/extensions/mv2/content_scripts/
      */
-    content_scripts: [{}];
+    content_scripts?: ContentScript[];
     /**
      * Content Security Policy
      *
@@ -164,7 +164,7 @@ declare namespace chromeExtension {
      * shared between other extensions and apps.
      *  @see https://developer.chrome.com/docs/extensions/mv2/shared_modules/
      */
-    import: SharedModule[];
+    import?: SharedModule[];
     /**
      * specify how this extension will behave if allowed to run in incognito mode.
      * @see https://developer.chrome.com/docs/extensions/mv2/manifest/incognito/
@@ -308,17 +308,19 @@ declare namespace chromeExtension {
     web_accessible_resources?: string[];
   }
 
+  export type ManifestVersion = 1 | 2 | 3;
+
   export interface IconStruct {
-    16: string;
-    32: string;
-    48: string;
+    16?: string;
+    32?: string;
+    48?: string;
     128: string;
   }
 
   /**
    * Icon 类型
    */
-  export type IconType = Partial<IconStruct> | string;
+  export type IconType = IconStruct | string;
 
   export interface BrowserAction {
     /**
