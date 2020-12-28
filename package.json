@@ -2,7 +2,7 @@
   "name": "umi-plugin-extensions",
   "version": "1.0.0",
   "main": "lib/index.js",
-  "description": "build extensions",
+  "description": "a umi plugin to build chrome extensions",
   "authors": {
     "name": "Arvin Xu",
     "email": "arvinx@foxmail.com"

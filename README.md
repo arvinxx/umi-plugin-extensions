@@ -1,32 +1,35 @@
 # umi-plugin-extensions
 
-[![NPM version](https://img.shields.io/npm/v/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
-[![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
+[![NPM version](https://img.shields.io/npm/v/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions) [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
 
-build extensions
+a umi plugin to build extensions
 
-## Install
+## 安装
 
 ```bash
-# or yarn
 $ npm install
 ```
 
+或
+
 ```bash
-$ npm run build --watch
-$ npm run start
+$ yarn
 ```
 
-## Usage
+## 启动
 
-Configure in `.umirc.js`,
+```bash
+$ yarn start
+```
+
+## 使用方式
+
+在 `.umirc.ts` 或 `config/config.ts` 配置项中
 
 ```ts
 export default {
-  plugins: [
-    'umi-plugin-crx',
-  ],
-}
+  plugins: ['umi-plugin-extensions'],
+};
 ```
 
 ## Options
