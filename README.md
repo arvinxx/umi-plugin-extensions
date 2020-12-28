@@ -7,24 +7,18 @@
 ## 安装
 
 ```bash
-$ npm i -D umi-plugin-extensions
+npm i -D umi-plugin-extensions
 ```
 
 或
 
 ```bash
-$ yarn add -D umi-plugin-extensions
+yarn add -D umi-plugin-extensions
 ```
 
 ## 使用方式
 
-在 `.umirc.ts` 或 `config/config.ts` 配置项中
 
-```ts
-export default {
-  plugins: ['umi-plugin-extensions'],
-};
-```
 
 ## 开发
 
@@ -36,6 +30,6 @@ $ yarn start
 
 TODO
 
-## LICENSE
+## License
 
-MIT
+[MIT](./LICENSE) ® Arvin Xu
