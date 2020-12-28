@@ -1,6 +1,7 @@
 {
+  "include": ["src", "test"],
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "moduleResolution": "node",
     "jsx": "preserve",
     "allowJs": true,
