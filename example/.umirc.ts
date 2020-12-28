@@ -5,7 +5,7 @@ export default defineConfig({
 
   extensions: {
     name: 'Umi Extension Plugin',
-    description: '基于 Chrome 插件开发的 Umi 插件',
+    description: '用于 Chrome 插件开发的 Umi 插件',
     manifestVersion: 2,
     minimumChromeVersion: '80',
     popupUI: '@/pages/index',

@@ -217,13 +217,6 @@ declare namespace chromeExtension {
      */
     optional_permissions?: Permissions[];
     /**
-     * An extension's options page will be displayed in a new tab.
-     * The options HTML file is listed registered under the options_page field.
-     *
-     * @see https://developer.chrome.com/docs/extensions/mv2/options/#full_page
-     */
-    options_page?: string;
-    /**
      * Embedded options allows users to adjust extension options
      * without navigating away from the extensions management page
      * inside an embedded box. To declare an embedded options, register the

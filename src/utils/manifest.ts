@@ -39,7 +39,7 @@ export const generateManifestFromConfig = (
   // 处理 option 参数项
   const option = {};
   if (typeof optionsUI === 'string') {
-    option['option_page'] = UIPageKeyMap.option.key;
+    option['options_ui'] = { page: UIPageKeyMap.option.key };
   }
   if (typeof optionsUI === 'object') {
     option['options_ui'] = {
