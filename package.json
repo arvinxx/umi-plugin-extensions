@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-extensions",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "lib/index.js",
   "description": "a umi plugin to build chrome extensions",
   "authors": {
@@ -22,7 +22,8 @@
     "build": "father-build",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "release": "yarn publish",
+    "release": "yarn build &&yarn release:only",
+    "release:only": "yarn publish",
     "example:dev": "cross-env APP_ROOT=example umi dev",
     "example:build": "cross-env APP_ROOT=example umi build",
     "test:update": "umi-test --updateSnapshot",
