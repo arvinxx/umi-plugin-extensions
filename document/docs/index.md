@@ -1,3 +1,8 @@
+---
+title: 介绍
+order: 1
+---
+
 # umi-plugin-extensions
 
 [![NPM version](https://img.shields.io/npm/v/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions) [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
@@ -14,7 +19,7 @@ TODO List
 - [ ] 约定 popup 默认路由和文件夹
 - [ ] 约定 options 默认路由和文件夹
 - [ ] 约定 background 的默认加载文件夹
-- [ ] 约定content Scripts 的默认加载文件夹
+- [ ] 约定 content Scripts 的默认加载文件夹
 - [ ] manifest 类型定义文件单独提出
 - [ ] 说明文档
 - [ ] 单元测试
@@ -39,7 +44,6 @@ yarn add -D umi-plugin-extensions
 $ yarn start
 ```
 
-
 ## License
 
-[MIT](./LICENSE) ® Arvin Xu
+[MIT](../../LICENSE) ® Arvin Xu

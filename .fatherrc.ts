@@ -1,12 +1,6 @@
-export default [{
+export default {
   target: 'node',
+  entry: 'src/index.ts',
   cjs: { type: 'babel', lazy: true },
   disableTypeCheck: true,
-  extraBabelPlugins: [
-    [
-      'babel-plugin-import',
-      { libraryName: 'antd', libraryDirectory: 'es', style: true },
-      'antd',
-    ],
-  ],
-}];
+};
