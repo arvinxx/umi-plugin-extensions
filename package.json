@@ -37,9 +37,10 @@
     "site": "cross-env APP_ROOT=document umi dev --dumi",
     "site:build": "cross-env APP_ROOT=document umi build --dumi",
     "site:publish": "yarn site:build && gh-pages -d ./document/dist",
+    "site:publish-only": "gh-pages -d ./document/dist",
     "---------   ": "",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "clean": "rm -rf es lib example/dist example/.umi*/ build coverage .eslintcache"
+    "clean": "rm -rf es lib example/dist document/dist example/.umi*/ document/.umi*/ coverage .eslintcache"
   },
   "lint-staged": {
     "*.ts?(x)": [
