@@ -34,12 +34,11 @@ module.exports = {
   disableSources: true,
   // 标记有 @internal 的代码将不会输出
   stripInternal: true,
+  // 将类型定义文件加入生成中
+  includeDeclarations: true,
   readme: 'document/API.md',
-  // plugin: 'none',
   plugin: ['typedoc-plugin-external-module-map', 'typedoc-plugin-markdown'],
   'external-modulemap': './types/([\\w\\-_]+)/',
-  includeDeclarations: true,
-
   hideBreadcrumbs: true,
   namedAnchors: true,
   hideProjectName: true,

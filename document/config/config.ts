@@ -22,7 +22,10 @@ export default defineConfig({
     ],
   ],
   navs: [
-    null,
+    { title: '指南', path: '/guide' },
+    { title: '教程', path: '/tutorial' },
+    { title: '配置', path: '/api/modules/extensionsplugin' },
+    { title: 'Manifest', path: '/api/modules/chromemanifest' },
     {
       title: 'GitHub',
       path: 'https://github.com/arvinxx/umi-plugin-extensions',
@@ -35,22 +38,30 @@ export default defineConfig({
   menus: {
     '/api': [
       {
-        path: '/api/globals',
-        title: 'API',
-        // children: ['api/globals.md'],
+        path: '/api',
+        title: '概览',
+        children: [{ path: '/api/globals', title: '版本&索引' }],
       },
       {
         path: '/api/modules/extensionsplugin',
-        title: '插件类型',
+        title: '插件配置',
       },
       {
         path: '/api/modules/chromemanifest',
-        title: 'Manifest属性',
+        title: 'Manifest 文件',
+      },
+    ],
+    '/api/modules/extensionsplugin': [
+      {
+        path: '/api/modules/extensionsplugin',
+        title: '概览',
+      },
+    ],
+    '/api/modules/chromemanifest': [
+      {
+        path: '/api/modules/chromemanifest',
+        title: '概览',
       },
     ],
   },
-  // {
-  //   path: '/api',
-  //   component: './docs/api/globals.md',
-  // },
 });

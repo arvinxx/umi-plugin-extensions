@@ -1,4 +1,10 @@
+/**
+ * umi-plugin-extensions 的配置定义
+ */
 declare namespace extensionsPlugin {
+  /**
+   * @internal
+   */
   export type BaseManifest = Pick<
     chromeManifest.Manifest,
     'name' | 'version' | 'background' | 'permissions' | 'icons'
