@@ -2,7 +2,6 @@ import type { IApi } from 'umi';
 import GenerateJsonPlugin from 'generate-json-webpack-plugin';
 
 import { generateManifestFromConfig } from '../utils';
-import type { IExtensionPluginConfig } from '../types/PluginConfig';
 
 /**
  *  生成 manifest.json 文件
@@ -11,7 +10,7 @@ import type { IExtensionPluginConfig } from '../types/PluginConfig';
 export default (api: IApi) => {
   api.chainWebpack((config) => {
     const manifest = generateManifestFromConfig(
-      <IExtensionPluginConfig>api.config.extensions,
+      <PluginExtensions.Config>api.config.extensions,
     );
 
     config

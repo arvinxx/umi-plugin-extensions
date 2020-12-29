@@ -4,7 +4,6 @@ import { uniq } from 'lodash';
 
 import fse from 'fs-extra';
 import { extractInlineScript, getScriptSHA, UIPageKeyMap } from '../utils';
-import type { IExtensionPluginConfig } from '../types/PluginConfig';
 
 /**
  * 处理 Chrome 的内容安全政策(CSP)相关的问题
@@ -23,7 +22,7 @@ export default (api: IApi) => {
 
   // 在配置项中注入该钩子字符串
   api.modifyConfig((config) => {
-    const { contentSecurityPolicy } = <IExtensionPluginConfig>config.extensions;
+    const { contentSecurityPolicy } = <PluginExtensions.Config>config.extensions;
     contentSecurityPolicy.inlineScript.push(__TO_REPLACE_INLINE_SCRIPT__);
     return config;
   });

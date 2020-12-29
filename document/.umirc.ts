@@ -32,4 +32,21 @@ export default defineConfig({
     loading: '@ant-design/pro-skeleton',
   },
   hash: true,
+  menus: {
+    '/api': [
+      {
+        path: '/api/globals',
+        title: 'API',
+        // children: ['api/globals.md'],
+      },
+      {
+        path: '/api/modules/manifest',
+        title: 'modules',
+      },
+    ],
+  },
+  // {
+  //   path: '/api',
+  //   component: './docs/api/globals.md',
+  // },
 });

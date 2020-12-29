@@ -1,5 +1,5 @@
 import { createHash, randomBytes } from 'crypto';
-import { IContentSecurityPolicy } from '../types/PluginConfig';
+import { IContentSecurityPolicy } from '../../types/PluginConfig';
 
 /**
  * 从 html 提取 script 并生成 sha 代码

@@ -1,5 +1,5 @@
 import type { IApi, IRoute } from 'umi';
-import { IExtensionPluginConfig } from '../types/PluginConfig';
+
 import { getRouteFromConfig, UIPageKeyMap } from '../utils';
 
 /**
@@ -16,7 +16,9 @@ export default (api: IApi) => {
       htmlSuffix: true,
     };
 
-    const extension = <IExtensionPluginConfig>config.extensions;
+    const extension = <PluginExtensions.Config>(
+      config.extensions
+    );
 
     const { optionsUI, popupUI } = extension;
 

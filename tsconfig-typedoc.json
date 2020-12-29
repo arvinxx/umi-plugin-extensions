@@ -1,15 +1,14 @@
 {
-  "include": ["src", "test", "types"],
+  "include": ["types"],
   "compilerOptions": {
     "target": "ESNext",
     "moduleResolution": "node",
-    "jsx": "react",
     "allowJs": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "noEmitOnError": false,
+    "noStrictGenericChecks": true,
+    "skipLibCheck": true,
     "declaration": true
   },
   "exclude": [

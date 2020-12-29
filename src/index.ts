@@ -9,8 +9,6 @@ import {
   Background,
 } from './functions';
 
-export * from './types/PluginConfig';
-
 export default (api: IApi) => {
   // 将 umi 的基础配置修改成适配插件开发的模式
   Base(api);

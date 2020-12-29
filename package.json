@@ -30,10 +30,12 @@
     "--------- ": "",
     "example:dev": "cross-env APP_ROOT=example umi dev",
     "example:build": "cross-env APP_ROOT=example umi build",
+    "---------     ": "",
+    "api:build": "typedoc",
     "---------  ": "",
     "site": "cross-env APP_ROOT=document umi dev --dumi",
     "site:build": "cross-env APP_ROOT=document umi build --dumi",
-    "site:publish": "yarn site:build && gh-pages -d ./dist",
+    "site:publish": "yarn site:build && gh-pages -d ./document/dist",
     "---------   ": "",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "clean": "rm -rf es lib example/dist example/.umi*/ build coverage .eslintcache"
@@ -69,6 +71,7 @@
     "eslint-import-resolver-typescript": "^2.2.1",
     "express": "^4.15.3",
     "father-build": "^1.19.1",
+    "gh-pages": "^3.1.0",
     "lint-staged": "^10.0.8",
     "npm-run-all": "^4.1.5",
     "pify": "^5.0.0",
@@ -80,6 +83,9 @@
     "react-test-renderer": "^16.9.0",
     "test-umi-plugin": "^0.1.0",
     "ts-jest": "^26.4.4",
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-external-module-map": "^1.2.1",
+    "typedoc-plugin-markdown": "^3.1.0",
     "umi": "^3.3.3",
     "yorkie": "^2.0.0"
   },
@@ -87,8 +93,10 @@
     "pre-commit": "lint-staged"
   },
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
+  "types": "types/index.d.ts",
   "dependencies": {
     "fs-extra": "^9.0.1",
     "generate-json-webpack-plugin": "^1.0.0"

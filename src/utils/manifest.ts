@@ -1,4 +1,3 @@
-import type { IExtensionPluginConfig } from '../types/PluginConfig';
 import { getCSPScript } from './csp';
 
 export const UIPageKeyMap = {
@@ -13,7 +12,7 @@ export const UIPageKeyMap = {
 };
 
 export const generateManifestFromConfig = (
-  config: IExtensionPluginConfig,
+  config: PluginExtensions.Config,
 ): chromeExtension.Manifest => {
   const {
     contentSecurityPolicy,
