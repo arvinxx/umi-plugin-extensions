@@ -1,12 +1,3 @@
-/**
- * @private
- */
-declare module 'umi' {
-  interface BaseIConfig {
-    extensions: PluginExtensions.Config;
-  }
-}
-
 declare namespace PluginExtensions {
   export type BaseManifest = Pick<
     chromeExtension.Manifest,

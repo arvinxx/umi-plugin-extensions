@@ -3,6 +3,12 @@ import { join } from 'path';
 import fse from 'fs-extra';
 import { baseDevURL, isDev } from '../utils';
 
+declare module 'umi' {
+  interface BaseIConfig {
+    extensions: PluginExtensions.Config;
+  }
+}
+
 /**
  * 定义插件结构
  * @param api
