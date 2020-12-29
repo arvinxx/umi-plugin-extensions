@@ -1,4 +1,4 @@
-declare namespace chromeExtension {
+declare namespace chromeManifest {
   export interface Manifest {
     /**
      * The name (maximum of 45 characters) is the primary

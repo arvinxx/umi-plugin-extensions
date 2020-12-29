@@ -1,4 +1,4 @@
-declare namespace chromeExtension {
+declare namespace chromeManifest {
   export interface Requirements {
     /**
      * access GPU hardware acceleration

@@ -12,8 +12,8 @@ export const UIPageKeyMap = {
 };
 
 export const generateManifestFromConfig = (
-  config: PluginExtensions.Config,
-): chromeExtension.Manifest => {
+  config: extensionsPlugin.Config,
+): chromeManifest.Manifest => {
   const {
     contentSecurityPolicy,
     background,

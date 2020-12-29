@@ -1,12 +1,12 @@
-declare namespace PluginExtensions {
+declare namespace extensionsPlugin {
   export type BaseManifest = Pick<
-    chromeExtension.Manifest,
+    chromeManifest.Manifest,
     'name' | 'version' | 'background' | 'permissions' | 'icons'
   >;
 
   export interface Config extends BaseManifest {
-    contentSecurityPolicy: IContentSecurityPolicy;
-    manifestVersion: chromeExtension.ManifestVersion;
+    contentSecurityPolicy: ContentSecurityPolicy;
+    manifestVersion: chromeManifest.ManifestVersion;
     minimumChromeVersion: string;
     optionsUI: string | OptionsUI;
     popupUI: string | PopupUI;
@@ -15,7 +15,7 @@ declare namespace PluginExtensions {
   /**
    * 使用的安全策略
    */
-  export interface IContentSecurityPolicy {
+  export interface ContentSecurityPolicy {
     nonce: string[];
     inlineScript: string[];
     url: string[];
@@ -24,7 +24,7 @@ declare namespace PluginExtensions {
   export interface PopupUI {
     page: string;
     title?: string;
-    icon?: chromeExtension.IconType;
+    icon?: chromeManifest.IconType;
     /**
      * popUp UI 的范围是 browser 还是 page
      * @default browser

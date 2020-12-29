@@ -1,5 +1,4 @@
-import { createHash, randomBytes } from 'crypto';
-import { IContentSecurityPolicy } from '../../types/PluginConfig';
+import { createHash } from 'crypto';
 
 /**
  * 从 html 提取 script 并生成 sha 代码
@@ -36,14 +35,14 @@ export const getCSPScript = ({
   nonce,
   url,
   inlineScript,
-}: IContentSecurityPolicy) => {
+}: extensionsPlugin.ContentSecurityPolicy) => {
   const nonceList = nonce?.map((n) => `'nonce-${n}'`).join(' ');
   const inlineScriptList = inlineScript?.map((n) => `'${n}'`).join(' ');
   const urlList = url?.join(' ');
 
-  const nonceStr = nonceList ? ' ' + nonceList : '';
-  const inlineScriptStr = inlineScriptList ? ' ' + inlineScriptList : '';
-  const urlStr = urlList ? ' ' + urlList : '';
+  const nonceStr = nonceList ? ` ${nonceList}` : '';
+  const inlineScriptStr = inlineScriptList ? ` ${inlineScriptList}` : '';
+  const urlStr = urlList ? ` ${urlList}` : '';
 
   return `script-src 'self'${nonceStr}${inlineScriptStr}${urlStr}; object-src 'self'`;
 };

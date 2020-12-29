@@ -1,4 +1,4 @@
-declare namespace chromeExtension {
+declare namespace chromeManifest {
   export interface ExternallyConnectable {
     /**
      * The IDs of extensions or apps that are allowed to connect.

@@ -1,4 +1,4 @@
-declare namespace chromeExtension {
+declare namespace chromeManifest {
   /**
    * @see https://developer.chrome.com/docs/extensions/mv2/settings_override/
    */

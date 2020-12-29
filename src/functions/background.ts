@@ -2,7 +2,6 @@ import { join } from 'path';
 import fse from 'fs-extra';
 import type { IApi } from 'umi';
 
-
 /**
  *  将 background 添加到打包对象中
  *  并在输出结果中添加 background 脚本
@@ -12,7 +11,7 @@ export default (api: IApi) => {
   const { paths } = api.service;
 
   api.chainWebpack((config) => {
-    const { background } = <PluginExtensions.Config>api.config.extensions;
+    const { background } = <extensionsPlugin.Config>api.config.extensions;
 
     // 如果没有 background 就直接结束
     if (!background || background?.scripts.length === 0) {
@@ -27,7 +26,7 @@ export default (api: IApi) => {
   const replaceOutputBackgroundPath = () => {
     const filepath = join(paths.absOutputPath!, 'manifest.json');
 
-    const manifest: chromeExtension.Manifest = fse.readJSONSync(filepath);
+    const manifest: chromeManifest.Manifest = fse.readJSONSync(filepath);
 
     if (manifest.background) {
       manifest.background.scripts = ['background.js'];

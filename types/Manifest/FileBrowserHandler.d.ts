@@ -1,4 +1,4 @@
-declare namespace chromeExtension {
+declare namespace chromeManifest {
   export interface FileBrowserHandler {
     id: string;
     default_title: string;

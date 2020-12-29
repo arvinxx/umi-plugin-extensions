@@ -10,7 +10,7 @@ import { generateManifestFromConfig } from '../utils';
 export default (api: IApi) => {
   api.chainWebpack((config) => {
     const manifest = generateManifestFromConfig(
-      <PluginExtensions.Config>api.config.extensions,
+      <extensionsPlugin.Config>api.config.extensions,
     );
 
     config

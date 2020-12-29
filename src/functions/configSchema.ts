@@ -5,7 +5,7 @@ import { baseDevURL, isDev } from '../utils';
 
 declare module 'umi' {
   interface BaseIConfig {
-    extensions: PluginExtensions.Config;
+    extensions: extensionsPlugin.Config;
   }
 }
 
@@ -33,7 +33,7 @@ export default (api: IApi) => {
           scripts: [],
           persistent: true,
         },
-        content_scripts: [],
+        contentScripts: [],
         icons: {},
         contentSecurityPolicy: {
           nonce: [],
@@ -57,6 +57,11 @@ export default (api: IApi) => {
         );
         const stringArr = joi.array().items(joi.string());
 
+        const contentScript = joi.object({
+          matches: stringArr.required(),
+          css: stringArr,
+          js: stringArr,
+        });
         return joi.object({
           name: joi.string(),
           version: joi.string(),
@@ -69,7 +74,7 @@ export default (api: IApi) => {
             inlineScript: stringArr,
             url: stringArr,
           }),
-          content_scripts: joi.array(),
+          contentScripts: contentScript,
           background: joi.object({
             scripts: stringArr,
             persistent: joi.boolean(),

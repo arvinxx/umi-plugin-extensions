@@ -1,4 +1,4 @@
-declare namespace chromeExtension {
+declare namespace chromeManifest {
   export interface BaseCommands {
     _execute_page_action?: Command;
     _execute_browser_action?: Command;

@@ -16,7 +16,7 @@ export default (api: IApi) => {
       htmlSuffix: true,
     };
 
-    const extension = <PluginExtensions.Config>(
+    const extension = <extensionsPlugin.Config>(
       config.extensions
     );
 

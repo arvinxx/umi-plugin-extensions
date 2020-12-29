@@ -40,8 +40,12 @@ export default defineConfig({
         // children: ['api/globals.md'],
       },
       {
-        path: '/api/modules/manifest',
-        title: 'modules',
+        path: '/api/modules/extensionsplugin',
+        title: '插件类型',
+      },
+      {
+        path: '/api/modules/chromemanifest',
+        title: 'Manifest属性',
       },
     ],
   },

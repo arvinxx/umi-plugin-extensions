@@ -1,4 +1,4 @@
-declare namespace chromeExtension {
+declare namespace chromeManifest {
   export interface ContentScript {
     /**
      * Specifies which pages this content script will be injected into.

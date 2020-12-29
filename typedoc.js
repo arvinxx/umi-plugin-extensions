@@ -9,7 +9,7 @@ const isProdSite =
 module.exports = {
   name: 'umi-plugin-extensions',
 
-  mode: 'modules',
+  mode: 'file',
   tsconfig: './tsconfig-typedoc.json',
   inputFiles: ['types'],
   // includes: ['src/types'],
@@ -43,5 +43,5 @@ module.exports = {
   hideBreadcrumbs: true,
   namedAnchors: true,
   hideProjectName: true,
-  publicPath: isProdSite ? '/umi-plugin-extensions/' : '/',
+  publicPath: isProdSite ? '/umi-plugin-extensions/api/' : '/api/',
 };
