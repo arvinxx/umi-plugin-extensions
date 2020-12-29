@@ -33,7 +33,7 @@ module.exports = {
    */
   disableSources: true,
   // 标记有 @internal 的代码将不会输出
-  // stripInternal: true,
+  stripInternal: true,
   readme: 'document/API.md',
   // plugin: 'none',
   plugin: ['typedoc-plugin-external-module-map', 'typedoc-plugin-markdown'],
