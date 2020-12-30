@@ -65,28 +65,31 @@ chrome.browserAction.setBadgeBackgroundColor({color: [255, 0, 0, 255]});` 复制
 
 示例(只有打开百度才显示图标)：
 
-```js
+```json
 {
-	"page_action":
-	{
-		"default_icon": "img/icon.png",
-		"default_title": "我是pageAction",
-		"default_popup": "popup.html"
-	},
-	"permissions": ["declarativeContent"]
+  "page_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "我是pageAction",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["declarativeContent"]
 }
+```
 
-chrome.runtime.onInstalled.addListener(function(){
-	chrome.declarativeContent.onPageChanged.removeRules(undefined, function(){
-		chrome.declarativeContent.onPageChanged.addRules([
-			{
-				conditions: [
-										new chrome.declarativeContent.PageStateMatcher({pageUrl: {urlContains: 'baidu.com'}})
-				],
-				actions: [new chrome.declarativeContent.ShowPageAction()]
-			}
-		]);
-	});
+```js
+chrome.runtime.onInstalled.addListener(function () {
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
+    chrome.declarativeContent.onPageChanged.addRules([
+      {
+        conditions: [
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: { urlContains: 'baidu.com' },
+          }),
+        ],
+        actions: [new chrome.declarativeContent.ShowPageAction()],
+      },
+    ]);
+  });
 });
 ```
 
