@@ -1,9 +1,9 @@
 ---
-title: 前言
+title: 基本介绍
 order: 2
 toc: menu
 ---
-# 前言
+# 基本介绍
 
 ## 什么是 Chrome 插件
 

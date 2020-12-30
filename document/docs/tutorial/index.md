@@ -5,7 +5,7 @@ order: 1
 
 > 转载自: [【干货】Chrome插件(扩展)开发全攻略](http://blog.liuxianan.com/chrome-plugin-develop.html)
 
-![](http://image.liuxianan.com/201707/20170710_222547_735_9922.png)
+![](https://gw.alipayobjects.com/zos/antfincdn/%26nhARE1LtY/4c5f730f-f11b-4924-8d94-e69198908e16.png)
 
 # Chrome 插件基础教程
 

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/triple-slash-reference */
+declare namespace chromeManifest {}
 
-/// <reference path="./ExtensionsPlugin/index.d.ts" />
-/// <reference path="./Manifest/index.d.ts" />
+declare namespace extensionsPlugin {}

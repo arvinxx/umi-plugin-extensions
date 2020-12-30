@@ -1,6 +1,4 @@
-const isProdSite =
-  // 不是预览模式 同时是生产环境
-  process.env.NODE_ENV === 'production';
+const isProdSite = process.env.NODE_ENV === 'production';
 
 /**
  * typedoc 配置项
@@ -9,16 +7,16 @@ const isProdSite =
 module.exports = {
   name: 'umi-plugin-extensions',
 
-  mode: 'file',
+  // mode: 'file',
   tsconfig: './tsconfig-typedoc.json',
-  inputFiles: ['types'],
+  entryPoints: ['types/index.d.ts'],
   // includes: ['src/types'],
   out: 'document/docs/api',
-  exclude: ['**/node_modules/**', 'types/index.d.ts'],
+  exclude: ['**/node_modules/**'],
   // externalPattern: [''],
   excludePrivate: true,
   excludeProtected: true,
-  excludeExternals: true,
+  // excludeExternals: true,
   // excludeNotExported: true,
   /**
    * 如果注释里包含 @category
@@ -33,14 +31,19 @@ module.exports = {
    */
   disableSources: true,
   // 标记有 @internal 的代码将不会输出
-  stripInternal: true,
-  // 将类型定义文件加入生成中
-  includeDeclarations: true,
+  // stripInternal: true,
+
   readme: 'document/API.md',
-  plugin: ['typedoc-plugin-external-module-map', 'typedoc-plugin-markdown'],
-  'external-modulemap': './types/([\\w\\-_]+)/',
-  hideBreadcrumbs: true,
+  // plugin: 'none',
+  plugin: [
+    // 'typedoc-plugin-external-module-map',
+    'typedoc-plugin-markdown',
+  ],
+  // 'external-modulemap': './types/([\\w\\-_]+)/',
+  // hideBreadcrumbs: true,
   namedAnchors: true,
   hideProjectName: true,
   publicPath: isProdSite ? '/umi-plugin-extensions/api/' : '/api/',
+  // 生成文件名用 - 隔开
+  filenameSeparator: '-',
 };

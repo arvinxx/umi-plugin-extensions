@@ -1,10 +1,12 @@
 ---
-title: Manifest 简介
+title: 核心概念
 order: 3
 toc: menu
 ---
 
-# `manifest.json` 简介
+# 核心概念
+
+## manifest.json
 
 这是一个 Chrome 插件最重要也是必不可少的文件，用来配置所有和插件相关的配置，必须放在根目录。其中，`manifest_version`、`name`、`version`3 个是必不可少的，`description`和`icons`是推荐的。
 

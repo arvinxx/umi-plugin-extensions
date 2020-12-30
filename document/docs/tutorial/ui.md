@@ -1,10 +1,10 @@
 ---
-title: 交互方式
+title: 展现形式
 order: 4
 toc: menu
 ---
 
-# 交互方式
+# 展现形式
 
 ## browserAction(浏览器右上角)
 
@@ -21,17 +21,17 @@ toc: menu
 }` 复制运行
 ```
 
-### 5.1.1. 图标
+### 图标
 
 `browser_action`图标推荐使用宽高都为 19 像素的图片，更大的图标会被缩小，格式随意，一般推荐 png，可以通过 manifest 中`default_icon`字段配置，也可以调用 setIcon()方法。
 
-### 5.1.2. tooltip
+### tooltip
 
 修改`browser_action`的 manifest 中`default_title`字段，或者调用`setTitle()`方法。
 
 ![](http://res.haoji.me/blog/images/transparent.gif)
 
-### 5.1.3. badge
+### badge
 
 所谓`badge`就是在图标上显示一些文本，可以用来更新一些小的扩展状态提示信息。因为 badge 空间有限，所以只支持 4 个以下的字符（英文 4 个，中文 2 个）。badge 无法通过配置文件来指定，必须通过代码实现，设置 badge 文字和颜色可以分别使用`setBadgeText()`和`setBadgeBackgroundColor()`。
 
@@ -44,7 +44,7 @@ chrome.browserAction.setBadgeBackgroundColor({color: [255, 0, 0, 255]});` 复制
 
 ![](http://res.haoji.me/blog/images/transparent.gif)
 
-### pageAction(地址栏右侧)
+## pageAction(地址栏右侧)
 
 所谓`pageAction`，指的是只有当某些特定页面打开才显示的图标，它和`browserAction`最大的区别是一个始终都显示，一个只在特定情况才显示。
 
@@ -65,8 +65,8 @@ chrome.browserAction.setBadgeBackgroundColor({color: [255, 0, 0, 255]});` 复制
 
 示例(只有打开百度才显示图标)：
 
-```
-`{
+```js
+{
 	"page_action":
 	{
 		"default_icon": "img/icon.png",
@@ -87,7 +87,7 @@ chrome.runtime.onInstalled.addListener(function(){
 			}
 		]);
 	});
-});` 复制运行
+});
 ```
 
 效果图：
@@ -175,7 +175,7 @@ chrome.contextMenus.update(menuItemId, updateProperties);` 复制运行
 }` 复制运行
 ```
 
-### 5.5.1. 预热
+### 5.预热
 
 使用过 vue 的应该见过这种类型的插件：
 
