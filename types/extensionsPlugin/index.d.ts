@@ -1,19 +1,37 @@
-/**
- * umi-plugin-extensions 的配置定义
- */
 declare namespace extensionsPlugin {
   /**
-   * @internal
+   * 从 Chrome Manifest 模块中提取的必要类型
    */
   export type BaseManifest = Pick<
     chromeManifest.Manifest,
     'name' | 'version' | 'background' | 'permissions' | 'icons'
   >;
 
+  /**
+   * Umi Extension 插件 的配置文档
+   */
   export interface Config extends BaseManifest {
+    /**
+     * CSP 配置项
+     */
     contentSecurityPolicy: ContentSecurityPolicy;
+    /**
+     * manifest 版本
+     * @description
+     * manifest 目前出了 3 个版本: 1 已经淘汰了; 2 是目前使用的版本 3 预计在 2021 年开始逐渐启用
+     * @default 2
+     */
     manifestVersion: chromeManifest.ManifestVersion;
+    /**
+     * 最低 Chrome 版本号
+     */
     minimumChromeVersion: string;
+    /**
+     * options 选项页的控制项
+     *
+     * [教程 - Option 选项页](/tutorial/display/options)
+     *
+     */
     optionsUI: string | OptionsUI;
     popupUI: string | PopupUI;
   }

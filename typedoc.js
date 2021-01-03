@@ -43,7 +43,7 @@ module.exports = {
   // hideBreadcrumbs: true,
   namedAnchors: true,
   hideProjectName: true,
-  publicPath: isProdSite ? '/umi-plugin-extensions/api/' : '/api/',
+  publicPath: '/api/',
   // 生成文件名用 - 隔开
   filenameSeparator: '-',
 };
