@@ -14,7 +14,7 @@ TODO List
 - [ ] 约定 popup 默认路由和文件夹
 - [ ] 约定 options 默认路由和文件夹
 - [ ] 约定 background 的默认加载文件夹
-- [ ] 约定content Scripts 的默认加载文件夹
+- [ ] 约定 content Scripts 的默认加载文件夹
 - [ ] manifest 类型定义文件单独提出
 - [ ] 说明文档
 - [ ] 单元测试
@@ -36,9 +36,8 @@ yarn add -D umi-plugin-extensions
 ## 开发
 
 ```bash
-$ yarn start
+yarn start
 ```
-
 
 ## License
 

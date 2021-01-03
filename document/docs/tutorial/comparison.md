@@ -6,6 +6,8 @@ toc: menu
 
 # 对比分析
 
+Chrome 插件的 JS 主要可以分为这 5 类：`injected script`、`content-script`、`popup js`、`background js`和`devtools js`，
+
 ## 权限对比
 
 | JS 种类 | 可访问的 API | DOM 访问情况 | JS 访问情况 | 直接跨域 |
@@ -21,10 +23,7 @@ toc: menu
 | JS 类型 | 调试方式 | 图片说明 |
 | --- | --- | --- |
 | injected script | 直接普通的 F12 即可 | 懒得截图 |
-| content-script | 打开 Console,如图切换 | ![](http://res.haoji.me/blog/images/transparent.gif) |
-
-| | popup-js | popup 页面右键审查元素 | ![](http://res.haoji.me/blog/images/transparent.gif) | | background | 插件管理页点击背景页即可 | ![](http://res.haoji.me/blog/images/transparent.gif) | | devtools-js | 暂未找到有效方法 | \- |
-
-通信主页：[https://developer.chrome.com/extensions/messaging](https://developer.chrome.com/extensions/messaging)
-
-前面我们介绍了 Chrome 插件中存在的 5 种 JS，那么它们之间如何互相通信呢？下面先来系统概况一下，然后再分类细说。需要知道的是，popup 和 background 其实几乎可以视为一种东西，因为它们可访问的 API 都一样、通信机制一样、都可以跨域。
+| content-script | 打开 Console,如图切换 | ![](https://gw.alipayobjects.com/zos/antfincdn/9U9WuAniFk/5c09b586-b95a-4f27-8bf6-23abbe44478c.png) |
+| popup-js | popup 页面右键审查元素 | ![](https://gw.alipayobjects.com/zos/antfincdn/yi7n%24b0bfV/072c7bee-f9e0-43df-8c74-bf7840366aa9.png) |
+| background | 插件管理页点击背景页即可 | ![](https://gw.alipayobjects.com/zos/antfincdn/9TBFyLrSHY/f78a7c71-a9f5-4bab-9e6c-3ca7f60829a4.png) |
+| devtools-js | 暂未找到有效方法 | - |

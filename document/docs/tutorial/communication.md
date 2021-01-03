@@ -6,6 +6,10 @@ toc: menu
 
 # 通信
 
+通信主页：[https://developer.chrome.com/extensions/messaging](https://developer.chrome.com/extensions/messaging)
+
+前面我们介绍了 Chrome 插件中存在的 5 种 JS，那么它们之间如何互相通信呢？下面先来系统概况一下，然后再分类细说。需要知道的是，popup 和 background 其实几乎可以视为一种东西，因为它们可访问的 API 都一样、通信机制一样、都可以跨域。
+
 ## 互相通信概览
 
 注：`-`表示不存在或者无意义，或者待验证。
@@ -22,25 +26,25 @@ toc: menu
 
 popup 可以直接调用 background 中的 JS 方法，也可以直接访问 background 的 DOM：
 
-```
-`function test()
-{
-	alert('我是background！');
+```js
+function test() {
+  alert('我是background！');
 }
 
 var bg = chrome.extension.getBackgroundPage();
-bg.test(); alert(bg.document.body.innerHTML);` 复制运行
+bg.test();
+alert(bg.document.body.innerHTML);
 ```
 
 > 小插曲，今天碰到一个情况，发现 popup 无法获取 background 的任何方法，找了半天才发现是因为 background 的 js 报错了，而你如果不主动查看 background 的 js 的话，是看不到错误信息的，特此提醒。
 
 至于`background`访问`popup`如下（前提是`popup`已经打开）：
 
-```
-`var views = chrome.extension.getViews({type:'popup'});
-if(views.length > 0) {
-	console.log(views[0].location.href);
-}` 复制运行
+```js
+var views = chrome.extension.getViews({ type: 'popup' });
+if (views.length > 0) {
+  console.log(views[0].location.href);
+}
 ```
 
 ### popup 或者 bg 向 content 主动发送消息
@@ -61,7 +65,7 @@ background.js 或者 popup.js：
 sendMessageToContentScript({cmd:'test', value:'你好，我是popup！'}, function(response)
 {
 	console.log('来自content的回复：'+response);
-});` 复制运行
+});
 ```
 
 `content-script.js`接收：
@@ -71,7 +75,7 @@ sendMessageToContentScript({cmd:'test', value:'你好，我是popup！'}, functi
 {
 		if(request.cmd == 'test') alert(request.value);
 	sendResponse('我收到了你的消息！');
-});` 复制运行
+});
 ```
 
 双方通信直接发送的都是 JSON 对象，不是 JSON 字符串，所以无需解析，很方便（当然也可以直接发送字符串）。
@@ -85,7 +89,7 @@ content-script.js：
 ```
 `chrome.runtime.sendMessage({greeting: '你好，我是content-script呀，我主动发消息给后台！'}, function(response) {
 	console.log('收到来自后台的回复：' + response);
-});` 复制运行
+});
 ```
 
 background.js 或者 popup.js：
@@ -96,7 +100,7 @@ background.js 或者 popup.js：
 	console.log('收到来自content-script的消息：');
 	console.log(request, sender, sendResponse);
 	sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
-});` 复制运行
+});
 ```
 
 注意事项：
@@ -115,32 +119,35 @@ background.js 或者 popup.js：
 
 `injected-script`中：
 
-```
-`window.postMessage({"test": '你好！'}, '*');` 复制运行
+```js
+window.postMessage({ test: '你好！' }, '*');
 ```
 
 content script 中：
 
-```
-`window.addEventListener("message", function(e)
-{
-	console.log(e.data);
-}, false);` 复制运行
+```js
+window.addEventListener(
+  'message',
+  function (e) {
+    console.log(e.data);
+  },
+  false,
+);
 ```
 
 第二种方法：
 
 `injected-script`中：
 
-```
-`var customEvent = document.createEvent('Event');
+```js
+var customEvent = document.createEvent('Event');
 customEvent.initEvent('myCustomEvent', true, true);
 function fireCustomEvent(data) {
-	hiddenDiv = document.getElementById('myCustomEventDiv');
-	hiddenDiv.innerText = data
-	hiddenDiv.dispatchEvent(customEvent);
+  hiddenDiv = document.getElementById('myCustomEventDiv');
+  hiddenDiv.innerText = data;
+  hiddenDiv.dispatchEvent(customEvent);
 }
-fireCustomEvent('你好，我是普通JS！');` 复制运行
+fireCustomEvent('你好，我是普通JS！');
 ```
 
 `content-script.js`中：
@@ -155,7 +162,7 @@ if(!hiddenDiv) {
 hiddenDiv.addEventListener('myCustomEvent', function() {
 	var eventData = document.getElementById('myCustomEventDiv').innerText;
 	console.log('收到自定义事件消息：' + eventData);
-});` 复制运行
+});
 ```
 
 `injected-script`无法直接和`popup`通信，必须借助`content-script`作为中间人。
@@ -183,19 +190,20 @@ popup.js：
 			port.postMessage({question: '哦，原来是你啊！'});
 		}
 	});
-});` 复制运行
+});
 ```
 
 content-script.js：
 
-```
-`chrome.runtime.onConnect.addListener(function(port) {
-	console.log(port);
-	if(port.name == 'test-connect') {
-		port.onMessage.addListener(function(msg) {
-			console.log('收到长连接消息：', msg);
-			if(msg.question == '你是谁啊？') port.postMessage({answer: '我是你爸！'});
-		});
-	}
-});` 复制运行
+```js
+chrome.runtime.onConnect.addListener(function (port) {
+  console.log(port);
+  if (port.name == 'test-connect') {
+    port.onMessage.addListener(function (msg) {
+      console.log('收到长连接消息：', msg);
+      if (msg.question == '你是谁啊？')
+        port.postMessage({ answer: '我是你爸！' });
+    });
+  }
+});
 ```
