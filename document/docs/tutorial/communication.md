@@ -16,11 +16,11 @@ toc: menu
 
 |  | injected-script | content-script | popup-js | background-js |
 | --- | --- | --- | --- | --- |
-| injected-script | \- | window.postMessage | \- | \- |
-| content-script | window.postMessage | \- | chrome.runtime.sendMessage chrome.runtime.connect | chrome.runtime.sendMessage chrome.runtime.connect |
-| popup-js | \- | chrome.tabs.sendMessage chrome.tabs.connect | \- | chrome.extension. getBackgroundPage() |
-| background-js | \- | chrome.tabs.sendMessage chrome.tabs.connect | chrome.extension.getViews | \- |
-| devtools-js | chrome.devtools. inspectedWindow.eval | \- | chrome.runtime.sendMessage | chrome.runtime.sendMessage |
+| injected-script | \- | `window.postMessage` | - | - |
+| content-script | `window.postMessage` | - | `chrome.runtime.sendMessage` `chrome.runtime.connect` | `chrome.runtime.sendMessage` `chrome.runtime.connect` |
+| popup-js | - | `chrome.tabs.sendMessage` `chrome.tabs.connect` | - | `chrome.extension. getBackgroundPage` |
+| background-js | - | `chrome.tabs.sendMessage` `chrome.tabs.connect` | `chrome.extension.getViews` | - |
+| devtools-js | `chrome.devtools.inspectedWindow.eval` | - | `chrome.runtime.sendMessage` | `chrome.runtime.sendMessage` |
 
 ## 通信详细介绍
 
@@ -51,30 +51,28 @@ if (views.length > 0) {
 
 background.js 或者 popup.js：
 
-```
-`function sendMessageToContentScript(message, callback)
-{
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
-	{
-		chrome.tabs.sendMessage(tabs[0].id, message, function(response)
-		{
-			if(callback) callback(response);
-		});
-	});
+```js
+function sendMessageToContentScript(message, callback) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, message, function (response) {
+      if (callback) callback(response);
+    });
+  });
 }
-sendMessageToContentScript({cmd:'test', value:'你好，我是popup！'}, function(response)
-{
-	console.log('来自content的回复：'+response);
-});
+sendMessageToContentScript(
+  { cmd: 'test', value: '你好，我是popup！' },
+  function (response) {
+    console.log('来自content的回复：' + response);
+  },
+);
 ```
 
 `content-script.js`接收：
 
-```
-`chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
-{
-		if(request.cmd == 'test') alert(request.value);
-	sendResponse('我收到了你的消息！');
+```js
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.cmd == 'test') alert(request.value);
+  sendResponse('我收到了你的消息！');
 });
 ```
 
@@ -84,22 +82,24 @@ sendMessageToContentScript({cmd:'test', value:'你好，我是popup！'}, functi
 
 ### content-script 主动发消息给后台
 
-content-script.js：
+`content-script.js`：
 
-```
-`chrome.runtime.sendMessage({greeting: '你好，我是content-script呀，我主动发消息给后台！'}, function(response) {
-	console.log('收到来自后台的回复：' + response);
-});
+```js
+chrome.runtime.sendMessage(
+  { greeting: '你好，我是content-script呀，我主动发消息给后台！' },
+  function (response) {
+    console.log('收到来自后台的回复：' + response);
+  },
+);
 ```
 
-background.js 或者 popup.js：
+`background.js` 或者 `popup.js`：
 
-```
-`chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
-{
-	console.log('收到来自content-script的消息：');
-	console.log(request, sender, sendResponse);
-	sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
+```js
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  console.log('收到来自content-script的消息：');
+  console.log(request, sender, sendResponse);
+  sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
 });
 ```
 
@@ -152,16 +152,16 @@ fireCustomEvent('你好，我是普通JS！');
 
 `content-script.js`中：
 
-```
-`var hiddenDiv = document.getElementById('myCustomEventDiv');
-if(!hiddenDiv) {
-	hiddenDiv = document.createElement('div');
-	hiddenDiv.style.display = 'none';
-	document.body.appendChild(hiddenDiv);
+```js
+var hiddenDiv = document.getElementById('myCustomEventDiv');
+if (!hiddenDiv) {
+  hiddenDiv = document.createElement('div');
+  hiddenDiv.style.display = 'none';
+  document.body.appendChild(hiddenDiv);
 }
-hiddenDiv.addEventListener('myCustomEvent', function() {
-	var eventData = document.getElementById('myCustomEventDiv').innerText;
-	console.log('收到自定义事件消息：' + eventData);
+hiddenDiv.addEventListener('myCustomEvent', function () {
+  var eventData = document.getElementById('myCustomEventDiv').innerText;
+  console.log('收到自定义事件消息：' + eventData);
 });
 ```
 
@@ -179,21 +179,20 @@ hiddenDiv.addEventListener('myCustomEvent', function() {
 
 popup.js：
 
-```
-`getCurrentTabId((tabId) => {
-	var port = chrome.tabs.connect(tabId, {name: 'test-connect'});
-	port.postMessage({question: '你是谁啊？'});
-	port.onMessage.addListener(function(msg) {
-		alert('收到消息：'+msg.answer);
-		if(msg.answer && msg.answer.startsWith('我是'))
-		{
-			port.postMessage({question: '哦，原来是你啊！'});
-		}
-	});
+```js
+getCurrentTabId((tabId) => {
+  var port = chrome.tabs.connect(tabId, { name: 'test-connect' });
+  port.postMessage({ question: '你是谁啊？' });
+  port.onMessage.addListener(function (msg) {
+    alert('收到消息：' + msg.answer);
+    if (msg.answer && msg.answer.startsWith('我是')) {
+      port.postMessage({ question: '哦，原来是你啊！' });
+    }
+  });
 });
 ```
 
-content-script.js：
+`content-script.js`：
 
 ```js
 chrome.runtime.onConnect.addListener(function (port) {

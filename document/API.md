@@ -1,51 +1,50 @@
 ---
-title: 简介
+title: API 说明
+order: 1
 nav:
-  title: 指南
-  order: 1
+  title: API
+  order: 2
 ---
 
-# umi-plugin-extensions
+# API 说明文件
 
-[![NPM version](https://img.shields.io/npm/v/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions) [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
+本组接口文件均通过 [Typedoc](https://typedoc.org/) 自动生成。优点有两方面：
 
-用于开发 Chrome 插件的 umi 插件
+1. 文档内容与接口内容一一对应，实时更新，减少重复工作量；
+2. 将注释写在类型定义文件后，生成的模块可以具有更加清晰的说明内容，进一步帮助开发；
 
-TODO List
+通过 Typedoc 生成文件包含两类：
 
-- [x] popup 集成
-- [x] options 集成
-- [x] background 集成
-- [x] manifest 自动生成
-- [ ] Content Script 集成
-- [ ] 约定 popup 默认路由和文件夹
-- [ ] 约定 options 默认路由和文件夹
-- [ ] 约定 background 的默认加载文件夹
-- [ ] 约定 content Scripts 的默认加载文件夹
-- [ ] manifest 类型定义文件单独提出
-- [ ] 说明文档
-- [ ] 单元测试
+1. interfaces 接口文件；
+2. modules 模块文件；
 
-## 安装
+## Interfaces 接口文件
 
-```bash
-npm i -D umi-plugin-extensions
+文件结构如下：
+
+```
+# 名称
+
+## Hierarchy -> 继承关系
+
+## Properties -> 属性
+
 ```
 
-或
+## Modules 模块文件
 
-```bash
-yarn add -D umi-plugin-extensions
+文件结构如下：
+
+```
+# 名称
+
+## Index -> 索引
+
+### Interfaces -> 接口
+
+### Type aliases -> 类型别名
+
+## Type Aliases 类型别名
 ```
 
-## 使用方式
-
-## 开发
-
-```bash
-$ yarn start
-```
-
-## License
-
-[MIT](../../LICENSE) ® Arvin Xu
+其中，Interfaces 会列出该模块包含的所有接口，并链接至相应的接口文件

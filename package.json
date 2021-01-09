@@ -32,7 +32,7 @@
     "example:build": "cross-env APP_ROOT=example umi build",
     "---------     ": "",
     "docs": "cross-env yarn api:build && APP_ROOT=document umi dev --dumi",
-    "docs:build": "cross-env APP_ROOT=document umi build --dumi",
+    "docs:build": "cross-env yarn api:build && APP_ROOT=document umi build --dumi",
     "docs:publish": "yarn docs:build && gh-pages -d ./document/dist",
     "docs:publish-only": "gh-pages -d ./document/dist",
     "---------  ": "",
@@ -87,7 +87,7 @@
     "ts-jest": "^26.4.4",
     "typedoc": "^0.20.4",
     "typedoc-plugin-external-module-map": "^1.2.1",
-    "typedoc-plugin-markdown": "^3.2.1",
+    "typedoc-plugin-markdown": "^3.4.0",
     "umi": "^3.3.3",
     "yorkie": "^2.0.0"
   },

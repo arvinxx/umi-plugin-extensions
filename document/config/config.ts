@@ -24,8 +24,8 @@ export default defineConfig({
   navs: [
     { title: '指南', path: '/guide' },
     { title: '教程', path: '/tutorial' },
-    { title: '配置', path: '/api/interfaces/extensionsplugin-config' },
-    { title: 'Manifest', path: '/api/modules/chromemanifest' },
+    { title: 'API', path: '/api' },
+
     {
       title: 'GitHub',
       path: 'https://github.com/arvinxx/umi-plugin-extensions',
@@ -38,65 +38,65 @@ export default defineConfig({
     type: 'hash',
   },
   hash: true,
-  // menus: {
-  // '/api': [
-  //   {
-  //     path: '/api',
-  //     title: '概览',
-  //     children: [{ path: '/api/modules', title: '版本&索引' }],
-  //   },
-  //   {
-  //     path: '/api/modules/extensionsplugin',
-  //     title: '插件配置',
-  //   },
-  //   {
-  //     path: '/api/modules/chromemanifest',
-  //     title: 'Manifest 文件',
-  //   },
-  // ],
-  ///api/interfaces/chromemanifest-actions
-  // /api/interfaces/chromemanifest-background
-  // /api/interfaces/chromemanifest-basecommands
-  // /api/interfaces/chromemanifest-browseraction
-  // /api/interfaces/chromemanifest-chromesettingsoverrides
-  // /api/interfaces/chromemanifest-chromeurloverrides
-  // /api/interfaces/chromemanifest-command
-  // /api/interfaces/chromemanifest-conditions
-  // /api/interfaces/chromemanifest-contentscript
-  // /api/interfaces/chromemanifest-customcommands
-  // /api/interfaces/chromemanifest-eventrule
-  // /api/interfaces/chromemanifest-externallyconnectable
-  // /api/interfaces/chromemanifest-filebrowserhandler
-  // /api/interfaces/chromemanifest-filesystemprovider
-  // /api/interfaces/chromemanifest-iconstruct
-  // /api/interfaces/chromemanifest-manifest
-  // /api/interfaces/chromemanifest-nativeclientmodule
-  // /api/interfaces/chromemanifest-optionsui
-  // /api/interfaces/chromemanifest-requirements
-  // /api/interfaces/chromemanifest-sandbox
-  // /api/interfaces/chromemanifest-searchprovider
-  // /api/interfaces/chromemanifest-sharedmodule
-  // /api/interfaces/chromemanifest-ttsengine
-  // /api/interfaces/chromemanifest-voice
-  // /api/interfaces/extensionsplugin-config
-  // /api/interfaces/extensionsplugin-contentsecuritypolicy
-  // /api/interfaces/extensionsplugin-optionsui
-  // /api/interfaces/extensionsplugin-popupui
-  // '/api/modules/extensionsplugin': [
-  //   {
-  //     path: '/api/modules/extensionsplugin',
-  //     title: '概览',
-  //   },
-  // ],
-  // '/api/modules/chromemanifest': [
-  //   {
-  //     path: '/api/modules/chromemanifest',
-  //     title: '概览',
-  //   },
-  //   {
-  //     title: 'Actions',
-  //     path: '/api/interfaces/chromemanifest-actions',
-  //   },
-  // ],
+  menus: {
+    '/api': [
+      // {
+      //   path: '/api/index',
+      //   title: '概览',
+      //   exact: true,
+      //   children: [{ path: '/api/modules', title: '模块索引' }],
+      // },
+      { path: '/api/modules', title: '模块索引' },
+      {
+        path: '/api/interfaces/extensionsplugin-config',
+        title: '插件配置',
+        children: [
+          {
+            title: 'ContentSecurityPolicy',
+            path: '/api/interfaces/extensionsplugin-contentsecuritypolicy',
+          },
+          {
+            title: 'OptionsUI',
+            path: '/api/interfaces/extensionsplugin-optionsui',
+          },
+          {
+            title: 'PopupUI',
+            path: '/api/interfaces/extensionsplugin-popupui',
+          },
+        ],
+      },
+      {
+        path: '/api/modules/chromemanifest',
+        title: 'Manifest 文件',
+        children: [
+          '/api/interfaces/chromemanifest-actions',
+          '/api/interfaces/chromemanifest-background',
+          '/api/interfaces/chromemanifest-basecommands',
+          '/api/interfaces/chromemanifest-browseraction',
+          '/api/interfaces/chromemanifest-chromesettingsoverrides',
+          '/api/interfaces/chromemanifest-chromeurloverrides',
+          '/api/interfaces/chromemanifest-command',
+          '/api/interfaces/chromemanifest-conditions',
+          '/api/interfaces/chromemanifest-contentscript',
+          '/api/interfaces/chromemanifest-customcommands',
+          '/api/interfaces/chromemanifest-eventrule',
+          '/api/interfaces/chromemanifest-externallyconnectable',
+          '/api/interfaces/chromemanifest-filebrowserhandler',
+          '/api/interfaces/chromemanifest-filesystemprovider',
+          '/api/interfaces/chromemanifest-iconstruct',
+          '/api/interfaces/chromemanifest-manifest',
+          '/api/interfaces/chromemanifest-nativeclientmodule',
+          '/api/interfaces/chromemanifest-optionsui',
+          '/api/interfaces/chromemanifest-requirements',
+          '/api/interfaces/chromemanifest-sandbox',
+          '/api/interfaces/chromemanifest-searchprovider',
+          '/api/interfaces/chromemanifest-sharedmodule',
+          '/api/interfaces/chromemanifest-ttsengine',
+          '/api/interfaces/chromemanifest-voice',
+        ],
+      },
+    ],
+  },
+
   // },
 });
