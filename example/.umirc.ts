@@ -8,7 +8,6 @@ export default defineConfig({
     description: '用于 Chrome 插件开发的 Umi 插件',
     manifestVersion: 2,
     minimumChromeVersion: '80',
-    popupUI: '@/pages/index',
     icons: {
       16: 'logo/logo@16.png',
       32: 'logo/logo@32.png',
@@ -16,18 +15,18 @@ export default defineConfig({
       128: 'logo/logo@128.png',
     },
     optionsUI: '@/pages/options',
+    popupUI: '@/pages/index',
     permissions: [],
     background: {
       scripts: ['@/background/index'],
       persistent: true,
     },
-
-    //   content_scripts: [
-    //     // {
-    //     //   matches: ['https://github.com/*'],
-    //     //   css: ['css/all.css'],
-    //     //   js: ['js/all.js'],
-    //     // },
-    //   ],
+    // contentScripts: [
+    //   {
+    //     matches: ['https://github.com/*'],
+    //     entries: ['@/contentScripts/index'],
+    //     runAt: 'document_start',
+    //   },
+    // ],
   },
 });

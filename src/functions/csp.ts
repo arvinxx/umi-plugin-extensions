@@ -3,7 +3,7 @@ import { join } from 'path';
 import { uniq } from 'lodash';
 
 import fse from 'fs-extra';
-import { extractInlineScript, getScriptSHA, UIPageKeyMap } from '../utils';
+import { CSPKeyMap, getCSPHashFromScript, updateCSP } from '../utils';
 
 /**
  * 处理 Chrome 的内容安全政策(CSP)相关的问题
@@ -16,53 +16,27 @@ import { extractInlineScript, getScriptSHA, UIPageKeyMap } from '../utils';
  */
 export default (api: IApi) => {
   const { paths } = api.service;
-
-  // 为替换文本准备的钩子字符串
-  const __TO_REPLACE_INLINE_SCRIPT__ = '__TO_REPLACE_INLINE_SCRIPT__';
+  const filepath = join(paths.absOutputPath!, 'manifest.json');
 
   // 在配置项中注入该钩子字符串
   api.modifyConfig((config) => {
-    const { contentSecurityPolicy } = <extensionsPlugin.Config>config.extensions;
-    contentSecurityPolicy.inlineScript.push(__TO_REPLACE_INLINE_SCRIPT__);
+    const { contentSecurityPolicy } = <extensionsPlugin.Config>(
+      config.extensions
+    );
+    contentSecurityPolicy.inlineScript.push(CSPKeyMap.key);
     return config;
   });
 
   /**
    * 写入 inline script 的 hash
    */
-  const writeInlineScriptHash = () => {
-    // 分别处理 popup 和 options 的 html 文件
-    const { option, popup } = UIPageKeyMap;
-    const htmlPaths: string[] = [];
-
-    if (option.output !== '') {
-      htmlPaths.push(join(paths.absOutputPath!, option.output));
-    }
-    if (popup.output !== '') {
-      htmlPaths.push(join(paths.absOutputPath!, popup.output));
-    }
-
-    const scriptList: string[] = [];
-
-    htmlPaths.forEach((htmlPath) => {
-      const html = fse.readFileSync(htmlPath, { encoding: 'utf-8' });
-
-      // 将 html 中的 inlineScript 全部记录到 inlineScriptSHAList 中
-      extractInlineScript(html).forEach((script) => {
-        scriptList.push(getScriptSHA(script));
-      });
-    });
-
-    // 待写入的 hash 字符串
-    const scriptStr = uniq<string>(scriptList)
-      .map((s) => `sha256-${s}`)
-      .join("' '");
+  const writeInlineScriptHash = async () => {
+    await getCSPHashFromScript(paths.absOutputPath);
 
     // 将 script 写入 manifest 中
-    const manifestFile = join(paths.absOutputPath!, 'manifest.json');
-    let manifest = fse.readFileSync(manifestFile, { encoding: 'utf8' });
-    manifest = manifest.replace(__TO_REPLACE_INLINE_SCRIPT__, scriptStr);
-    fse.writeFileSync(manifestFile, manifest);
+    const manifest = fse.readFileSync(filepath, { encoding: 'utf8' });
+
+    fse.writeFileSync(filepath, updateCSP(manifest));
   };
 
   // Dev 下需要

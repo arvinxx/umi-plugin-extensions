@@ -1,6 +1,27 @@
-import { getCSPScript } from './csp';
+import { utils } from 'umi';
 
-export const UIPageKeyMap = {
+import { getCSPScript } from './csp';
+import got from 'got';
+import { baseDevURL } from './env';
+
+interface ContentScriptsMap {
+  key: string;
+  entry: string[];
+  js: string[];
+  css: string[];
+}
+interface IUIPageKeyMap {
+  popup: {
+    key: '__TO_REPLACE_POPUP__';
+    output: string;
+  };
+  option: {
+    key: '__TO_REPLACE_OPTION__';
+    output: string;
+  };
+  contentScripts: ContentScriptsMap[];
+}
+export const UIPageKeyMap: IUIPageKeyMap = {
   popup: {
     key: '__TO_REPLACE_POPUP__',
     output: '',
@@ -9,8 +30,19 @@ export const UIPageKeyMap = {
     key: '__TO_REPLACE_OPTION__',
     output: '',
   },
+  contentScripts: [],
 };
 
+export const CSPKeyMap = {
+  // 为替换文本准备的钩子字符串
+  key: '__TO_REPLACE_INLINE_SCRIPT__',
+  output: '',
+};
+
+/**
+ * 从 umi 插件配置项中生成 manifest 文件
+ * @param config
+ */
 export const generateManifestFromConfig = (
   config: extensionsPlugin.Config,
 ): chromeManifest.Manifest => {
@@ -21,6 +53,7 @@ export const generateManifestFromConfig = (
     popupUI,
     manifestVersion: manifest_version,
     minimumChromeVersion: minimum_chrome_version,
+    contentScripts,
     ...manifest
   } = config;
 
@@ -46,7 +79,7 @@ export const generateManifestFromConfig = (
       open_in_tab: optionsUI.openInTab,
     };
   }
-
+  console.log(utils.routeToChunkName({ route: '@/background/index' }));
   // 处理 popup 的参数项
   const popup = {};
   if (typeof popupUI === 'string') {
@@ -72,6 +105,25 @@ export const generateManifestFromConfig = (
         };
     }
   }
+
+  // 处理 content scripts
+  const content_scripts: chromeManifest.ContentScript[] = contentScripts.map(
+    (item, index) => {
+      UIPageKeyMap.contentScripts[index] = {
+        key: `__TO_REPLACE_CONTENT_SCRIPTS_${index}__`,
+        entry: item.entries!,
+        js: [`__TO_REPLACE_CONTENT_SCRIPTS_JS_${index}__`],
+        css: [`__TO_REPLACE_CONTENT_SCRIPTS_CSS_${index}__`],
+      };
+
+      return {
+        matches: item.matches!,
+        run_at: item.runAt!,
+        js: UIPageKeyMap.contentScripts[index].js!,
+        css: UIPageKeyMap.contentScripts[index].css!,
+      };
+    },
+  );
   return {
     ...manifest,
     ...option,
@@ -80,7 +132,44 @@ export const generateManifestFromConfig = (
     manifest_version,
     content_security_policy,
     minimum_chrome_version,
+    content_scripts: content_scripts.length > 0 ? content_scripts : undefined,
   };
 };
 
-// export const
+/**
+ * 专门用于 onStart 方法的
+ * @param fn
+ */
+export const gotManifest = (fn: any) => {
+  got(`${baseDevURL}/manifest.json`).then(fn).catch();
+};
+
+/**
+ * 更新 manifest 中和 UI 路径相关的内容
+ * @param manifest
+ */
+export const updateUIPath = (manifest: string): string => {
+  const { option, popup } = UIPageKeyMap;
+
+  return manifest
+    .replace(option.key, option.output)
+    .replace(popup.key, popup.output);
+};
+/**
+ * 更新 background 脚本地址
+ * @param manifest
+ */
+export const updateBackground = (manifest: chromeManifest.Manifest): string => {
+  const data = manifest;
+  if (data.background) {
+    data.background.scripts = ['background.js'];
+  }
+  return JSON.stringify(data);
+};
+
+/**
+ * 写入 inline script 的 hash
+ */
+export const updateCSP = (manifest: string) => {
+  return manifest.replace(CSPKeyMap.key, CSPKeyMap.output);
+};

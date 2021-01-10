@@ -33,7 +33,13 @@ declare namespace extensionsPlugin {
      *
      */
     optionsUI: string | OptionsUI;
+
     popupUI: string | PopupUI;
+
+    /**
+     * 注入脚本
+     */
+    contentScripts: ContentScript[];
   }
 
   /**
@@ -60,5 +66,20 @@ declare namespace extensionsPlugin {
   export interface OptionsUI {
     page: string;
     openInTab?: boolean;
+  }
+
+  export interface ContentScript {
+    /**
+     * 匹配的网址
+     */
+    matches?: string[];
+    /**
+     * 注入的入口文件
+     */
+    entries?: string[];
+    /**
+     * 执行时间
+     */
+    runAt?: 'document_idle' | 'document_start' | 'document_end';
   }
 }

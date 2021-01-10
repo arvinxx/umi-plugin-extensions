@@ -2,7 +2,7 @@ import type { IApi } from 'umi';
 
 import { join } from 'path';
 
-import { UIPageKeyMap } from '../utils';
+import { updateUIPath } from '../utils';
 import fse from 'fs-extra';
 
 /**
@@ -11,21 +11,17 @@ import fse from 'fs-extra';
  */
 export default (api: IApi) => {
   const { paths } = api.service;
-  const replaceOutputUIPath = () => {
-    const filepath = join(paths.absOutputPath!, 'manifest.json');
 
-    let manifest = fse.readFileSync(filepath, { encoding: 'utf8' });
+  const filepath = join(paths.absOutputPath!, 'manifest.json');
 
-    const { option, popup } = UIPageKeyMap;
-
-    manifest = manifest
-      .replace(option.key, option.output)
-      .replace(popup.key, popup.output);
-
-    fse.writeFileSync(filepath, manifest);
+  /**
+   * 任何其他时候
+   */
+  const done = () => {
+    const manifest = fse.readFileSync(filepath, { encoding: 'utf8' });
+    fse.writeFileSync(filepath, updateUIPath(manifest));
   };
 
-  api.onDevCompileDone(replaceOutputUIPath);
-
-  api.onBuildComplete(replaceOutputUIPath);
+  api.onDevCompileDone(done);
+  api.onBuildComplete(done);
 };

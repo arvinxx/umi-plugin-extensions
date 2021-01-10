@@ -1,4 +1,10 @@
 import { createHash } from 'crypto';
+import { join } from 'path';
+import fse from 'fs-extra';
+import { uniq } from 'lodash';
+import { CSPKeyMap, UIPageKeyMap } from './manifest';
+import got from 'got';
+import { baseDevURL } from './env';
 
 /**
  * 从 html 提取 script 并生成 sha 代码
@@ -45,4 +51,48 @@ export const getCSPScript = ({
   const urlStr = urlList ? ` ${urlList}` : '';
 
   return `script-src 'self'${nonceStr}${inlineScriptStr}${urlStr}; object-src 'self'`;
+};
+
+/**
+ * 整合方法 从 script 中获取 hash
+ * @param path
+ */
+export const getCSPHashFromScript = async (path: string | undefined) => {
+  // 分别处理 popup 和 options 的 html 文件
+  const { option, popup } = UIPageKeyMap;
+  const htmlPaths: string[] = [];
+
+  if (option.output !== '') {
+    htmlPaths.push(option.output);
+  }
+  if (popup.output !== '') {
+    htmlPaths.push(popup.output);
+  }
+
+  const scriptList: string[] = [];
+
+  const promiseArr = htmlPaths.map((url: string) =>
+    got(`${baseDevURL}/${url}`)
+      .then(() => {
+        const html = fse.readFileSync(join(path!, url), { encoding: 'utf-8' });
+
+        // 将 html 中的 inlineScript 全部记录到 inlineScriptSHAList 中
+        extractInlineScript(html).forEach((script) => {
+          scriptList.push(getScriptSHA(script));
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+      }),
+  );
+
+  await Promise.all(promiseArr);
+
+  // 待写入的 hash 字符串
+  const scriptStr = uniq<string>(scriptList)
+    .map((s) => `sha256-${s}`)
+    .join("' '");
+
+  CSPKeyMap.output = scriptStr;
+  return scriptStr;
 };

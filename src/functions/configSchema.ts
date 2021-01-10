@@ -59,9 +59,12 @@ export default (api: IApi) => {
 
         const contentScript = joi.object({
           matches: stringArr.required(),
-          css: stringArr,
-          js: stringArr,
+          entries: stringArr.required(),
+          runAt: joi
+            .string()
+            .valid('document_idle', 'document_start', 'document_end'),
         });
+
         return joi.object({
           name: joi.string(),
           version: joi.string(),
@@ -74,7 +77,7 @@ export default (api: IApi) => {
             inlineScript: stringArr,
             url: stringArr,
           }),
-          contentScripts: contentScript,
+          contentScripts: joi.array().items(contentScript),
           background: joi.object({
             scripts: stringArr,
             persistent: joi.boolean(),
