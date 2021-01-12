@@ -9,6 +9,8 @@ import {
   isDev,
   updateCSP,
   getCSPHashFromScript,
+  updateContentScripts,
+  updateHotLoad,
 } from '../utils';
 import fse from 'fs-extra';
 
@@ -33,9 +35,13 @@ export default (api: IApi) => {
 
       await api.utils.delay(500);
 
+      const newManifest = updateContentScripts(
+        updateHotLoad(updateBackground(manifest)),
+      );
+
       fse.writeFileSync(
         filepath,
-        updateCSP(updateUIPath(updateBackground(manifest))),
+        updateCSP(updateUIPath(JSON.stringify(newManifest))),
       );
     });
   });

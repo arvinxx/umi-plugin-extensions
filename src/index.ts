@@ -8,6 +8,8 @@ import {
   UIPath,
   Background,
   onStart,
+  ContentScripts,
+  HotReload,
 } from './functions';
 
 export default (api: IApi) => {
@@ -34,4 +36,10 @@ export default (api: IApi) => {
 
   // 处理 background 脚本
   Background(api);
+
+  // 处理 content scripts 脚本
+  ContentScripts(api);
+
+  // 处理脚本的自动更新
+  HotReload(api);
 };

@@ -1,15 +1,7 @@
-import { utils } from 'umi';
-
 import { getCSPScript } from './csp';
 import got from 'got';
 import { baseDevURL } from './env';
 
-interface ContentScriptsMap {
-  key: string;
-  entry: string[];
-  js: string[];
-  css: string[];
-}
 interface IUIPageKeyMap {
   popup: {
     key: '__TO_REPLACE_POPUP__';
@@ -19,8 +11,8 @@ interface IUIPageKeyMap {
     key: '__TO_REPLACE_OPTION__';
     output: string;
   };
-  contentScripts: ContentScriptsMap[];
 }
+
 export const UIPageKeyMap: IUIPageKeyMap = {
   popup: {
     key: '__TO_REPLACE_POPUP__',
@@ -30,7 +22,6 @@ export const UIPageKeyMap: IUIPageKeyMap = {
     key: '__TO_REPLACE_OPTION__',
     output: '',
   },
-  contentScripts: [],
 };
 
 export const CSPKeyMap = {
@@ -79,7 +70,6 @@ export const generateManifestFromConfig = (
       open_in_tab: optionsUI.openInTab,
     };
   }
-  console.log(utils.routeToChunkName({ route: '@/background/index' }));
   // 处理 popup 的参数项
   const popup = {};
   if (typeof popupUI === 'string') {
@@ -108,19 +98,12 @@ export const generateManifestFromConfig = (
 
   // 处理 content scripts
   const content_scripts: chromeManifest.ContentScript[] = contentScripts.map(
-    (item, index) => {
-      UIPageKeyMap.contentScripts[index] = {
-        key: `__TO_REPLACE_CONTENT_SCRIPTS_${index}__`,
-        entry: item.entries!,
-        js: [`__TO_REPLACE_CONTENT_SCRIPTS_JS_${index}__`],
-        css: [`__TO_REPLACE_CONTENT_SCRIPTS_CSS_${index}__`],
-      };
-
+    (item) => {
       return {
         matches: item.matches!,
         run_at: item.runAt!,
-        js: UIPageKeyMap.contentScripts[index].js!,
-        css: UIPageKeyMap.contentScripts[index].css!,
+        js: [],
+        css: [],
       };
     },
   );
@@ -155,16 +138,47 @@ export const updateUIPath = (manifest: string): string => {
     .replace(option.key, option.output)
     .replace(popup.key, popup.output);
 };
+
 /**
  * 更新 background 脚本地址
  * @param manifest
  */
-export const updateBackground = (manifest: chromeManifest.Manifest): string => {
+export const updateBackground = (manifest: chromeManifest.Manifest) => {
   const data = manifest;
   if (data.background) {
     data.background.scripts = ['background.js'];
   }
-  return JSON.stringify(data);
+  return data;
+};
+
+/**
+ * 更新热加载方法
+ * @param manifest
+ */
+export const updateHotLoad = (manifest: chromeManifest.Manifest) => {
+  const data = manifest;
+  if (data.background) {
+    data.background.scripts.push('hot-reload.js');
+  } else {
+    data.background = { persistent: true, scripts: ['hot-reload.js'] };
+  }
+  return data;
+};
+
+/**
+ * 更新 contentScripts 脚本地址
+ * @param manifest
+ */
+export const updateContentScripts = (manifest: chromeManifest.Manifest) => {
+  const data = manifest;
+  if (data.content_scripts) {
+    data.content_scripts = data.content_scripts.map((item, index) => {
+      item.js = [`contentScript_${index}.js`];
+      item.css = [`contentScript_${index}.css`];
+      return item;
+    });
+  }
+  return data;
 };
 
 /**

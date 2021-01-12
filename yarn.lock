@@ -2083,6 +2083,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/copy-webpack-plugin@^6.4.0":
+  version "6.4.0"
+  resolved "https://r.cnpmjs.org/@types/copy-webpack-plugin/download/@types/copy-webpack-plugin-6.4.0.tgz#225f86bc60a62052df39a110f7cbf7bc5156a0c1"
+  integrity sha1-Il+GvGCmIFLfOaEQ98v3vFFWoME=
+  dependencies:
+    "@types/webpack" "*"
+
 "@types/cross-spawn@6.0.2":
   version "6.0.2"
   resolved "https://registry.npm.taobao.org/@types/cross-spawn/download/@types/cross-spawn-6.0.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fcross-spawn%2Fdownload%2F%40types%2Fcross-spawn-6.0.2.tgz#168309de311cd30a2b8ae720de6475c2fbf33ac7"
@@ -5497,6 +5504,11 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     semver "^5.5.0"
     shebang-command "^1.2.0"
     which "^1.2.9"
+
+crx-hotreload@^1.0.6:
+  version "1.0.6"
+  resolved "https://r.cnpmjs.org/crx-hotreload/download/crx-hotreload-1.0.6.tgz#6caebf8307bc4efec0b661d7cf4f03a27fdfebc2"
+  integrity sha1-bK6/gwe8Tv7AtmHXz08Don/f68I=
 
 crypto-browserify@^3.11.0:
   version "3.12.0"

@@ -21,12 +21,15 @@ export default defineConfig({
       scripts: ['@/background/index'],
       persistent: true,
     },
-    // contentScripts: [
-    //   {
-    //     matches: ['https://github.com/*'],
-    //     entries: ['@/contentScripts/index'],
-    //     runAt: 'document_start',
-    //   },
-    // ],
+    contentScripts: [
+      {
+        matches: ['https://github.com/*'],
+        entries: ['@/contentScripts/github'],
+      },
+      {
+        matches: ['https://baidu.com/*', 'https://www.baidu.com/*'],
+        entries: ['@/contentScripts/baidu'],
+      },
+    ],
   },
 });

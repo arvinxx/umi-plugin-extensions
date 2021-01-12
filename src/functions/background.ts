@@ -26,11 +26,10 @@ export default (api: IApi) => {
     return config;
   });
 
-  const filepath = join(paths.absOutputPath!, 'manifest.json');
-
   const done = () => {
+    const filepath = join(paths.absOutputPath!, 'manifest.json');
     const manifest: chromeManifest.Manifest = fse.readJSONSync(filepath);
-    fse.writeFileSync(filepath, updateBackground(manifest));
+    fse.writeJSONSync(filepath, updateBackground(manifest));
   };
 
   api.onDevCompileDone(done);

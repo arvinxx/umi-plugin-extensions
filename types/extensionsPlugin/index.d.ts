@@ -72,11 +72,11 @@ declare namespace extensionsPlugin {
     /**
      * 匹配的网址
      */
-    matches?: string[];
+    matches: string[];
     /**
      * 注入的入口文件
      */
-    entries?: string[];
+    entries: string[];
     /**
      * 执行时间
      */
