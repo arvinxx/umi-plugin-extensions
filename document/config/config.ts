@@ -52,16 +52,20 @@ export default defineConfig({
         title: '插件配置',
         children: [
           {
-            title: 'ContentSecurityPolicy',
-            path: '/api/interfaces/extensionsplugin-contentsecuritypolicy',
-          },
-          {
             title: 'OptionsUI',
             path: '/api/interfaces/extensionsplugin-optionsui',
           },
           {
             title: 'PopupUI',
             path: '/api/interfaces/extensionsplugin-popupui',
+          },
+          {
+            title: 'ContentScript',
+            path: '/api/interfaces/extensionsplugin-contentscript',
+          },
+          {
+            title: 'ContentSecurityPolicy',
+            path: '/api/interfaces/extensionsplugin-contentsecuritypolicy',
           },
         ],
       },
