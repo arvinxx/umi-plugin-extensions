@@ -9,20 +9,17 @@ order: 1
 
 用于开发 Chrome 插件的 umi 插件
 
-TODO List
+## 安装
 
-- [x] popup 集成
-- [x] options 集成
-- [x] background 集成
-- [x] manifest 自动生成
-- [ ] Content Script 集成
-- [ ] 约定 popup 默认路由和文件夹
-- [ ] 约定 options 默认路由和文件夹
-- [ ] 约定 background 的默认加载文件夹
-- [ ] 约定 content Scripts 的默认加载文件夹
-- [ ] manifest 类型定义文件单独提出
-- [ ] 说明文档
-- [ ] 单元测试
+```bash
+npm i -D umi-plugin-extensions
+```
+
+或
+
+```bash
+yarn add -D umi-plugin-extensions
+```
 
 ## 安装
 
@@ -36,13 +33,17 @@ npm i -D umi-plugin-extensions
 yarn add -D umi-plugin-extensions
 ```
 
-## 使用方式
+## 使用
 
-## 开发
+🔔 请确保你对 Chrome 插件开发已经有基本的了解，入门教程：[Chrome 插件(扩展)开发全攻略](https://arvinxx.github.io/umi-plugin-extensions/#/tutorial)。
 
-```bash
-$ yarn start
-```
+在 umi 配置文件 `cofig/config.ts` 或 `.umirc.ts` 中配置 `extensions` 。完整配置项说明请查阅[插件配置项文档](https://arvinxx.github.io/umi-plugin-extensions/#/api/interfaces/extensionsplugin-config)。
+
+如需脚手架可使用 [Umi Chrome Extensions Template](https://github.com/arvinxx/umi-chrome-extensions-template)。
+
+## 插件开发
+
+如希望对本插件进行开发，可查阅 插件项目架构文档(TODO)
 
 ## License
 
