@@ -21,18 +21,6 @@ npm i -D umi-plugin-extensions
 yarn add -D umi-plugin-extensions
 ```
 
-## 安装
-
-```bash
-npm i -D umi-plugin-extensions
-```
-
-或
-
-```bash
-yarn add -D umi-plugin-extensions
-```
-
 ## 使用
 
 🔔 请确保你对 Chrome 插件开发已经有基本的了解，入门教程：[Chrome 插件(扩展)开发全攻略](https://arvinxx.github.io/umi-plugin-extensions/#/tutorial)。
