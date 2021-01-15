@@ -226,13 +226,15 @@ declare namespace chromeManifest {
      */
     options_ui?: OptionsUI;
     /**
-     * Declare permissions
+     * 权限声明
      *
-     * Use the chrome.permissions API to request declared optional permissions
-     * at run time rather than install time, so users understand why
-     * the permissions are needed and grant only those that are necessary.
+     * 要使用大多数 `chrome.*` API，插件必须在清单的 `permissions` 字段中声明其意图。
+     * 每个权限可以是已知字符串列表（例如`geolocation`）中的一个，也可以是允许访问一个或多个主机的匹配模式。
      *
-     * @see https://developer.chrome.com/docs/extensions/reference/permissions/
+     * 如果插件被恶意软件破坏，则权限有助于限制破坏。在安装之前，还会向用户显示一些权限，如权限警告中所述。
+     *
+     * 如果 API 要求在清单中声明许可，则其文档会告诉您如何进行声明。例如，存储页面显示了如何声明 `storage` 权限。
+     * @see https://developer.chrome.com/docs/extensions/mv2/declare_permissions/#manifest
      */
     permissions?: Permissions[];
     platforms?: string;
@@ -260,11 +262,11 @@ declare namespace chromeManifest {
     signature?: string;
     spellcheck?: string;
     /**
-     * Unlike the local and sync storage areas, the managed storage area
-     * requires its structure to be declared as JSON Schema and is strictly
-     * validated by Chrome. This schema must be stored in a file indicated
-     * by the "managed_schema" property of the "storage" manifest key and
-     * declares the enterprise policies supported by the extension.
+     * 托管存储区域
+     *
+     * 与本地和同步存储区域不同，托管存储区域要求将其结构声明为 JSON Schema，并由 Chrome 严格验证。
+     * 此架构必须存储在由`storage`清单键的 `managed_schema` 属性指示的文件中，
+     * 并声明扩展支持的企业策略。
      *
      * @see https://developer.chrome.com/docs/extensions/mv2/manifest/storage/
      */
@@ -276,7 +278,7 @@ declare namespace chromeManifest {
     };
     system_indicator?: string;
     /**
-     * Use the chrome.ttsEngine API to implement a text-to-speech(TTS) engine using an extension.
+     * Use the `chrome.ttsEngine` API to implement a text-to-speech(TTS) engine using an extension.
      * @see https://developer.chrome.com/docs/extensions/reference/ttsEngine/
      */
     tts_engine?: TTSEngine;
@@ -348,7 +350,160 @@ declare namespace chromeManifest {
     open_in_tab: boolean;
   }
 
-  export type Permissions = SpecialPermissions | string;
+  export type Permissions = SpecialPermissions | KnownPermissions | string;
+
+  export type KnownPermissions =
+    /**
+     * Requests that the extension be granted permissions according to the activeTab specification.
+     */
+    | 'activeTab'
+    // Gives your extension access to the chrome.alarms API.
+    | 'alarms'
+    /**
+     * Makes Chrome start up early and shut down late, so that apps and extensions can have a longer life.
+     * When any installed hosted app, packaged app, or extension has "background" permission, Chrome runs (invisibly) as soon as the user logs into their computer—before the user launches Chrome. The "background" permission also makes Chrome continue running (even after its last window is closed) until the user explicitly quits Chrome.
+     * Note: Disabled apps and extensions are treated as if they aren't installed
+     * You typically use the "background" permission with a background page, event page or (for hosted apps) a background window.
+     */
+    | 'background'
+
+    // Gives your extension access to the chrome.bookmarks API.
+    | 'bookmarks'
+    // Gives your extension access to the chrome.browsingData API.
+    | 'browsingData'
+    // Gives your extension access to the chrome.certificateProvider API.
+    | 'certificateProvider'
+    // Required if the extension or app uses document.execCommand('paste').
+    | 'clipboardRead'
+    // Indicates the extension or app uses document.execCommand('copy') or document.execCommand('cut'). This permission is required for hosted apps; it's recommended for extensions and packaged apps.
+    | 'clipboardWrite'
+    // Gives your extension access to the chrome.contentSettings API.
+    | 'contentSettings'
+    // Gives your extension access to the chrome.contextMenus API.
+    | 'contextMenus'
+    // Gives your extension access to the chrome.cookies API.
+    | 'cookies'
+    // Gives your extension access to the chrome.debugger API.
+    | 'debugger'
+    // Gives your extension access to the chrome.declarativeContent API.
+    | 'declarativeContent'
+    // Gives your extension access to the chrome.declarativeNetRequest API.
+    | 'declarativeNetRequest'
+    // Grants the extension access to events and methods within the chrome.declarativeNetRequest API which return information on declarative rules matched.
+    | 'declarativeNetRequestFeedback'
+    // Gives your extension access to the chrome.declarativeWebRequest API.
+    | 'declarativeWebRequest'
+    // Gives your extension access to the chrome.desktopCapture API.
+    | 'desktopCapture'
+    // Gives your extension access to the chrome.displaySource API.
+    | 'displaySource'
+    // Gives your extension access to the chrome.dns API.
+    | 'dns'
+    // Gives your extension access to the chrome.documentScan API.
+    | 'documentScan'
+    // Gives your extension access to the chrome.downloads API.
+    | 'downloads'
+    // Gives your extension access to the chrome.enterprise.deviceAttributes API.
+    | 'enterprise.deviceAttributes'
+    // Gives your extension access to the chrome.enterprise.hardwarePlatform API.
+    | 'enterprise.hardwarePlatform'
+    // Gives your extension access to the chrome.enterprise.networkingAttributes API.
+    | 'enterprise.networkingAttributes'
+    // Gives your extension access to the chrome.enterprise.platformKeys API.
+    | 'enterprise.platformKeys'
+    // Required if the extension or app uses any chrome.experimental.* APIs.
+    | 'experimental'
+    // Gives your extension access to the chrome.fileBrowserHandler API.
+    | 'fileBrowserHandler'
+    // Gives your extension access to the chrome.fileSystemProvider API.
+    | 'fileSystemProvider'
+    // Gives your extension access to the chrome.fontSettings API.
+    | 'fontSettings'
+    // Gives your extension access to the chrome.gcm API.
+    | 'gcm'
+    // Allows the extension or app to use the geolocation API without prompting the user for permission.
+    | 'geolocation'
+    // Gives your extension access to the chrome.history API.
+    | 'history'
+    // Gives your extension access to the chrome.identity API.
+    | 'identity'
+    // Gives your extension access to the chrome.idle API.
+    | 'idle'
+    // Gives your extension access to the chrome.idltest API.
+    | 'idltest'
+    // Gives your extension access to the chrome.login API.
+    | 'login'
+    // Gives your extension access to the chrome.loginScreenStorage API.
+    | 'loginScreenStorage'
+    // Gives your extension access to the chrome.loginState API.
+    | 'loginState'
+    // Gives your extension access to the chrome.management API.
+    | 'management'
+    // Gives your extension access to the native messaging API.
+    | 'nativeMessaging'
+    // Gives your extension access to the chrome.notifications API.
+    | 'notifications'
+    // Gives your extension access to the chrome.pageCapture API.
+    | 'pageCapture'
+    // Gives your extension access to the chrome.platformKeys API.
+    | 'platformKeys'
+    // Gives your extension access to the chrome.power API.
+    | 'power'
+    // Gives your extension access to the chrome.printerProvider API.
+    | 'printerProvider'
+    // Gives your extension access to the chrome.printing API.
+    | 'printing'
+    // Gives your extension access to the chrome.printingMetrics API.
+    | 'printingMetrics'
+    // Gives your extension access to the chrome.privacy API.
+    | 'privacy'
+    // Gives your extension access to the chrome.processes API.
+    | 'processes'
+    // Gives your extension access to the chrome.proxy API.
+    | 'proxy'
+    // Gives your extension access to the chrome.scripting API.
+    | 'scripting'
+    // Gives your extension access to the chrome.search API.
+    | 'search'
+    // Gives your extension access to the chrome.sessions API.
+    | 'sessions'
+    // Gives your extension access to the chrome.signedInDevices API.
+    | 'signedInDevices'
+    // Gives your extension access to the chrome.storage API.
+    | 'storage'
+    // Gives your extension access to the chrome.system.cpu API.
+    | 'system.cpu'
+    // Gives your extension access to the chrome.system.display API.
+    | 'system.display'
+    // Gives your extension access to the chrome.system.memory API.
+    | 'system.memory'
+    // Gives your extension access to the chrome.system.storage API.
+    | 'system.storage'
+    // Gives your extension access to the chrome.tabCapture API.
+    | 'tabCapture'
+    // Gives your extension access to the chrome.tabGroups API.
+    | 'tabGroups'
+    // Gives your extension access to privileged fields of the Tab objects used by several APIs including chrome.tabs and chrome.windows. In many circumstances your extension will not need to declare the "tabs" permission to make use of these APIs.
+    | 'tabs'
+    // Gives your extension access to the chrome.topSites API.
+    | 'topSites'
+    // Gives your extension access to the chrome.tts API.
+    | 'tts'
+    // Gives your extension access to the chrome.ttsEngine API.
+    | 'ttsEngine'
+    // Provides an unlimited quota for storing client-side data, such as databases and local storage files. Without this permission, the extension or app is limited to 5 MB of local storage.
+    //   Note: This permission applies only to Web SQL Database and application cache (see issue 58985). Also, it doesn't currently work with wildcard subdomains such as http://*.example.com.
+    | 'unlimitedStorage'
+    // Gives your extension access to the chrome.vpnProvider API.
+    | 'vpnProvider'
+    // Gives your extension access to the chrome.wallpaper API.
+    | 'wallpaper'
+    // Gives your extension access to the chrome.webNavigation API.
+    | 'webNavigation'
+    // Gives your extension access to the chrome.webRequest API.
+    | 'webRequest'
+    // Required if the extension uses the chrome.webRequest API in a blocking fashion.
+    | 'webRequestBlocking';
 
   export type SpecialPermissions =
     /**
