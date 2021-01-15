@@ -70,7 +70,7 @@ export default (api: IApi) => {
           .items(
             joi
               .string()
-              .valid([
+              .valid(
                 'activeTab',
                 'alarms',
                 'background',
@@ -142,7 +142,7 @@ export default (api: IApi) => {
                 'webNavigation',
                 'webRequest',
                 'webRequestBlocking',
-              ]),
+              ),
           );
 
         return joi.object({
