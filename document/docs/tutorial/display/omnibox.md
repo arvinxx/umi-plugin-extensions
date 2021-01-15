@@ -1,5 +1,5 @@
 ---
-title: omnibox
+title: omnibox 搜索建议
 order: 7
 ---
 

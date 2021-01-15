@@ -1,5 +1,5 @@
 ---
-title: 基础教程
+title: 基础介绍
 order: 1
 toc: menu
 ---
