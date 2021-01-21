@@ -2,10 +2,12 @@ node_modules
 .changelog
 .umi*
 .umi-test
-.umi-pr oduction
+.umi-production
 .DS_Store
 /lib
 dist
 .idea
 coverage
 /document/docs/api
+yarn.lock
+.eslintcache

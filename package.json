@@ -38,8 +38,14 @@
     "api:build": "yarn api:clean && typedoc",
     "api:clean": "rm -rf document/docs/api",
     "---------   ": "",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "clean": "rm -rf es lib example/dist document/dist example/.umi*/ document/.umi*/ coverage .eslintcache"
+    "clean": "rm -rf es lib example/dist document/dist example/.umi*/ document/.umi*/ coverage .eslintcache",
+    "lint": "npm run lint-eslint",
+    "tsc": "tsc -p tsconfig-check.json",
+    "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty src",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ",
+    "prettier": "prettier -c --write \"**/**\""
   },
   "lint-staged": {
     "*.ts?(x)": [
