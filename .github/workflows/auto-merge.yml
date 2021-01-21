@@ -25,6 +25,7 @@ jobs:
           key: npm-${{ runner.os }}-${{ hashFiles('package.json') }}
       - run: yarn
       - run: yarn lint
+      - run: yarn test
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
           command: merge
