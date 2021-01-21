@@ -2,7 +2,7 @@
 
 [![NPM version][npm-image]][npm-url] ![NPM downloads][download-image]
 
-[![Test CI status][test-ci]][test-ci-url] ![Deploy CI][deploy-ci] [![Coverage][coverage]][codecov-url]
+[![Test CI status][test-ci]][test-ci-url] [![Release CI][release-ci]][deploy-ci-url] [![Coverage][coverage]][codecov-url]
 
 <!-- npm url -->
 
@@ -18,9 +18,9 @@
 <!-- Github CI -->
 
 [test-ci]: https://github.com/arvinxx/umi-plugin-extensions/workflows/Test%20CI/badge.svg
-[deploy-ci]: https://github.com/arvinxx/umi-plugin-extensions/workflows/Deploy%20CI/badge.svg
-[test-ci-url]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3ATest%20CI
-[deploy-ci-ci]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3ADeploy%20CI
+[release-ci]: https://github.com/arvinxx/umi-plugin-extensions/workflows/Release%20CI/badge.svg
+[test-ci-url]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3A%22Test+CI%22
+[deploy-ci-url]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3A%22Release+CI%22
 
 用于开发 Chrome 插件的 umi 插件。
 
