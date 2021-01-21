@@ -21,13 +21,6 @@ $ yarn build --watch
 
 ```
 
-## Dev Plugin
-
-```bash
-# This Step must only be executed in Build
-$ yarn dev
-```
-
 ## Debug
 
 TODO
@@ -37,4 +30,3 @@ TODO
 ```bash
 $ yarn test
 ```
-
