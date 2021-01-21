@@ -25,8 +25,7 @@
     "test:coverage": "umi-test --coverage",
     "test:update": "umi-test --updateSnapshot",
     "---------    ": "",
-    "release": "npm run build &&npm run release:only",
-    "release:only": "yarn publish",
+    "release": "semantic-release",
     "--------- ": "",
     "example:dev": "cross-env APP_ROOT=example umi dev",
     "example:build": "cross-env APP_ROOT=example umi build",
@@ -52,8 +51,26 @@
       "git add"
     ]
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "crx-hotreload": "^1.0.6",
+    "fs-extra": "^9.0.1",
+    "generate-json-webpack-plugin": "^1.0.0"
+  },
   "devDependencies": {
     "@ant-design/pro-skeleton": "^1.0.0-beta.2",
+    "@commitlint/cli": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@testing-library/react": "^9.4.0",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/fs-extra": "^9.0.6",
@@ -66,7 +83,9 @@
     "@umijs/test-utils": "^1.0.0",
     "antd": "^4.9.4",
     "body-parser": "^1.18.2",
+    "commitlint-config-gitmoji": "^2.1.2",
     "concurrently": "^5.3.0",
+    "conventional-changelog-gitmoji-config": "^1.1.1",
     "cross-env": "^6.0.3",
     "eslint": "^7.7.0",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -83,6 +102,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.9.0",
+    "semantic-release": "^17.3.3",
     "test-umi-plugin": "^0.1.0",
     "ts-jest": "^26.4.4",
     "typedoc": "^0.20.4",
@@ -90,18 +110,5 @@
     "typedoc-plugin-markdown": "^3.4.0",
     "umi": "^3.3.3",
     "yorkie": "^2.0.0"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "files": [
-    "lib",
-    "types"
-  ],
-  "types": "types/index.d.ts",
-  "dependencies": {
-    "crx-hotreload": "^1.0.6",
-    "fs-extra": "^9.0.1",
-    "generate-json-webpack-plugin": "^1.0.0"
   }
 }

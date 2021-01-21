@@ -1,6 +1,26 @@
 # umi-plugin-extensions
 
-[![NPM version](https://img.shields.io/npm/v/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions) [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-extensions.svg?style=flat)](https://npmjs.org/package/umi-plugin-extensions)
+[![NPM version][npm-image]][npm-url] ![NPM downloads][download-image]
+
+[![Test CI status][test-ci]][test-ci-url] ![Deploy CI][deploy-ci] [![Coverage][coverage]][codecov-url]
+
+<!-- npm url -->
+
+[npm-image]: http://img.shields.io/npm/v/umi-plugin-extensions.svg?color=deepgreen&label=latest
+[npm-url]: http://npmjs.org/package/umi-plugin-extensions
+[download-image]: https://img.shields.io/npm/dm/umi-plugin-extensions.svg
+
+<!-- coverage -->
+
+[coverage]: https://codecov.io/gh/arvinxx/umi-plugin-extensions/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/arvinxx/umi-plugin-extensions/branch/master
+
+<!-- Github CI -->
+
+[test-ci]: https://github.com/ant-design/html2sketch/workflows/Test%20CI/badge.svg
+[deploy-ci]: https://github.com/ant-design/html2sketch/workflows/Deploy%20CI/badge.svg
+[test-ci-url]: https://github.com/ant-design/html2sketch/actions?query=workflow%3ATest%20CI
+[deploy-ci-ci]: https://github.com/ant-design/html2sketch/actions?query=workflow%3ADeploy%20CI
 
 用于开发 Chrome 插件的 umi 插件。
 

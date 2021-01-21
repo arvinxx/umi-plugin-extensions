@@ -1,0 +1,21 @@
+name: Test CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: install
+        run: yarn
+
+      - name: lint
+        run: yarn lint && yarn tsc
+
+      - name: test
+        run: yarn test:coverage
+
+      - name: Generate coverage
+        run: bash <(curl -s https://codecov.io/bash)
