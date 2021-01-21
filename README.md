@@ -1,8 +1,10 @@
 # umi-plugin-extensions
 
-[![NPM version][npm-image]][npm-url] ![NPM downloads][download-image]
+[![NPM version][npm-image]][npm-url] ![NPM downloads][download-image] [![semantic-release][semantic-release]][semantic-release-repo] ![][license-url]
 
 [![Test CI status][test-ci]][test-ci-url] [![Release CI][release-ci]][deploy-ci-url] [![Coverage][coverage]][codecov-url]
+
+[license-url]: https://img.shields.io/github/license/arvinxx/umi-plugin-develop-template
 
 <!-- npm url -->
 
@@ -21,6 +23,11 @@
 [release-ci]: https://github.com/arvinxx/umi-plugin-extensions/workflows/Release%20CI/badge.svg
 [test-ci-url]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3A%22Test+CI%22
 [deploy-ci-url]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3A%22Release+CI%22
+
+<!-- semantic-release -->
+
+[semantic-release]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-repo]: https://github.com/semantic-release/semantic-release
 
 用于开发 Chrome 插件的 umi 插件。
 
