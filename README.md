@@ -17,10 +17,10 @@
 
 <!-- Github CI -->
 
-[test-ci]: https://github.com/ant-design/html2sketch/workflows/Test%20CI/badge.svg
-[deploy-ci]: https://github.com/ant-design/html2sketch/workflows/Deploy%20CI/badge.svg
-[test-ci-url]: https://github.com/ant-design/html2sketch/actions?query=workflow%3ATest%20CI
-[deploy-ci-ci]: https://github.com/ant-design/html2sketch/actions?query=workflow%3ADeploy%20CI
+[test-ci]: https://github.com/arvinxx/umi-plugin-extensions/workflows/Test%20CI/badge.svg
+[deploy-ci]: https://github.com/arvinxx/umi-plugin-extensions/workflows/Deploy%20CI/badge.svg
+[test-ci-url]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3ATest%20CI
+[deploy-ci-ci]: https://github.com/arvinxx/umi-plugin-extensions/actions?query=workflow%3ADeploy%20CI
 
 用于开发 Chrome 插件的 umi 插件。
 
