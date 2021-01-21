@@ -11,6 +11,16 @@ const base = {
   popupUI: '435',
   version: '',
   manifestVersion: 1,
+  contentScripts: [
+    {
+      matches: ['https://github.com/*'],
+      entries: ['@/contentScripts/github'],
+    },
+    {
+      matches: ['https://baidu.com/*', 'https://www.baidu.com/*'],
+      entries: ['@/contentScripts/baidu'],
+    },
+  ],
 };
 
 const baseResult = {
@@ -21,9 +31,23 @@ const baseResult = {
   manifest_version: 1,
   minimum_chrome_version: '79',
   name: '123',
-  option_page: '__TO_REPLACE_OPTION__',
+  options_ui: {
+    page: '__TO_REPLACE_OPTION__',
+  },
   permissions: [],
   version: '',
+  content_scripts: [
+    {
+      matches: ['https://github.com/*'],
+      js: [],
+      css: [],
+    },
+    {
+      matches: ['https://baidu.com/*', 'https://www.baidu.com/*'],
+      js: [],
+      css: [],
+    },
+  ],
 };
 describe('generateManifestFromConfig', () => {
   it('base', () => {
