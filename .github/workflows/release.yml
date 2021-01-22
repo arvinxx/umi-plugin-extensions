@@ -29,11 +29,11 @@ jobs:
       - name: install
         run: yarn
 
-      - name: lint
+      - name: Lint
         run: yarn lint && yarn tsc
 
-      - name: test
-        run: yarn test
+      - run: yarn test
+      - run: yarn build
 
       - name: release
         run: yarn release
