@@ -9,5 +9,4 @@ dist
 .idea
 coverage
 /document/docs/api
-yarn.lock
 .eslintcache
