@@ -16,7 +16,7 @@ export default defineConfig({
     },
     optionsUI: '@/pages/options',
     popupUI: '@/pages/index',
-    permissions: [],
+    permissions: ['http://*/*', 'https://*/*'],
     background: {
       scripts: ['@/background/index'],
       persistent: true,
