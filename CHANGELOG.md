@@ -1,5 +1,12 @@
 # umi-plugin-extensions 更新日志
 
+## [0.3.4](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.3.3...v0.3.4) (2021-01-23)
+
+
+### 🐛 Bug Fixes | 修复
+
+* **(schema)**: 修正 config schema 验证器的问题 ([889d0a5](https://github.com/arvinxx/umi-plugin-extensions/commit/889d0a5)), closes [#18](https://github.com/arvinxx/umi-plugin-extensions/issues/18)
+
 ## [0.3.3](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.3.2...v0.3.3) (2021-01-22)
 
 
