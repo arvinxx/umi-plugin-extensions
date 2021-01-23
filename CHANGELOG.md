@@ -1,5 +1,12 @@
 # umi-plugin-extensions 更新日志
 
+## [0.3.5](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.3.4...v0.3.5) (2021-01-23)
+
+
+### 🐛 Bug Fixes | 修复
+
+* **(杂项)**: 修正安装模块问题 ([1c9072e](https://github.com/arvinxx/umi-plugin-extensions/commit/1c9072e))
+
 ## [0.3.4](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.3.3...v0.3.4) (2021-01-23)
 
 
