@@ -1,6 +1,6 @@
 ---
 name: '功能需求 ✨'
-about: 对 html2sketch 的需求或建议
+about: 对 umi-plugin-extensions 的需求或建议
 title: '👑 [需求]'
 labels: '👑 Feature'
 assignees: ''
