@@ -38,6 +38,7 @@
     "api:build": "yarn api:clean && typedoc",
     "api:clean": "rm -rf document/docs/api",
     "---------   ": "",
+    "postinstall": "umi generate tmp",
     "clean": "rm -rf es lib example/dist document/dist example/.umi*/ document/.umi*/ coverage .eslintcache",
     "lint": "npm run lint-eslint",
     "tsc": "tsc -p tsconfig-check.json",
