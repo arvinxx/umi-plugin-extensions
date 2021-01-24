@@ -14,7 +14,11 @@ export default defineConfig({
       48: 'logo/logo@48.png',
       128: 'logo/logo@128.png',
     },
-    optionsUI: '@/pages/options',
+    // optionsUI: '@/pages/options',
+    optionsUI: {
+      page: '@/pages/options',
+      openInTab: true,
+    },
     popupUI: '@/pages/index',
     permissions: ['http://*/*', 'https://*/*'],
     background: {

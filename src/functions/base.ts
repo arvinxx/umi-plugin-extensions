@@ -16,14 +16,12 @@ export default (api: IApi) => {
       htmlSuffix: true,
     };
 
-    const extension = <extensionsPlugin.Config>(
-      config.extensions
-    );
+    const extension = <extensionsPlugin.Config>config.extensions;
 
     const { optionsUI, popupUI } = extension;
 
     // 插入 routes
-    const optionRoute = getRouteFromConfig(optionsUI, '/option');
+    const optionRoute = getRouteFromConfig(optionsUI, '/options');
     const popUpRoute = getRouteFromConfig(popupUI, '/');
 
     const extensionRoutes = [optionRoute, popUpRoute].filter(
@@ -37,7 +35,7 @@ export default (api: IApi) => {
     }
     // 为替换 manifest 的 page 做准备
     if (optionRoute) {
-      UIPageKeyMap.option.output = 'option.html';
+      UIPageKeyMap.option.output = 'options.html';
     }
     if (popUpRoute) {
       UIPageKeyMap.popup.output = 'index.html';
