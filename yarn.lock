@@ -1400,15 +1400,15 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@gitmoji/commit-types@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@gitmoji/commit-types/download/@gitmoji/commit-types-1.0.0.tgz#b9351616d5cbf31e01911c42c68effb2ea64bd59"
-  integrity sha1-uTUWFtXL8x4BkRxCxo7/supkvVk=
+"@gitmoji/commit-types@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.npm.taobao.org/@gitmoji/commit-types/download/@gitmoji/commit-types-1.1.5.tgz#8ca89aeea4e253a3818ac63206b4eb4f2352c4ff"
+  integrity sha1-jKia7qTiU6OBisYyBrTrTyNSxP8=
 
-"@gitmoji/parser-opts@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npm.taobao.org/@gitmoji/parser-opts/download/@gitmoji/parser-opts-1.2.1.tgz?cache=0&sync_timestamp=1611004005361&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40gitmoji%2Fparser-opts%2Fdownload%2F%40gitmoji%2Fparser-opts-1.2.1.tgz#08dade2481c6de109f4ca976ed773b9a4e89273b"
-  integrity sha1-CNreJIHG3hCfTKl27Xc7mk6JJzs=
+"@gitmoji/parser-opts@1.2.5":
+  version "1.2.5"
+  resolved "https://registry.npm.taobao.org/@gitmoji/parser-opts/download/@gitmoji/parser-opts-1.2.5.tgz#d7adac21a76ed929a497ab8654686d1be244bfa3"
+  integrity sha1-162sIadu2Smkl6uGVGhtG+JEv6M=
 
 "@hapi/address@^2.1.2":
   version "2.1.4"
@@ -5642,19 +5642,19 @@ commander@^6.2.0:
   resolved "https://registry.npm.taobao.org/commander/download/commander-6.2.1.tgz?cache=0&sync_timestamp=1610702173050&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha1-B5LraC37wyWZm7K4T93duhEKxzw=
 
-commitlint-config-gitmoji@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.npm.taobao.org/commitlint-config-gitmoji/download/commitlint-config-gitmoji-2.1.2.tgz?cache=0&sync_timestamp=1611004010353&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommitlint-config-gitmoji%2Fdownload%2Fcommitlint-config-gitmoji-2.1.2.tgz#66658c31867780d707c6ca516b285ecff2090588"
-  integrity sha1-ZmWMMYZ3gNcHxspRayhez/IJBYg=
+commitlint-config-gitmoji@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/commitlint-config-gitmoji/download/commitlint-config-gitmoji-2.2.0.tgz#f2949be900ea18cf8a76f928d6b842dddd5ef23e"
+  integrity sha1-8pSb6QDqGM+Kdvko1rhC3d1e8j4=
   dependencies:
-    "@gitmoji/commit-types" "^1.0.0"
-    "@gitmoji/parser-opts" "^1.2.1"
-    commitlint-plugin-gitmoji "^2.0.1"
+    "@gitmoji/commit-types" "1.1.5"
+    "@gitmoji/parser-opts" "1.2.5"
+    commitlint-plugin-gitmoji "2.0.5"
 
-commitlint-plugin-gitmoji@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npm.taobao.org/commitlint-plugin-gitmoji/download/commitlint-plugin-gitmoji-2.0.1.tgz?cache=0&sync_timestamp=1611004005352&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommitlint-plugin-gitmoji%2Fdownload%2Fcommitlint-plugin-gitmoji-2.0.1.tgz#6f9d91abed03821df062a5208c854d727f44eb86"
-  integrity sha1-b52Rq+0Dgh3wYqUgjIVNcn9E64Y=
+commitlint-plugin-gitmoji@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npm.taobao.org/commitlint-plugin-gitmoji/download/commitlint-plugin-gitmoji-2.0.5.tgz#eab04fb2c95a2289c29b9df298627d79e212cd27"
+  integrity sha1-6rBPsslaIonCm53ymGJ9eeISzSc=
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -5668,6 +5668,11 @@ compare-func@^2.0.0:
   dependencies:
     array-ify "^1.0.0"
     dot-prop "^5.1.0"
+
+compare-versions@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npm.taobao.org/compare-versions/download/compare-versions-3.6.0.tgz#1a5689913685e5a87637b8d3ffca75514ec41d62"
+  integrity sha1-GlaJkTaF5ah2N7jT/8p1UU7EHWI=
 
 component-emitter@^1.2.1:
   version "1.3.0"
@@ -5818,13 +5823,13 @@ conventional-changelog-angular@^5.0.0:
     compare-func "^2.0.0"
     q "^1.5.1"
 
-conventional-changelog-gitmoji-config@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npm.taobao.org/conventional-changelog-gitmoji-config/download/conventional-changelog-gitmoji-config-1.1.1.tgz?cache=0&sync_timestamp=1611004010404&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fconventional-changelog-gitmoji-config%2Fdownload%2Fconventional-changelog-gitmoji-config-1.1.1.tgz#ff8e253215ca14622186ad5cdd575f66dc200f31"
-  integrity sha1-/44lMhXKFGIhhq1c3VdfZtwgDzE=
+conventional-changelog-gitmoji-config@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.npm.taobao.org/conventional-changelog-gitmoji-config/download/conventional-changelog-gitmoji-config-1.3.6.tgz#f20e60030d48d3ce5aa784cd08edaad6e7a134c7"
+  integrity sha1-8g5gAw1I085ap4TNCO2q1uehNMc=
   dependencies:
-    "@gitmoji/commit-types" "^1.0.0"
-    "@gitmoji/parser-opts" "^1.2.1"
+    "@gitmoji/commit-types" "1.1.5"
+    "@gitmoji/parser-opts" "1.2.5"
     q "^1.5.1"
 
 conventional-changelog-writer@^4.0.0:
@@ -7595,19 +7600,6 @@ execa@^0.7.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.npm.taobao.org/execa/download/execa-0.8.0.tgz?cache=0&sync_timestamp=1606971018065&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-0.8.0.tgz#d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da"
-  integrity sha1-2NdrvBtVIX7RkP1t1J08d07PyNo=
-  dependencies:
-    cross-spawn "^5.0.1"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
 execa@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/execa/download/execa-1.0.0.tgz?cache=0&sync_timestamp=1606971018065&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
@@ -9355,6 +9347,22 @@ humanize-url@^1.0.0:
   dependencies:
     normalize-url "^1.0.0"
     strip-url-auth "^1.0.0"
+
+husky@^4.3.8:
+  version "4.3.8"
+  resolved "https://registry.npm.taobao.org/husky/download/husky-4.3.8.tgz?cache=0&sync_timestamp=1611794741182&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fhusky%2Fdownload%2Fhusky-4.3.8.tgz#31144060be963fd6850e5cc8f019a1dfe194296d"
+  integrity sha1-MRRAYL6WP9aFDlzI8Bmh3+GUKW0=
+  dependencies:
+    chalk "^4.0.0"
+    ci-info "^2.0.0"
+    compare-versions "^3.6.0"
+    cosmiconfig "^7.0.0"
+    find-versions "^4.0.0"
+    opencollective-postinstall "^2.0.2"
+    pkg-dir "^5.0.0"
+    please-upgrade-node "^3.2.0"
+    slash "^3.0.0"
+    which-pm-runs "^1.0.0"
 
 iconv-lite@0.4.24:
   version "0.4.24"
@@ -12786,11 +12794,6 @@ normalize-package-data@^3.0.0:
     semver "^7.3.2"
     validate-npm-package-license "^3.0.1"
 
-normalize-path@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/normalize-path/download/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"
-  integrity sha1-MtDkcvkf80VwHBWoMRAY07CpA3k=
-
 normalize-path@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/normalize-path/download/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
@@ -13262,6 +13265,11 @@ onigasm@^2.2.5:
   integrity sha1-zE0qeaD6C2TK7B9MfqNnWFpnaJI=
   dependencies:
     lru-cache "^5.1.1"
+
+opencollective-postinstall@^2.0.2:
+  version "2.0.3"
+  resolved "https://registry.npm.taobao.org/opencollective-postinstall/download/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
+  integrity sha1-eg//l49tv6TQBiOPusmO1BmMMlk=
 
 opener@^1.5.1, opener@^1.5.2:
   version "1.5.2"
@@ -13839,6 +13847,13 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   integrity sha1-8JkTPfft5CLoHR2ESCcO6z5CYfM=
   dependencies:
     find-up "^4.0.0"
+
+pkg-dir@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/pkg-dir/download/pkg-dir-5.0.0.tgz#a02d6aebe6ba133a928f74aec20bafdfe6b8e760"
+  integrity sha1-oC1q6+a6EzqSj3Suwguv3+a452A=
+  dependencies:
+    find-up "^5.0.0"
 
 pkg-up@3.1.0:
   version "3.1.0"
@@ -19357,6 +19372,11 @@ which-module@^2.0.0:
   resolved "https://registry.npm.taobao.org/which-module/download/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"
   integrity sha1-2e8H3Od7mQK4o6j6SzHD4/fm6Ho=
 
+which-pm-runs@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/which-pm-runs/download/which-pm-runs-1.0.0.tgz#670b3afbc552e0b55df6b7780ca74615f23ad1cb"
+  integrity sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=
+
 which@^1.2.9, which@^1.3.0, which@^1.3.1:
   version "1.3.1"
   resolved "https://registry.npm.taobao.org/which/download/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
@@ -19706,16 +19726,6 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npm.taobao.org/yocto-queue/download/yocto-queue-0.1.0.tgz?cache=0&sync_timestamp=1606290282107&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyocto-queue%2Fdownload%2Fyocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
-
-yorkie@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npm.taobao.org/yorkie/download/yorkie-2.0.0.tgz#92411912d435214e12c51c2ae1093e54b6bb83d9"
-  integrity sha1-kkEZEtQ1IU4SxRwq4Qk+VLa7g9k=
-  dependencies:
-    execa "^0.8.0"
-    is-ci "^1.0.10"
-    normalize-path "^1.0.0"
-    strip-indent "^2.0.0"
 
 zlib@1.0.5:
   version "1.0.5"
