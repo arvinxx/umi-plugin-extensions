@@ -5643,18 +5643,18 @@ commander@^6.2.0:
   integrity sha1-B5LraC37wyWZm7K4T93duhEKxzw=
 
 commitlint-config-gitmoji@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.npm.taobao.org/commitlint-config-gitmoji/download/commitlint-config-gitmoji-2.2.0.tgz#f2949be900ea18cf8a76f928d6b842dddd5ef23e"
-  integrity sha1-8pSb6QDqGM+Kdvko1rhC3d1e8j4=
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/commitlint-config-gitmoji/-/commitlint-config-gitmoji-2.2.1.tgz#f42e247953f99cd328417956eef20c72f9926910"
+  integrity sha512-VSIC5TJdMqDcYsrswil5max//85170RZcqRRG0pUsVmAB92ntge6XVprgJMi70poPeZHpaDQBraEGaNNnJvsDw==
   dependencies:
     "@gitmoji/commit-types" "1.1.5"
     "@gitmoji/parser-opts" "1.2.5"
-    commitlint-plugin-gitmoji "2.0.5"
+    commitlint-plugin-gitmoji "2.0.6"
 
-commitlint-plugin-gitmoji@2.0.5:
-  version "2.0.5"
-  resolved "https://registry.npm.taobao.org/commitlint-plugin-gitmoji/download/commitlint-plugin-gitmoji-2.0.5.tgz#eab04fb2c95a2289c29b9df298627d79e212cd27"
-  integrity sha1-6rBPsslaIonCm53ymGJ9eeISzSc=
+commitlint-plugin-gitmoji@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/commitlint-plugin-gitmoji/-/commitlint-plugin-gitmoji-2.0.6.tgz#ef90562d0033071db39685ef89913d53956f7b8b"
+  integrity sha512-8SdmLPtxKbJiAiLQThO+SJVUO2AIyNCG2WpIL6h7pT1dED+10Rk0T3KWk8zcWJQmQHy+dyMlTMHx3k28BK+M+A==
 
 commondir@^1.0.1:
   version "1.0.1"
