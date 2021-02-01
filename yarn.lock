@@ -18442,9 +18442,9 @@ typedoc-plugin-external-module-map@^1.2.1:
   integrity sha1-Mmaaa4HleWLS2ugNem749dC+Zd0=
 
 typedoc-plugin-markdown@^3.4.0:
-  version "3.4.1"
-  resolved "https://registry.npm.taobao.org/typedoc-plugin-markdown/download/typedoc-plugin-markdown-3.4.1.tgz#b1034dacde1c1fbaaeaeeb7e4c07baba964d82ba"
-  integrity sha1-sQNNrN4cH7qurut+TAe6upZNgro=
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.4.5.tgz#d32aad06a9b93946a31ea68438cd02620c12e857"
+  integrity sha512-m24mSCGcEk6tQDCHIG4TM3AS2a7e9NtC/YdO0mefyF+z1/bKYnZ/oQswLZmm2zBngiLIoKX6eNdufdBpQNPtrA==
   dependencies:
     handlebars "^4.7.6"
 
