@@ -1,5 +1,12 @@
 # umi-plugin-extensions 更新日志
 
+# [0.4.0](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.3.6...v0.4.0) (2021-02-14)
+
+
+### ✨ Features
+
+* **杂项**: 处理版本结构 ([97a858c](https://github.com/arvinxx/umi-plugin-extensions/commit/97a858c)), closes [#50](https://github.com/arvinxx/umi-plugin-extensions/issues/50) [#50](https://github.com/arvinxx/umi-plugin-extensions/issues/50)
+
 ## [0.3.6](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.3.5...v0.3.6) (2021-01-24)
 
 
