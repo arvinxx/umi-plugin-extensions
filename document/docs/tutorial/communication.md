@@ -16,7 +16,7 @@ toc: menu
 
 |  | injected-script | content-script | popup-js | background-js |
 | --- | --- | --- | --- | --- |
-| injected-script | \- | `window.postMessage` | - | - |
+| injected-script | - | `window.postMessage` | - | - |
 | content-script | `window.postMessage` | - | `chrome.runtime.sendMessage` `chrome.runtime.connect` | `chrome.runtime.sendMessage` `chrome.runtime.connect` |
 | popup-js | - | `chrome.tabs.sendMessage` `chrome.tabs.connect` | - | `chrome.extension. getBackgroundPage` |
 | background-js | - | `chrome.tabs.sendMessage` `chrome.tabs.connect` | `chrome.extension.getViews` | - |
