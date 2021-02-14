@@ -1,6 +1,7 @@
 import { generateManifestFromConfig, validateVersion } from '../../src/utils';
 
 const base = {
+  version: '1.0.0',
   background: undefined,
   contentSecurityPolicy: { inlineScript: [], nonce: [], url: [] },
   icons: undefined,
@@ -9,7 +10,6 @@ const base = {
   optionsUI: '123',
   permissions: [],
   popupUI: '435',
-  version: '',
   manifestVersion: 1,
   contentScripts: [
     {
@@ -24,6 +24,7 @@ const base = {
 };
 
 const baseResult = {
+  version: '1.0.0',
   browser_action: {
     default_popup: '__TO_REPLACE_POPUP__',
   },
@@ -35,7 +36,6 @@ const baseResult = {
     page: '__TO_REPLACE_OPTION__',
   },
   permissions: [],
-  version: '',
   content_scripts: [
     {
       matches: ['https://github.com/*'],
