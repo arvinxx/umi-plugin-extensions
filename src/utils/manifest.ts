@@ -31,6 +31,32 @@ export const CSPKeyMap = {
 };
 
 /**
+ * 检查版本格式
+ * @param version
+ */
+export const validateVersion = (version: string) => {
+  // 测试是否属于 X.Y.Z.a
+  // https://regex101.com/r/xijWEc/3
+  const regex = /^\d(\.\d){0,3}$/;
+
+  //  说明不是正常的版本号
+  if (!regex.exec(version)) {
+    // 检查是否带 -rc.2 这种结构
+    // https://regex101.com/r/2iu2oy/4
+    const withAlphabet = /^\d(?:\.\d){2}(-[a-z]*)\.\d/;
+
+    const res = withAlphabet.exec(version);
+
+    if (!res) {
+      throw Error('版本格式不正确,请检查后重试...');
+    }
+    const alphabet = res[1];
+    return version.replace(alphabet, '');
+  }
+  return version;
+};
+
+/**
  * 从 umi 插件配置项中生成 manifest 文件
  * @param config
  */
@@ -45,6 +71,7 @@ export const generateManifestFromConfig = (
     manifestVersion: manifest_version,
     minimumChromeVersion: minimum_chrome_version,
     contentScripts,
+    version,
     ...manifest
   } = config;
 
@@ -111,6 +138,7 @@ export const generateManifestFromConfig = (
     ...manifest,
     ...option,
     ...popup,
+    version: validateVersion(version),
     background: backgroundStr,
     manifest_version,
     content_security_policy,
