@@ -25,6 +25,7 @@
     "test:coverage": "umi-test --coverage",
     "test:update": "umi-test --updateSnapshot",
     "---------    ": "",
+    "prepublishOnly": "yarn build",
     "release": "semantic-release",
     "--------- ": "",
     "example:dev": "cross-env APP_ROOT=example umi dev",
