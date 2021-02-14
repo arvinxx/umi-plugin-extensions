@@ -45,9 +45,9 @@ yarn add -D umi-plugin-extensions
 
 ## 使用
 
-🔔 请确保你对 Chrome 插件开发已经有基本的了解，入门教程：[Chrome 插件(扩展)开发全攻略](/tutorial)。
+🔔 请确保你对 Chrome 插件开发已经有基本的了解，入门教程：[Chrome 插件(扩展)开发全攻略](https://umi-plugin-extensions.vercel.app/tutorial)。
 
-在 umi 配置文件 `cofig/config.ts` 或 `.umirc.ts` 中配置 `extensions` 。完整配置项说明请查阅[插件配置项文档](/api/interfaces/extensionsplugin-config)。
+在 umi 配置文件 `cofig/config.ts` 或 `.umirc.ts` 中配置 `extensions` 。完整配置项说明请查阅[插件配置项文档](https://umi-plugin-extensions.vercel.app/api/interfaces/extensionsplugin-config)。
 
 如需脚手架可使用 [Umi Chrome Extensions Template](https://github.com/arvinxx/umi-chrome-extensions-template)。
 
