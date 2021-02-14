@@ -1,16 +1,11 @@
 import { defineConfig } from 'umi';
-import { resolve } from 'path';
-
-const isProdSite =
-  // 不是预览模式 同时是生产环境
-  process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   title: 'umi-plugin-extensions',
   mode: 'site',
   // 部署在非根目录时, base 和 publicPath 都需要配置
   base: '/',
-  publicPath: isProdSite ? '/umi-plugin-extensions/' : '/',
+  publicPath: '/',
   extraBabelPlugins: [
     [
       'import',
@@ -33,9 +28,6 @@ export default defineConfig({
   ],
   dynamicImport: {
     loading: '@ant-design/pro-skeleton',
-  },
-  history: {
-    type: 'hash',
   },
   hash: true,
   menus: {
