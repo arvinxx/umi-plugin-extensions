@@ -88,6 +88,8 @@ declare namespace chromeManifest {
      * 默认情况下，Command 的作用域是 Chrome 浏览器，这意味着当浏览器失焦时，该快捷键将不会被激活。在 Chrome 桌面端上，Command 从Chrome v35版开始 具有全局作用域，在 Chrome 失焦时也可以使用。
      * @注意
      * Chrome OS 例外，目前不允许使用全局命令。
+     *
+     * @see https://developer.chrome.com/docs/extensions/reference/commands/#scope
      */
     global?: boolean;
   }
