@@ -15,8 +15,8 @@ nav:
 
 通过 Typedoc 生成文件包含两类：
 
-1. interfaces 接口文件；
-2. modules 模块文件；
+1. `interfaces` 接口文件；
+2. `modules` 模块文件；
 
 ## Interfaces 接口文件
 
