@@ -31,6 +31,8 @@ nav:
 
 ```
 
+例如 [Interface: Command ](/api/interfaces/chromemanifest-command)
+
 ## Modules 模块文件
 
 文件结构如下：
@@ -48,3 +50,5 @@ nav:
 ```
 
 其中，Interfaces 会列出该模块包含的所有接口，并链接至相应的接口文件
+
+例如: [chromeManifest](/api/modules/chromemanifest)
