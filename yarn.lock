@@ -3485,9 +3485,9 @@
     spdy "4.0.2"
 
 "@umijs/test-utils@^3.3.7":
-  version "3.3.7"
-  resolved "https://registry.npm.taobao.org/@umijs/test-utils/download/@umijs/test-utils-3.3.7.tgz#1be771f559203039e871ceb3509933b3ec732329"
-  integrity sha1-G+dx9VkgMDnocc6zUJkzs+xzIyk=
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/@umijs/test-utils/-/test-utils-3.3.9.tgz#4554df9b555b6f917835e8d1c017ba103b707fb5"
+  integrity sha512-iacFC+D8B3JfnWuyzQOaNxSv+o8haBgl3PAeF2fDr/8nFPmjqBhq+SBwBwccsrcHk0yWeLHBlDXhVsp+M6BihQ==
 
 "@umijs/test@^3.0.10":
   version "3.3.7"
