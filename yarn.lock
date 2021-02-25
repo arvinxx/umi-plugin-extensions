@@ -3389,9 +3389,9 @@
     zlib "1.0.5"
 
 "@umijs/preset-dumi@^1.0.38":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@umijs/preset-dumi/-/preset-dumi-1.1.4.tgz#6e06a203f6badc329629e6a243fea721dc8e5e87"
-  integrity sha512-CkyNWsaS9BeD6BWSuoYQFKnmqwqJ7WYUuc6R53LL6jWeBppBRD80AhzPAMCO/snO2ZcLhZ/v9AR6rlNkrBt88Q==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@umijs/preset-dumi/-/preset-dumi-1.1.5.tgz#b316931f783c6aea2bea06dcb6dfdf138f52e42a"
+  integrity sha512-+fOF+8y0kFpIn/rV1i+BuoiJKFIbiGRKZF6BWypO+Hz+zruDcOMh1Q+86cw55IjGdHikkRQBH85dyUxCMai0tg==
   dependencies:
     "@babel/core" "^7.7.2"
     "@babel/generator" "^7.7.2"
@@ -3407,7 +3407,7 @@
     copy-text-to-clipboard "^2.2.0"
     deepmerge "^4.2.2"
     dumi-assets-types "1.0.0"
-    dumi-theme-default "1.0.4"
+    dumi-theme-default "1.0.5"
     enhanced-resolve "^4.1.1"
     github-slugger "^1.3.0"
     hast-util-has-property "^1.0.4"
@@ -3431,6 +3431,7 @@
     remark-rehype "^8.0.0"
     remark-stringify "^9.0.0"
     slash2 "^2.0.0"
+    terser "^5.5.1"
     unified "^8.4.1"
     unist-util-visit "^2.0.1"
     unist-util-visit-parents "^3.0.1"
@@ -6838,10 +6839,10 @@ dumi-assets-types@1.0.0:
   resolved "https://registry.npm.taobao.org/dumi-assets-types/download/dumi-assets-types-1.0.0.tgz#d5368cb11045b203bf1ef1080e553b2287a2ec81"
   integrity sha1-1TaMsRBFsgO/HvEIDlU7Ioei7IE=
 
-dumi-theme-default@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/dumi-theme-default/-/dumi-theme-default-1.0.4.tgz#b7cb18c873c898fc9dd743763397cea7eccac7ab"
-  integrity sha512-FP3IdCSYuyoI0wPjX9WYaOnMnRVrMmgsShknVbOQdTI/gH7vND500K+S3osUyq3UuEo602pqijgTehc2pYp2/Q==
+dumi-theme-default@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/dumi-theme-default/-/dumi-theme-default-1.0.5.tgz#f019c68cb00ae4ef4aea854b6509084c8a96e3cd"
+  integrity sha512-6AIn3RxgtRkEmGvZ2MKBvOcd9kh8jkTVHo5QRfjyPkRR8mlCLvIy6nMrcsrDpgsZ6re6CCJ015BJafnl0pPSbg==
   dependencies:
     prism-react-renderer "^1.1.1"
     prismjs "^1.21.0"
@@ -17958,10 +17959,10 @@ terser@^4.1.2:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-terser@^5.0.0, terser@^5.3.4:
-  version "5.5.1"
-  resolved "https://registry.npm.taobao.org/terser/download/terser-5.5.1.tgz#540caa25139d6f496fdea056e414284886fb2289"
-  integrity sha1-VAyqJROdb0lv3qBW5BQoSIb7Iok=
+terser@^5.0.0, terser@^5.3.4, terser@^5.5.1:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.6.0.tgz#138cdf21c5e3100b1b3ddfddf720962f88badcd2"
+  integrity sha512-vyqLMoqadC1uR0vywqOZzriDYzgEkNJFK4q9GeyOBHIbiECHiWLKcWfbQWAUaPfxkjDhapSlZB9f7fkMrvkVjA==
   dependencies:
     commander "^2.20.0"
     source-map "~0.7.2"
