@@ -1561,6 +1561,11 @@
   resolved "https://registry.yarnpkg.com/@gitmoji/parser-opts/-/parser-opts-1.2.6.tgz#1f7d253d9f52e91e9e5f65216b190e481b505277"
   integrity sha512-90e0sDneqK5EdtUqEn/e6p8hRmQ/+VDcHOm+mS/9d+4QDx1BQ8tULKhBc+cmZqRihTluZWsp2W1zNcS2VqRm8A==
 
+"@gitmoji/parser-opts@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@gitmoji/parser-opts/-/parser-opts-1.3.0.tgz#7118a512342afd89c895cb2fd95454fa73f377bb"
+  integrity sha512-NqfoW12eXMdDJz3g3NHnopEgDoqdY1YshO6XxIVPOqotGTDcjD1sL28AVKskbYveGmHBPdHieRRv6M9Iq7dt4w==
+
 "@hapi/address@^2.1.2":
   version "2.1.4"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz?cache=0&sync_timestamp=1603524710662&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Faddress%2Fdownload%2F%40hapi%2Faddress-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -5978,12 +5983,12 @@ conventional-changelog-angular@^5.0.0, conventional-changelog-angular@^5.0.11:
     q "^1.5.1"
 
 conventional-changelog-gitmoji-config@^1.3.6:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-gitmoji-config/-/conventional-changelog-gitmoji-config-1.4.1.tgz#1951d51c5967abdbb7fa922ec8355faa48fb5f47"
-  integrity sha512-YZq+uxEGs9t1V8CL5zbL8Rqj4fnwA7PiL0J8yGJZbaHBCcCjiYbVvcj5zSLs008t7txi0zSxNapHEAHTU8xoqw==
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-gitmoji-config/-/conventional-changelog-gitmoji-config-1.4.2.tgz#4c08bda06b77eaa4c8c286c88fffb04db96404e0"
+  integrity sha512-cLZ7+FNWypnFsSz3IXvvDcfmGDNX5DvQFdRkNTqIOlwAa+i9gcwcvOjI6UntbTmK3z1XWEWI/tipWGEvzNpcAw==
   dependencies:
     "@gitmoji/commit-types" "1.1.5"
-    "@gitmoji/parser-opts" "1.2.6"
+    "@gitmoji/parser-opts" "1.3.0"
     cosmiconfig "^7.0.0"
 
 conventional-changelog-writer@^4.0.0:
