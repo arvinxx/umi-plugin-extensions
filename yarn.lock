@@ -1556,11 +1556,6 @@
   resolved "https://registry.npm.taobao.org/@gitmoji/commit-types/download/@gitmoji/commit-types-1.1.5.tgz#8ca89aeea4e253a3818ac63206b4eb4f2352c4ff"
   integrity sha1-jKia7qTiU6OBisYyBrTrTyNSxP8=
 
-"@gitmoji/parser-opts@1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@gitmoji/parser-opts/-/parser-opts-1.2.6.tgz#1f7d253d9f52e91e9e5f65216b190e481b505277"
-  integrity sha512-90e0sDneqK5EdtUqEn/e6p8hRmQ/+VDcHOm+mS/9d+4QDx1BQ8tULKhBc+cmZqRihTluZWsp2W1zNcS2VqRm8A==
-
 "@gitmoji/parser-opts@1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@gitmoji/parser-opts/-/parser-opts-1.3.0.tgz#7118a512342afd89c895cb2fd95454fa73f377bb"
@@ -3643,9 +3638,9 @@
     spdy "4.0.2"
 
 "@umijs/test-utils@^3.3.7":
-  version "3.3.9"
-  resolved "https://registry.yarnpkg.com/@umijs/test-utils/-/test-utils-3.3.9.tgz#4554df9b555b6f917835e8d1c017ba103b707fb5"
-  integrity sha512-iacFC+D8B3JfnWuyzQOaNxSv+o8haBgl3PAeF2fDr/8nFPmjqBhq+SBwBwccsrcHk0yWeLHBlDXhVsp+M6BihQ==
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@umijs/test-utils/-/test-utils-3.4.0.tgz#f9edc645a98c90c6003601ab179fb6e9722ed66c"
+  integrity sha512-udy52HuSj0vho/ZzShApKXyCbpQII1gHCCV6w69daWQm4gjurWeGcI16Z1jNnel2ZhEGDyvGbyda9eJm5odtsg==
 
 "@umijs/test@^3.0.10":
   version "3.3.9"
