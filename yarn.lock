@@ -1556,11 +1556,6 @@
   resolved "https://registry.npm.taobao.org/@gitmoji/commit-types/download/@gitmoji/commit-types-1.1.5.tgz#8ca89aeea4e253a3818ac63206b4eb4f2352c4ff"
   integrity sha1-jKia7qTiU6OBisYyBrTrTyNSxP8=
 
-"@gitmoji/parser-opts@1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@gitmoji/parser-opts/-/parser-opts-1.2.6.tgz#1f7d253d9f52e91e9e5f65216b190e481b505277"
-  integrity sha512-90e0sDneqK5EdtUqEn/e6p8hRmQ/+VDcHOm+mS/9d+4QDx1BQ8tULKhBc+cmZqRihTluZWsp2W1zNcS2VqRm8A==
-
 "@gitmoji/parser-opts@1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@gitmoji/parser-opts/-/parser-opts-1.3.0.tgz#7118a512342afd89c895cb2fd95454fa73f377bb"
@@ -2788,9 +2783,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/jest@26.x", "@types/jest@^26.0.20":
-  version "26.0.20"
-  resolved "https://registry.npm.taobao.org/@types/jest/download/@types/jest-26.0.20.tgz?cache=0&sync_timestamp=1610007761795&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fjest%2Fdownload%2F%40types%2Fjest-26.0.20.tgz#cd2f2702ecf69e86b586e1f5223a60e454056307"
-  integrity sha1-zS8nAuz2noa1huH1Ijpg5FQFYwc=
+  version "26.0.21"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.21.tgz#3a73c2731e7e4f0fbaea56ce7ff8c79cf812bd24"
+  integrity sha512-ab9TyM/69yg7eew9eOwKMUmvIZAKEGZYlq/dhe5/0IMUd/QLJv5ldRMdddSn+u22N13FP3s5jYyktxuBwY0kDA==
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
