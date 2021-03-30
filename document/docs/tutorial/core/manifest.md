@@ -105,4 +105,4 @@ group:
 }
 ```
 
-`matches`的语法参考：[https://developer.chrome.com/extensions/match_patterns](https://developer.chrome.com/extensions/match_patterns)
+`matches`的语法参考：[Match patterns](https://developer.chrome.com/extensions/match_patterns)
