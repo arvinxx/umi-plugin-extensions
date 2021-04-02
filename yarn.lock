@@ -122,16 +122,7 @@
     eslint-visitor-keys "^1.3.0"
     semver "^6.3.0"
 
-"@babel/generator@^7.12.1", "@babel/generator@^7.12.10", "@babel/generator@^7.12.11", "@babel/generator@^7.4.0", "@babel/generator@^7.7.2":
-  version "7.12.11"
-  resolved "https://registry.npm.taobao.org/@babel/generator/download/@babel/generator-7.12.11.tgz?cache=0&sync_timestamp=1608075197769&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fgenerator%2Fdownload%2F%40babel%2Fgenerator-7.12.11.tgz#98a7df7b8c358c9a37ab07a24056853016aba3af"
-  integrity sha1-mKffe4w1jJo3qweiQFaFMBaro68=
-  dependencies:
-    "@babel/types" "^7.12.11"
-    jsesc "^2.5.1"
-    source-map "^0.5.0"
-
-"@babel/generator@^7.13.0":
+"@babel/generator@^7.12.1", "@babel/generator@^7.12.10", "@babel/generator@^7.12.11", "@babel/generator@^7.13.0", "@babel/generator@^7.4.0", "@babel/generator@^7.7.2":
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.13.0.tgz#bd00d4394ca22f220390c56a0b5b85568ec1ec0c"
   integrity sha512-zBZfgvBB/ywjx0Rgc2+BwoH/3H+lDtlgD4hBOpEv5LxRnYsm/753iRuLepqnYlynpjC3AdQxtxsoeHJoEEwOAw==
@@ -1332,7 +1323,7 @@
     "@babel/parser" "^7.12.13"
     "@babel/types" "^7.12.13"
 
-"@babel/traverse@7.12.12", "@babel/traverse@^7.1.0", "@babel/traverse@^7.10.4", "@babel/traverse@^7.12.1", "@babel/traverse@^7.12.10", "@babel/traverse@^7.12.5", "@babel/traverse@^7.4.3", "@babel/traverse@^7.7.0", "@babel/traverse@^7.7.2":
+"@babel/traverse@7.12.12":
   version "7.12.12"
   resolved "https://registry.npm.taobao.org/@babel/traverse/download/@babel/traverse-7.12.12.tgz?cache=0&sync_timestamp=1608730482757&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftraverse%2Fdownload%2F%40babel%2Ftraverse-7.12.12.tgz#d0cd87892704edd8da002d674bc811ce64743376"
   integrity sha1-0M2HiScE7djaAC1nS8gRzmR0M3Y=
@@ -1347,7 +1338,7 @@
     globals "^11.1.0"
     lodash "^4.17.19"
 
-"@babel/traverse@^7.13.0":
+"@babel/traverse@^7.1.0", "@babel/traverse@^7.10.4", "@babel/traverse@^7.12.1", "@babel/traverse@^7.12.10", "@babel/traverse@^7.12.5", "@babel/traverse@^7.13.0", "@babel/traverse@^7.4.3", "@babel/traverse@^7.7.0", "@babel/traverse@^7.7.2":
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.13.0.tgz#6d95752475f86ee7ded06536de309a65fc8966cc"
   integrity sha512-xys5xi5JEhzC3RzEmSGrs/b3pJW/o87SypZ+G/PhaE7uqVQNv/jlmVIBXuoh5atqQ434LfXV+sf23Oxj0bchJQ==
@@ -1362,7 +1353,7 @@
     globals "^11.1.0"
     lodash "^4.17.19"
 
-"@babel/types@7.12.12", "@babel/types@^7.0.0", "@babel/types@^7.10.4", "@babel/types@^7.10.5", "@babel/types@^7.12.1", "@babel/types@^7.12.10", "@babel/types@^7.12.11", "@babel/types@^7.12.12", "@babel/types@^7.12.5", "@babel/types@^7.12.6", "@babel/types@^7.12.7", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.7.0", "@babel/types@^7.7.2":
+"@babel/types@7.12.12":
   version "7.12.12"
   resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.12.12.tgz?cache=0&sync_timestamp=1608730459294&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.12.12.tgz#4608a6ec313abbd87afa55004d373ad04a96c299"
   integrity sha1-Rgim7DE6u9h6+lUATTc60EqWwpk=
@@ -1380,7 +1371,7 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@babel/types@^7.12.13", "@babel/types@^7.13.0":
+"@babel/types@^7.0.0", "@babel/types@^7.10.4", "@babel/types@^7.10.5", "@babel/types@^7.12.1", "@babel/types@^7.12.10", "@babel/types@^7.12.11", "@babel/types@^7.12.12", "@babel/types@^7.12.13", "@babel/types@^7.12.5", "@babel/types@^7.12.6", "@babel/types@^7.12.7", "@babel/types@^7.13.0", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.7.0", "@babel/types@^7.7.2":
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.13.0.tgz#74424d2816f0171b4100f0ab34e9a374efdf7f80"
   integrity sha512-hE+HE8rnG1Z6Wzo+MhaKE5lM5eMx71T4EHJgku2E3xIfaULhDcxiiRxUYgwX8qwP1BBSlag+TdGOt6JAidIZTA==
@@ -2915,6 +2906,11 @@
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.0.23.tgz#676fa0883450ed9da0bb24156213636290892806"
   integrity sha1-Z2+giDRQ7Z2guyQVYhNjYpCJKAY=
 
+"@types/node@^14.14.28":
+  version "14.14.37"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
+  integrity sha512-XYmBiy+ohOR4Lh5jE379fV2IU+6Jn4g5qASinhitfyO71b/sCo6MKsMLF5tc7Zf2CE8hViVQyYSobJNke8OvUw==
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npm.taobao.org/@types/normalize-package-data/download/@types/normalize-package-data-2.4.0.tgz?cache=0&sync_timestamp=1605054866275&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnormalize-package-data%2Fdownload%2F%40types%2Fnormalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
@@ -3058,6 +3054,13 @@
   integrity sha1-udA/CQ7OJjZxiY1Xu3uwBwI6wZ8=
   dependencies:
     "@types/glob" "*"
+    "@types/node" "*"
+
+"@types/sax@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/sax/-/sax-1.2.1.tgz#e0248be936ece791a82db1a57f3fb5f7c87e8172"
+  integrity sha512-dqYdvN7Sbw8QT/0Ci5rhjE4/iCMJEM0Y9rHpCu+gGXD9Lwbz28t6HI2yegsB6BoV1sShRMU6lAmAcgRjmFy7LA==
+  dependencies:
     "@types/node" "*"
 
 "@types/semantic-release@^17.2.0":
@@ -3621,9 +3624,9 @@
     zlib "1.0.5"
 
 "@umijs/preset-dumi@^1.0.38":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@umijs/preset-dumi/-/preset-dumi-1.1.7.tgz#9f9a616402e19be9cd39f36aefe2bb3152653910"
-  integrity sha512-/YOf+4WzVzVrVX4xyxeZbwsQK4mL7yKP8gxbxsA6+52AS/EvFJDpJpkYfzKEjvi3eVBDkpq5Wy1bx/lmLx0kTw==
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/@umijs/preset-dumi/-/preset-dumi-1.1.10.tgz#065bad25c2e38f06c79a2dfcd321dc8c3b78f8ad"
+  integrity sha512-wBjwa/joP8IXO4v5zva8qCbxYdcKiBBqD68/VyLK1JHKT80jJKTLRxAdRKnSoi0yL5yzLXdMk7+BOHF0zk4T3g==
   dependencies:
     "@babel/core" "^7.7.2"
     "@babel/generator" "^7.7.2"
@@ -3639,7 +3642,7 @@
     copy-text-to-clipboard "^2.2.0"
     deepmerge "^4.2.2"
     dumi-assets-types "1.0.0"
-    dumi-theme-default "1.0.7"
+    dumi-theme-default "1.0.10"
     enhanced-resolve "^4.1.1"
     github-slugger "^1.3.0"
     hast-util-has-property "^1.0.4"
@@ -3662,6 +3665,7 @@
     remark-parse "^9.0.0"
     remark-rehype "^8.0.0"
     remark-stringify "^9.0.0"
+    sitemap "^6.3.3"
     slash2 "^2.0.0"
     terser "^5.5.1"
     unified "^8.4.1"
@@ -4389,6 +4393,11 @@ are-we-there-yet@~1.1.2:
   dependencies:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
+
+arg@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/arg/-/arg-5.0.0.tgz#a20e2bb5710e82950a516b3f933fee5ed478be90"
+  integrity sha512-4P8Zm2H+BRS+c/xX1LrHw0qKpEhdlZjLCgWy+d78T9vqa2Z2SiD2wMrYuWIAFy5IZUD7nnNXroRttz+0RzlrzQ==
 
 argparse@^1.0.7:
   version "1.0.10"
@@ -7123,10 +7132,10 @@ dumi-assets-types@1.0.0:
   resolved "https://registry.npm.taobao.org/dumi-assets-types/download/dumi-assets-types-1.0.0.tgz#d5368cb11045b203bf1ef1080e553b2287a2ec81"
   integrity sha1-1TaMsRBFsgO/HvEIDlU7Ioei7IE=
 
-dumi-theme-default@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/dumi-theme-default/-/dumi-theme-default-1.0.7.tgz#55fc5cf9c4462668c8b2c51642fec506d822bee9"
-  integrity sha512-OSlNa6Eaxpty7c62Kg7EWFZj+92Lwcai0/SzlzwK8ZMgPyEoarrlvzMujDxplPQjkZyLq9f0Yo5P+nVwTlFv7Q==
+dumi-theme-default@1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/dumi-theme-default/-/dumi-theme-default-1.0.10.tgz#8f2da347da16e61889b5fd3a3601c805ac8a70d0"
+  integrity sha512-Hdy3jbVk+ocQSYFXLYR/7HW4NK04VhwDxvpvvLuCzTP9Hq7ZQUCjRhOjYbk3/H+QwDECKVkGP99IgeKtAsTdQg==
   dependencies:
     prism-react-renderer "^1.1.1"
     prismjs "^1.21.0"
@@ -16778,7 +16787,7 @@ sane@^4.0.3:
     minimist "^1.1.1"
     walker "~1.0.5"
 
-sax@~1.2.4:
+sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.npm.taobao.org/sax/download/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
@@ -17144,6 +17153,16 @@ sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/sisteransi/download/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha1-E01oEpd1ZDfMBcoBNw06elcQde0=
+
+sitemap@^6.3.3:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-6.4.0.tgz#b4bc4edf36de742405a7572bc3e467ba484b852e"
+  integrity sha512-DoPKNc2/apQZTUnfiOONWctwq7s6dZVspxAZe2VPMNtoqNq7HgXRvlRnbIpKjf+8+piQdWncwcy+YhhTGY5USQ==
+  dependencies:
+    "@types/node" "^14.14.28"
+    "@types/sax" "^1.2.1"
+    arg "^5.0.0"
+    sax "^1.2.4"
 
 slash2@2.0.0, slash2@^2.0.0:
   version "2.0.0"
