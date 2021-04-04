@@ -4,6 +4,7 @@ import fse from 'fs-extra';
 import { baseDevURL, isDev } from '../utils';
 
 declare module 'umi' {
+  // @ts-ignore
   interface BaseIConfig {
     extensions: extensionsPlugin.Config;
   }
