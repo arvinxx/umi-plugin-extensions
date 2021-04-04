@@ -1,3 +1,12 @@
+# Changelog
+
+## [0.4.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.4.0...v0.4.1) (2021-04-04)
+
+
+### 🐛 Bug Fixes
+
+* **杂项**: 修正丢失 got 依赖的问题 ([fc2ee88](https://github.com/arvinxx/umi-plugin-extensions/commit/fc2ee88))
+
 # umi-plugin-extensions 更新日志
 
 # [0.4.0](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.3.6...v0.4.0) (2021-02-14)
