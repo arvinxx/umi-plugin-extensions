@@ -44,7 +44,6 @@ module.exports = {
   entryDocument: 'index.md',
   hideBreadcrumbs: true,
   namedAnchors: true,
-  hideProjectName: true,
   publicPath: '/api/',
   // 生成文件名用 - 隔开
   filenameSeparator: '-',
