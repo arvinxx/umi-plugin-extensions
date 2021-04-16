@@ -138,9 +138,7 @@ declare namespace chromeManifest {
      */
     event_rules?: EventRule[];
     /**
-     *  declares which extensions, apps,
-     *  and web pages can connect to your extension via
-     *  runtime.connect and runtime.sendMessage.
+     *  声明哪些扩展、应用和网页可以通过 `runtime.connect` 和 `runtime.sendMessage` 连接到您的扩展
      *  @see https://developer.chrome.com/docs/extensions/mv2/manifest/externally_connectable/
      */
     externally_connectable?: ExternallyConnectable;
@@ -295,8 +293,7 @@ declare namespace chromeManifest {
      */
     version_name?: string;
     /**
-     * An array of strings specifying the paths of packaged resources
-     * that are expected to be usable in the context of a web page
+     * 普通页面能够直接访问的插件资源列表，如果不设置是无法直接访问的
      * @see https://developer.chrome.com/docs/extensions/mv2/manifest/web_accessible_resources/
      */
     web_accessible_resources?: string[];
