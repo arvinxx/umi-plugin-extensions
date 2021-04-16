@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.5.0](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.4.1...v0.5.0) (2021-04-16)
+
+
+### ✨ Features
+
+* **杂项**: 添加 extends 字段 ([caf65d8](https://github.com/arvinxx/umi-plugin-extensions/commit/caf65d8))
+
 ## [0.4.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.4.0...v0.4.1) (2021-04-04)
 
 
