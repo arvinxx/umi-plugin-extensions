@@ -72,6 +72,7 @@ export const generateManifestFromConfig = (
     minimumChromeVersion: minimum_chrome_version,
     contentScripts,
     version,
+    extends: origin,
     ...manifest
   } = config;
 
@@ -138,6 +139,7 @@ export const generateManifestFromConfig = (
     ...manifest,
     ...option,
     ...popup,
+    ...origin,
     version: validateVersion(version),
     background: backgroundStr,
     manifest_version,

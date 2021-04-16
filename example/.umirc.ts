@@ -35,5 +35,8 @@ export default defineConfig({
         entries: ['@/contentScripts/baidu'],
       },
     ],
+    extends: {
+      web_accessible_resources: ['*'],
+    },
   },
 });

@@ -179,6 +179,7 @@ export default (api: IApi) => {
             }),
           ),
           icons: iconSchema,
+          extends: joi.object(),
         });
       },
     },
