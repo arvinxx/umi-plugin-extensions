@@ -1,23 +1,18 @@
 declare namespace chromeManifest {
   export interface ExternallyConnectable {
     /**
-     * The IDs of extensions or apps that are allowed to connect.
-     * If left empty or unspecified, no extensions or apps can connect.
      *
-     * The wildcard "*" will allow all extensions and apps to connect.
+     * 允许连接的扩展或应用的ID。如果留空或未指定，则无法连接任何扩展或应用程序。通配符 `*` 将允许所有扩展和应用程序连接。
      */
     ids?: string[];
     /**
-     * The URL patterns for web pages that are allowed to connect.
-     * This does not affect content scripts.
-     * If left empty or unspecified, no web pages can connect.
+     * 允许连接的网页的URL模式。这不会影响内容脚本。如果留空或未指定，则无法连接任何网页
      */
     matches?: string[];
     /**
-     * If true, messages sent via `runtime.connect` or `runtime.sendMessage` will
-     * set `runtime.MessageSender.tlsChannelId` if those methods request it to be.
+     * 如果为 `true`, 通过 `runtime.connect` 或 `runtime.sendMessage` 发送的消息将被设置为 `runtime.MessageSender.tlsChannelId`
      *
-     * If false, `runtime.MessageSender.tlsChannelId` will never be set under any circumstance.
+     *  如果为 `false` , `runtime.MessageSender.tlsChannelId` 在任何情况下都不会被设定。
      */
     accepts_tls_channel_id?: boolean;
   }

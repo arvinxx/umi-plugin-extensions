@@ -40,6 +40,11 @@ declare namespace extensionsPlugin {
      * 注入脚本
      */
     contentScripts: ContentScript[];
+
+    /**
+     * 在这里书写原有的 manifest
+     */
+    extends?: Partial<chromeManifest.Manifest>;
   }
 
   /**
