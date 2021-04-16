@@ -1,2 +1,2 @@
 fixes:
-  - '/home/runner/work/*/*/::' # 修正 github ci 路径问题
+  - '/home/runner/work/umi-plugin-extensions/umi-plugin-extensions/::' # 修正 github ci 路径问题
