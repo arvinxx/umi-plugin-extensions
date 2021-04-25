@@ -24,7 +24,8 @@ jobs:
       - name: Lint
         run: yarn lint && yarn tsc
 
-      - run: yarn test
+      - name: Test
+        run: yarn build && yarn test
 
       - name: release
         run: yarn release

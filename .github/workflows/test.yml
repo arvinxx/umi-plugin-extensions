@@ -21,7 +21,7 @@ jobs:
         run: yarn lint && yarn tsc
 
       - name: test
-        run: yarn test:coverage
+        run: yarn build && yarn test:coverage
 
       - name: Generate coverage
         run: bash <(curl -s https://codecov.io/bash)
