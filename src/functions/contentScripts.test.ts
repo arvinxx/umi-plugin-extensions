@@ -2,13 +2,13 @@ import { join } from 'path';
 import { Service } from 'umi';
 import { render } from '@testing-library/react';
 
-const fixtures = join(__dirname, './fixtures');
+const fixtures = join(__dirname, '../fixtures');
 
 test('normal tmp', async () => {
-  const cwd = join(fixtures, 'normal');
+  const cwd = join(fixtures, 'contentScripts');
   const service = new Service({
     cwd,
-    plugins: [require.resolve('./index')],
+    plugins: [require.resolve('./contentScripts')],
   });
   // 用于产生临时文件
   await service.run({
