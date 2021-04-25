@@ -27,6 +27,11 @@ export default defineConfig({
     },
     contentScripts: [
       {
+        matches: ['http://*/*', 'https://*/*'],
+        entries: ['jquery', 'require.js'],
+        runAt: 'document_end',
+      },
+      {
         matches: ['https://github.com/*'],
         entries: ['@/contentScripts/github'],
       },

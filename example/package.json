@@ -1,4 +1,10 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "require.js": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.5"
+  },
   "version": "1.0.0"
 }
