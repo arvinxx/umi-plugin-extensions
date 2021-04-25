@@ -82,6 +82,7 @@
     "@umijs/test": "^3.0.10",
     "@umijs/test-utils": "^3.3.7",
     "antd": "^4.9.4",
+    "babel-plugin-import": "^1.13.3",
     "body-parser": "^1.18.2",
     "commitlint-config-gitmoji": "^2.2.0",
     "concurrently": "^6.0.0",
