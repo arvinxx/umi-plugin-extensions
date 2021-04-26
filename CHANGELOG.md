@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.6.0](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.5.0...v0.6.0) (2021-04-26)
+
+
+### ✨ Features
+
+* 添加 dependency 注入支持 ([bef3ff6](https://github.com/arvinxx/umi-plugin-extensions/commit/bef3ff6))
+
 # [0.6.0-beta.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.5.0...v0.6.0-beta.1) (2021-04-25)
 
 
