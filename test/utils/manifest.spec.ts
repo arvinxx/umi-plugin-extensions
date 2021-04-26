@@ -1,4 +1,12 @@
-import { generateManifestFromConfig, validateVersion } from '../../src/utils';
+import {
+  generateManifestFromConfig,
+  validateVersion,
+  updateUIPath,
+  updateCSP,
+  updateBackground,
+  updateHotLoad,
+  updateContentScripts,
+} from '../../src/utils/manifest';
 
 const base = {
   version: '1.0.0',
@@ -133,4 +141,42 @@ describe('validateVersion', () => {
       );
     });
   });
+});
+
+test('updateBackground', () => {
+  expect(updateBackground({ background: {} })).toEqual({
+    background: { scripts: ['background.js'] },
+  });
+  expect(updateBackground({})).toEqual({});
+});
+
+test('updateHotLoad', () => {
+  expect(updateHotLoad({ background: { scripts: [] } })).toEqual({
+    background: { scripts: ['hot-reload.js'] },
+  });
+  expect(updateHotLoad({})).toEqual({
+    background: {
+      persistent: true,
+      scripts: ['hot-reload.js'],
+    },
+  });
+});
+
+test('updateContentScripts', () => {
+  expect(updateContentScripts({})).toEqual({});
+  expect(updateContentScripts({ content_scripts: [{}] })).toEqual({
+    content_scripts: [
+      { js: ['contentScript_0.js'], css: ['contentScript_0.css'] },
+    ],
+  });
+});
+
+test('updateUIPath', () => {
+  expect(
+    updateUIPath('x __TO_REPLACE_POPUP__  __TO_REPLACE_OPTION__ x'),
+  ).toEqual('x    x');
+});
+
+test('updateCSP', () => {
+  expect(updateCSP('__TO_REPLACE_INLINE_SCRIPT__')).toEqual('');
 });

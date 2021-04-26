@@ -153,7 +153,9 @@ export const generateManifestFromConfig = (
  * 专门用于 onStart 方法的
  * @param fn
  */
+/* istanbul ignore next */
 export const gotManifest = (fn: any) => {
+  /* istanbul ignore next */
   got(`${baseDevURL}/manifest.json`).then(fn).catch();
 };
 
