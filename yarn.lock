@@ -2959,7 +2959,7 @@
   dependencies:
     "@umijs/utils" "3.4.8"
 
-"@umijs/babel-preset-umi@3.4.11":
+"@umijs/babel-preset-umi@3.4.11", "@umijs/babel-preset-umi@3.x":
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/babel-preset-umi/download/@umijs/babel-preset-umi-3.4.11.tgz?cache=0&sync_timestamp=1618906104108&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Fbabel-preset-umi%2Fdownload%2F%40umijs%2Fbabel-preset-umi-3.4.11.tgz#a5d549f189b0a3790be25f6f704fd3976256e986"
   integrity sha1-pdVJ8Ymwo3kL4l9vcE/Tl2JW6YY=
@@ -2970,7 +2970,7 @@
     "@umijs/babel-plugin-lock-core-js-3" "3.4.11"
     "@umijs/babel-plugin-no-anonymous-default-export" "3.4.11"
 
-"@umijs/babel-preset-umi@3.4.8", "@umijs/babel-preset-umi@3.x":
+"@umijs/babel-preset-umi@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/babel-preset-umi/-/babel-preset-umi-3.4.8.tgz#45f9ae1de109145f17206e7ea96a0075da8849e0"
   integrity sha512-ZIWOOplileF8nfTMb1PlZW9w22HcYW0kYX9DdyPFTglV2jAXHkipEUSLlMRhJCLhdNMlmQaiRg50jfoTF33ZmQ==
@@ -3235,13 +3235,13 @@
   integrity sha512-ExOVzigLE08ODkt+Cnc1hQnuvEZnXwha8uPbfrMne3TY20whI+askWjDwuVAPSP1UX6D5glTIpw0aDkzswOr5g==
 
 "@umijs/test@^3.0.10":
-  version "3.4.8"
-  resolved "https://registry.yarnpkg.com/@umijs/test/-/test-3.4.8.tgz#e717418929181759efb9d080525c3cead29371bd"
-  integrity sha512-yGhzqNJsUUASmnyxiY55BuafiW89SwgKJNcyNKfR3TPddEVUXXlQcSneIyLh4Xmqx/OVz0LTFrmhEK7Q6U3s2g==
+  version "3.4.11"
+  resolved "https://registry.yarnpkg.com/@umijs/test/-/test-3.4.11.tgz#224e58a5d10907c2aac08cecc4c1d2a56250403f"
+  integrity sha512-uLtRzO8US8por0u8D5x2hN18J8QjsPKK0EHm5T77qP5FlkJbo/+mHUnBalU2awihCzRdnEuIzemi+vcfb5VFIw==
   dependencies:
     "@babel/core" "7.12.10"
-    "@umijs/babel-preset-umi" "3.4.8"
-    "@umijs/utils" "3.4.8"
+    "@umijs/babel-preset-umi" "3.4.11"
+    "@umijs/utils" "3.4.11"
     babel-core "7.0.0-bridge.0"
     babel-jest "^26.6.3"
     core-js "3.8.2"
@@ -3276,14 +3276,14 @@
     "@umijs/utils" "3.4.8"
     webpack-chain "6.5.1"
 
-"@umijs/utils@3.4.11":
+"@umijs/utils@3.4.11", "@umijs/utils@^3.2.28":
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/utils/download/@umijs/utils-3.4.11.tgz?cache=0&sync_timestamp=1618906001842&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Futils%2Fdownload%2F%40umijs%2Futils-3.4.11.tgz#41e78ada49aaf2bf2247f0f76866fb6f5f92b837"
   integrity sha1-QeeK2kmq8r8iR/D3aGb7b1+SuDc=
   dependencies:
     "@umijs/deps" "3.4.11"
 
-"@umijs/utils@3.4.8", "@umijs/utils@^3.2.28":
+"@umijs/utils@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/utils/-/utils-3.4.8.tgz#770604486a06e9099eba42d4e020176daf9f7480"
   integrity sha512-ewVj7M+B3WCRv7yqBBmN/JiiA/copH0cU7uGwIrnfytX86wjyjgq54LJ1Yj9bpw9axbOB+qaU2x+arfU6LLLag==
