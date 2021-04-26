@@ -2,7 +2,7 @@ import { join } from 'path';
 import fse from 'fs-extra';
 
 import type { IApi } from 'umi';
-import { updateContentScripts } from '../utils';
+import { getDependencyPath, updateContentScripts } from '../utils';
 
 /**
  *  将 contentScripts 添加到打包对象中
@@ -10,7 +10,7 @@ import { updateContentScripts } from '../utils';
  * @param api
  */
 export default (api: IApi) => {
-  const { paths } = api.service;
+  const { paths, cwd } = api.service;
 
   // 修正 webpack 关于 contentScripts 的配置
   api.chainWebpack((config) => {
@@ -23,9 +23,9 @@ export default (api: IApi) => {
 
     // 将 contentScripts 作为一个入口插入打包对象中
     contentScripts.forEach((item, index) => {
-      const { entries } = item;
-
       const entry = `contentScript_${index}`;
+
+      const entries = item.entries.map((e) => getDependencyPath(e, cwd));
 
       config.entry(entry).merge(entries);
     });

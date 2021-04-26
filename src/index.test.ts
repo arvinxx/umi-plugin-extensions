@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { Service } from 'umi';
-import { render } from '@testing-library/react';
+import { readFileSync } from 'fs';
 
 const fixtures = join(__dirname, './fixtures');
 
@@ -18,8 +18,6 @@ test('normal tmp', async () => {
     },
   });
 
-  // eslint-disable-next-line global-require,import/no-dynamic-require
-  const reactNode = require(join(cwd, '.umi-test', 'umi.ts')).default;
-  const { container } = render(reactNode);
-  expect(container.textContent).toEqual('');
+  const html = readFileSync(join(cwd, 'dist', 'index.html'), 'utf-8');
+  expect(html).toContain('root');
 });
