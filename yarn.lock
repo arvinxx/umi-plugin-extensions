@@ -5055,19 +5055,20 @@ commander@^6.0.0, commander@^6.2.0:
   integrity sha1-B5LraC37wyWZm7K4T93duhEKxzw=
 
 commitlint-config-gitmoji@^2.2.0:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/commitlint-config-gitmoji/-/commitlint-config-gitmoji-2.2.3.tgz#e7dcf3902f3eed1f602c65f1eede07cc6d86a5b8"
-  integrity sha512-lCA/I2NM5LutG++lCHIKEpEI0qUGsOuvlWw2faD4vbXPal7ENkTIn2ggG5ktM0sAz40osR/RS1paPxyI8rtbZw==
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/commitlint-config-gitmoji/-/commitlint-config-gitmoji-2.2.5.tgz#a0de3b5d2adde5f31fcb38edb872811dc5992857"
+  integrity sha512-2Es3QtiOzrNHNuYsonNHodNZIub17+F0/ZukDlVz4FdrRZvYi1f5B1bTr23QPL1QmlhgYcXkNxLOQhegKqaA/g==
   dependencies:
     "@gitmoji/commit-types" "1.1.5"
     "@gitmoji/parser-opts" "1.3.0"
-    commitlint-plugin-gitmoji "2.1.0"
+    commitlint-plugin-gitmoji "2.2.0"
 
-commitlint-plugin-gitmoji@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/commitlint-plugin-gitmoji/-/commitlint-plugin-gitmoji-2.1.0.tgz#da54a2e4909affbf03ef0012f6ad86a02eb8c009"
-  integrity sha512-G5Othkb/KkhEj4oLhUHiAYLK9Q7T/IdQ/c5HiCwgslKI2zfxSc9Ocopz+pMmvGtVrU16g22fHGBiO0Z+KOGkyA==
+commitlint-plugin-gitmoji@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/commitlint-plugin-gitmoji/-/commitlint-plugin-gitmoji-2.2.0.tgz#e8fd35f1fd9f5790d7382d2d00bc90452ff24e56"
+  integrity sha512-njFLibrctUTeYjJYqiG9EOnCUcX/OvHCf96bArYBIbH7IEV6fylslVTt6pQcCvaMfOPUBj3f+a3g1eYchggZVw==
   dependencies:
+    dotenv "^8.2.0"
     emoji-name-map "^1.2.9"
 
 commondir@^1.0.1:
@@ -6124,6 +6125,11 @@ dotenv@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npm.taobao.org/dotenv/download/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
   integrity sha1-pTF0Wb09eauIz/bkQFemo/ux/O8=
+
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 dumi-assets-types@1.0.0:
   version "1.0.0"
