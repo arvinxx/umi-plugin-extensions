@@ -2910,6 +2910,11 @@
   resolved "https://registry.nlark.com/@umijs/babel-plugin-auto-css-modules/download/@umijs/babel-plugin-auto-css-modules-3.4.11.tgz?cache=0&sync_timestamp=1618906117639&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Fbabel-plugin-auto-css-modules%2Fdownload%2F%40umijs%2Fbabel-plugin-auto-css-modules-3.4.11.tgz#254869b1de4a8a81673ad558156834cd6959e5d2"
   integrity sha1-JUhpsd5KioFnOtVYFWg0zWlZ5dI=
 
+"@umijs/babel-plugin-auto-css-modules@3.4.24":
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/babel-plugin-auto-css-modules/-/babel-plugin-auto-css-modules-3.4.24.tgz#5e9d0dc105b5fcff0f2653f65332b2784ca3c569"
+  integrity sha512-lILhrDFCp3034prRHkOCOk9mX9FG/KI2R4V3+6Krh3ipWvby6izbC33/3VgaqrS6AQWQ7UjPb+YDU/qxgmL+4g==
+
 "@umijs/babel-plugin-auto-css-modules@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/babel-plugin-auto-css-modules/-/babel-plugin-auto-css-modules-3.4.8.tgz#941f97f15ebb09ffc48aa53cbe57bd55e443529b"
@@ -2921,6 +2926,13 @@
   integrity sha1-l1spb+abJSKhJyPP16SCZ2tFCfY=
   dependencies:
     "@umijs/utils" "3.4.11"
+
+"@umijs/babel-plugin-import-to-await-require@3.4.24":
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/babel-plugin-import-to-await-require/-/babel-plugin-import-to-await-require-3.4.24.tgz#728a50bc5cbe9169dddf941ed85c284f4082e20f"
+  integrity sha512-ikTOaQ13/ZDWXeO2abNUSKLBaisTWLnaYOODo1lCIXf89lN+co4M4fckljE0jkITlBWWZVaJeO6RRzdGhq+IPw==
+  dependencies:
+    "@umijs/utils" "3.4.24"
 
 "@umijs/babel-plugin-import-to-await-require@3.4.8":
   version "3.4.8"
@@ -2937,6 +2949,14 @@
     "@umijs/utils" "3.4.11"
     core-js "3.6.5"
 
+"@umijs/babel-plugin-lock-core-js-3@3.4.24":
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/babel-plugin-lock-core-js-3/-/babel-plugin-lock-core-js-3-3.4.24.tgz#1fb97787569544271b2b0103dcae84c4a35c5f10"
+  integrity sha512-BTsSqSK5iyzj0VDNUuhAkUfpU4LzOVn22tq2OD9KQ13G8SB+dyPJXq1EE7ovaBIcCNp2of+wDvAUk2X/NCFLmA==
+  dependencies:
+    "@umijs/utils" "3.4.24"
+    core-js "3.6.5"
+
 "@umijs/babel-plugin-lock-core-js-3@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/babel-plugin-lock-core-js-3/-/babel-plugin-lock-core-js-3-3.4.8.tgz#ca2ff9b39961f8c8ffee16ca1f327855cf49e7aa"
@@ -2951,6 +2971,13 @@
   integrity sha1-N0iSRpmxW9XOX8fg770hwmPCCXI=
   dependencies:
     "@umijs/utils" "3.4.11"
+
+"@umijs/babel-plugin-no-anonymous-default-export@3.4.24":
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/babel-plugin-no-anonymous-default-export/-/babel-plugin-no-anonymous-default-export-3.4.24.tgz#d106b5c53c8ed1c05f5a083b7f7c05d25bfb85c7"
+  integrity sha512-MsAOA90bLk+lcaw00rosnwe/9salbPIY3PxY6sZMYDXj+IiyQ3vjzpYr+hQ5qLiDYdlw2LldBgavxB7W+1R5gw==
+  dependencies:
+    "@umijs/utils" "3.4.24"
 
 "@umijs/babel-plugin-no-anonymous-default-export@3.4.8":
   version "3.4.8"
@@ -2970,7 +2997,18 @@
     "@umijs/babel-plugin-lock-core-js-3" "3.4.11"
     "@umijs/babel-plugin-no-anonymous-default-export" "3.4.11"
 
-"@umijs/babel-preset-umi@3.4.8", "@umijs/babel-preset-umi@3.x":
+"@umijs/babel-preset-umi@3.4.24", "@umijs/babel-preset-umi@3.x":
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/babel-preset-umi/-/babel-preset-umi-3.4.24.tgz#2cc1adbc9a85944f25cbef104fe3bcbe13686d7c"
+  integrity sha512-twGpsUf3L+7bP1/Vz/1BUQgYtW+8qmZQdv2NxOZpUbCcgh9V+MBd0C1iYkBdrgn+SUVI4YQaTF8kSON14fBH7g==
+  dependencies:
+    "@babel/runtime" "7.12.5"
+    "@umijs/babel-plugin-auto-css-modules" "3.4.24"
+    "@umijs/babel-plugin-import-to-await-require" "3.4.24"
+    "@umijs/babel-plugin-lock-core-js-3" "3.4.24"
+    "@umijs/babel-plugin-no-anonymous-default-export" "3.4.24"
+
+"@umijs/babel-preset-umi@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/babel-preset-umi/-/babel-preset-umi-3.4.8.tgz#45f9ae1de109145f17206e7ea96a0075da8849e0"
   integrity sha512-ZIWOOplileF8nfTMb1PlZW9w22HcYW0kYX9DdyPFTglV2jAXHkipEUSLlMRhJCLhdNMlmQaiRg50jfoTF33ZmQ==
@@ -3045,6 +3083,17 @@
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/deps/download/@umijs/deps-3.4.11.tgz?cache=0&sync_timestamp=1618906097535&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Fdeps%2Fdownload%2F%40umijs%2Fdeps-3.4.11.tgz#ad846439d49d4f8a0684694b750803d73a1b5bf3"
   integrity sha1-rYRkOdSdT4oGhGlLdQgD1zobW/M=
+  dependencies:
+    "@bloomberg/record-tuple-polyfill" "0.0.3"
+    chokidar "3.5.1"
+    clipboardy "2.3.0"
+    jest-worker "24.9.0"
+    prettier "2.2.1"
+
+"@umijs/deps@3.4.24":
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/deps/-/deps-3.4.24.tgz#3d416edbf4257c3c2238b8316e08e5532162f6a6"
+  integrity sha512-qQXPmorQtA/hKFVvKU2BXalV7tZ03kFq3NZ6+YPoDCiNTaqyFOE9vWHIemI5oxvk3vcZI2R539BDvQcLWJhJzw==
   dependencies:
     "@bloomberg/record-tuple-polyfill" "0.0.3"
     chokidar "3.5.1"
@@ -3235,13 +3284,13 @@
   integrity sha512-ExOVzigLE08ODkt+Cnc1hQnuvEZnXwha8uPbfrMne3TY20whI+askWjDwuVAPSP1UX6D5glTIpw0aDkzswOr5g==
 
 "@umijs/test@^3.0.10":
-  version "3.4.8"
-  resolved "https://registry.yarnpkg.com/@umijs/test/-/test-3.4.8.tgz#e717418929181759efb9d080525c3cead29371bd"
-  integrity sha512-yGhzqNJsUUASmnyxiY55BuafiW89SwgKJNcyNKfR3TPddEVUXXlQcSneIyLh4Xmqx/OVz0LTFrmhEK7Q6U3s2g==
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/test/-/test-3.4.24.tgz#f3f3ce9fc8801003593dfd42498edea2caf52812"
+  integrity sha512-6dDOVs0DHaSQcHHmgojxLhT01C0trF6GiylW4VUK4nZk12oPpumwyWJbpSBL68E9E/sibKZJ9eMWDLXdHLGtkA==
   dependencies:
     "@babel/core" "7.12.10"
-    "@umijs/babel-preset-umi" "3.4.8"
-    "@umijs/utils" "3.4.8"
+    "@umijs/babel-preset-umi" "3.4.24"
+    "@umijs/utils" "3.4.24"
     babel-core "7.0.0-bridge.0"
     babel-jest "^26.6.3"
     core-js "3.8.2"
@@ -3283,7 +3332,14 @@
   dependencies:
     "@umijs/deps" "3.4.11"
 
-"@umijs/utils@3.4.8", "@umijs/utils@^3.2.28":
+"@umijs/utils@3.4.24", "@umijs/utils@^3.2.28":
+  version "3.4.24"
+  resolved "https://registry.yarnpkg.com/@umijs/utils/-/utils-3.4.24.tgz#6ed3da0882fe58ded145c3c396ae99fec5f9269f"
+  integrity sha512-xjXKRvDqo1sLgmXmAcsNZMQ+r+eOWy2nVu7EHZM/vXHAeYUNpVo98EP45nZk5nkGXXmrGBNtx15QPKFy4EdCXw==
+  dependencies:
+    "@umijs/deps" "3.4.24"
+
+"@umijs/utils@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/utils/-/utils-3.4.8.tgz#770604486a06e9099eba42d4e020176daf9f7480"
   integrity sha512-ewVj7M+B3WCRv7yqBBmN/JiiA/copH0cU7uGwIrnfytX86wjyjgq54LJ1Yj9bpw9axbOB+qaU2x+arfU6LLLag==
