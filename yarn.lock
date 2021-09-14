@@ -1301,16 +1301,7 @@
     globals "^11.1.0"
     lodash "^4.17.19"
 
-"@babel/types@^7.0.0", "@babel/types@^7.10.4", "@babel/types@^7.10.5", "@babel/types@^7.12.1", "@babel/types@^7.12.10", "@babel/types@^7.12.11", "@babel/types@^7.12.12", "@babel/types@^7.12.13", "@babel/types@^7.12.5", "@babel/types@^7.12.6", "@babel/types@^7.12.7", "@babel/types@^7.13.0", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.7.0", "@babel/types@^7.7.2":
-  version "7.13.0"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.13.0.tgz#74424d2816f0171b4100f0ab34e9a374efdf7f80"
-  integrity sha512-hE+HE8rnG1Z6Wzo+MhaKE5lM5eMx71T4EHJgku2E3xIfaULhDcxiiRxUYgwX8qwP1BBSlag+TdGOt6JAidIZTA==
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.12.11"
-    lodash "^4.17.19"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.13.12":
+"@babel/types@^7.0.0", "@babel/types@^7.10.4", "@babel/types@^7.10.5", "@babel/types@^7.12.1", "@babel/types@^7.12.10", "@babel/types@^7.12.11", "@babel/types@^7.12.12", "@babel/types@^7.12.13", "@babel/types@^7.12.5", "@babel/types@^7.12.6", "@babel/types@^7.12.7", "@babel/types@^7.13.0", "@babel/types@^7.13.12", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.7.0", "@babel/types@^7.7.2":
   version "7.13.17"
   resolved "https://registry.nlark.com/@babel/types/download/@babel/types-7.13.17.tgz?cache=0&sync_timestamp=1618961099146&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.13.17.tgz#48010a115c9fba7588b4437dd68c9469012b38b4"
   integrity sha1-SAEKEVyfunWItEN91oyUaQErOLQ=
@@ -2898,13 +2889,6 @@
   dependencies:
     "@umijs/utils" "3.4.11"
 
-"@umijs/ast@3.4.8":
-  version "3.4.8"
-  resolved "https://registry.npm.taobao.org/@umijs/ast/download/@umijs/ast-3.4.8.tgz#90c3748181b870263f6c51c05866ae79d187fa5e"
-  integrity sha1-kMN0gYG4cCY/bFHAWGauedGH+l4=
-  dependencies:
-    "@umijs/utils" "3.4.8"
-
 "@umijs/babel-plugin-auto-css-modules@3.4.11":
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/babel-plugin-auto-css-modules/download/@umijs/babel-plugin-auto-css-modules-3.4.11.tgz?cache=0&sync_timestamp=1618906117639&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Fbabel-plugin-auto-css-modules%2Fdownload%2F%40umijs%2Fbabel-plugin-auto-css-modules-3.4.11.tgz#254869b1de4a8a81673ad558156834cd6959e5d2"
@@ -2959,7 +2943,7 @@
   dependencies:
     "@umijs/utils" "3.4.8"
 
-"@umijs/babel-preset-umi@3.4.11":
+"@umijs/babel-preset-umi@3.4.11", "@umijs/babel-preset-umi@3.x":
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/babel-preset-umi/download/@umijs/babel-preset-umi-3.4.11.tgz?cache=0&sync_timestamp=1618906104108&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Fbabel-preset-umi%2Fdownload%2F%40umijs%2Fbabel-preset-umi-3.4.11.tgz#a5d549f189b0a3790be25f6f704fd3976256e986"
   integrity sha1-pdVJ8Ymwo3kL4l9vcE/Tl2JW6YY=
@@ -2970,7 +2954,7 @@
     "@umijs/babel-plugin-lock-core-js-3" "3.4.11"
     "@umijs/babel-plugin-no-anonymous-default-export" "3.4.11"
 
-"@umijs/babel-preset-umi@3.4.8", "@umijs/babel-preset-umi@3.x":
+"@umijs/babel-preset-umi@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/babel-preset-umi/-/babel-preset-umi-3.4.8.tgz#45f9ae1de109145f17206e7ea96a0075da8849e0"
   integrity sha512-ZIWOOplileF8nfTMb1PlZW9w22HcYW0kYX9DdyPFTglV2jAXHkipEUSLlMRhJCLhdNMlmQaiRg50jfoTF33ZmQ==
@@ -3019,16 +3003,6 @@
     "@umijs/babel-preset-umi" "3.4.11"
     "@umijs/deps" "3.4.11"
     "@umijs/utils" "3.4.11"
-
-"@umijs/core@3.4.8":
-  version "3.4.8"
-  resolved "https://registry.npm.taobao.org/@umijs/core/download/@umijs/core-3.4.8.tgz#72f6a45f6a9dbf9d988698246fb9a07d739ef529"
-  integrity sha1-cvakX2qdv52Yhpgkb7mgfXOe9Sk=
-  dependencies:
-    "@umijs/ast" "3.4.8"
-    "@umijs/babel-preset-umi" "3.4.8"
-    "@umijs/deps" "0.8.1"
-    "@umijs/utils" "3.4.8"
 
 "@umijs/deps@0.8.1":
   version "0.8.1"
@@ -3122,9 +3096,9 @@
     regenerator-runtime "0.13.5"
 
 "@umijs/preset-dumi@^1.0.38":
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/@umijs/preset-dumi/-/preset-dumi-1.1.13.tgz#c21d33144b351c65558a90d6c054d12c0a16d184"
-  integrity sha512-WjSH5MIWDNo4Apg2NOm+0kCbmqrIWCJWGb7WheSb95ETYHBPiYgLIYHUyPrVCTlZKkG2x6NdxneShC/qlF4nKg==
+  version "1.1.27"
+  resolved "https://registry.yarnpkg.com/@umijs/preset-dumi/-/preset-dumi-1.1.27.tgz#0ca303bac600e4f2bac02f2e9f84f5aef000870f"
+  integrity sha512-YKchYsmcD7C1XkU0D3AkY+UDJxZhFll7gDxvkgunmmOlPRMdXJov3Oj/l0OYGMxf3X7AmvCnXzjqPCPHP2B+3Q==
   dependencies:
     "@babel/core" "^7.7.2"
     "@babel/generator" "^7.7.2"
@@ -3140,7 +3114,7 @@
     copy-text-to-clipboard "^2.2.0"
     deepmerge "^4.2.2"
     dumi-assets-types "1.0.0"
-    dumi-theme-default "1.0.13"
+    dumi-theme-default "1.1.10"
     enhanced-resolve "^4.1.1"
     github-slugger "^1.3.0"
     hast-util-has-property "^1.0.4"
@@ -3149,9 +3123,11 @@
     hast-util-to-html "^7.1.1"
     hast-util-to-string "^1.0.2"
     hosted-git-info "^3.0.2"
+    ignore "^5.1.8"
     js-yaml "^3.13.1"
+    lodash.throttle "^4.1.1"
     lz-string "^1.4.4"
-    react-docgen-typescript "^1.20.5"
+    react-docgen-typescript-dumi-tmp "^1.22.1-0"
     rehype-autolink-headings "^4.0.0"
     rehype-mathjax "^3.1.0"
     rehype-remove-comments "^4.0.2"
@@ -3189,22 +3165,10 @@
     "@umijs/runtime" "3.4.11"
     react-router-config "5.1.1"
 
-"@umijs/runtime@3.4.11":
+"@umijs/runtime@3.4.11", "@umijs/runtime@^3.2.14":
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/runtime/download/@umijs/runtime-3.4.11.tgz?cache=0&sync_timestamp=1618906084974&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Fruntime%2Fdownload%2F%40umijs%2Fruntime-3.4.11.tgz#ca7ddb939cf9f218c831e9b12f42c0f3e115e0a3"
   integrity sha1-yn3bk5z58hjIMemxL0LA8+EV4KM=
-  dependencies:
-    "@types/react-router" "5.1.12"
-    "@types/react-router-dom" "5.1.7"
-    history-with-query "4.10.4"
-    react-router "5.2.0"
-    react-router-dom "5.2.0"
-    use-subscription "1.5.1"
-
-"@umijs/runtime@^3.2.14":
-  version "3.4.8"
-  resolved "https://registry.npm.taobao.org/@umijs/runtime/download/@umijs/runtime-3.4.8.tgz?cache=0&sync_timestamp=1617346371616&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40umijs%2Fruntime%2Fdownload%2F%40umijs%2Fruntime-3.4.8.tgz#e0de30a6924e8a4fd24db2c532df6222f4318f82"
-  integrity sha1-4N4wppJOik/STbLFMt9iIvQxj4I=
   dependencies:
     "@types/react-router" "5.1.12"
     "@types/react-router-dom" "5.1.7"
@@ -3220,14 +3184,6 @@
   dependencies:
     "@umijs/deps" "3.4.11"
     "@umijs/utils" "3.4.11"
-
-"@umijs/server@3.4.8":
-  version "3.4.8"
-  resolved "https://registry.npm.taobao.org/@umijs/server/download/@umijs/server-3.4.8.tgz#3a43083c0320861d847a0a13b6612336626888a9"
-  integrity sha1-OkMIPAMghh2EegoTtmEjNmJoiKk=
-  dependencies:
-    "@umijs/deps" "0.8.1"
-    "@umijs/utils" "3.4.8"
 
 "@umijs/test-utils@^3.3.7":
   version "3.4.8"
@@ -3252,7 +3208,7 @@
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.5.0"
 
-"@umijs/types@3.4.11":
+"@umijs/types@3.4.11", "@umijs/types@3.x":
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/types/download/@umijs/types-3.4.11.tgz?cache=0&sync_timestamp=1618906002768&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Ftypes%2Fdownload%2F%40umijs%2Ftypes-3.4.11.tgz#c3ed2a2488588ae8e518d6e1279f2f0e93adf2bf"
   integrity sha1-w+0qJIhYiujlGNbhJ58vDpOt8r8=
@@ -3264,26 +3220,14 @@
     "@umijs/utils" "3.4.11"
     webpack-chain "6.5.1"
 
-"@umijs/types@3.x":
-  version "3.4.8"
-  resolved "https://registry.npm.taobao.org/@umijs/types/download/@umijs/types-3.4.8.tgz?cache=0&sync_timestamp=1617346381215&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40umijs%2Ftypes%2Fdownload%2F%40umijs%2Ftypes-3.4.8.tgz#102ceb5289578dde451d073ab63dc753f98420f8"
-  integrity sha1-ECzrUolXjd5FHQc6tj3HU/mEIPg=
-  dependencies:
-    "@umijs/babel-preset-umi" "3.4.8"
-    "@umijs/core" "3.4.8"
-    "@umijs/deps" "0.8.1"
-    "@umijs/server" "3.4.8"
-    "@umijs/utils" "3.4.8"
-    webpack-chain "6.5.1"
-
-"@umijs/utils@3.4.11":
+"@umijs/utils@3.4.11", "@umijs/utils@^3.2.28":
   version "3.4.11"
   resolved "https://registry.nlark.com/@umijs/utils/download/@umijs/utils-3.4.11.tgz?cache=0&sync_timestamp=1618906001842&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40umijs%2Futils%2Fdownload%2F%40umijs%2Futils-3.4.11.tgz#41e78ada49aaf2bf2247f0f76866fb6f5f92b837"
   integrity sha1-QeeK2kmq8r8iR/D3aGb7b1+SuDc=
   dependencies:
     "@umijs/deps" "3.4.11"
 
-"@umijs/utils@3.4.8", "@umijs/utils@^3.2.28":
+"@umijs/utils@3.4.8":
   version "3.4.8"
   resolved "https://registry.yarnpkg.com/@umijs/utils/-/utils-3.4.8.tgz#770604486a06e9099eba42d4e020176daf9f7480"
   integrity sha512-ewVj7M+B3WCRv7yqBBmN/JiiA/copH0cU7uGwIrnfytX86wjyjgq54LJ1Yj9bpw9axbOB+qaU2x+arfU6LLLag==
@@ -6130,10 +6074,10 @@ dumi-assets-types@1.0.0:
   resolved "https://registry.npm.taobao.org/dumi-assets-types/download/dumi-assets-types-1.0.0.tgz#d5368cb11045b203bf1ef1080e553b2287a2ec81"
   integrity sha1-1TaMsRBFsgO/HvEIDlU7Ioei7IE=
 
-dumi-theme-default@1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/dumi-theme-default/-/dumi-theme-default-1.0.13.tgz#35c0721f7ee70eac7fa893be8c216ab40d594878"
-  integrity sha512-Z/iOpEDFm6HAh3SVk0XcwBR33lFOYMpdXZLcTSHy7UxVRVmsWmgaCvsFLkGnLL+B8AXW9BkKIq4b1e5xp1VJww==
+dumi-theme-default@1.1.10:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/dumi-theme-default/-/dumi-theme-default-1.1.10.tgz#c91e455b71188c99a7b79788d5d427d5ce01be83"
+  integrity sha512-g4o62cbSCOHScGYeiNy4GGr1UYCWo/QL0Onuxvf62AogeTiNVGAhSHBMQv0XifwG0C6IcDrn5sOcu4wCLowTDQ==
   dependencies:
     prism-react-renderer "^1.1.1"
     prismjs "^1.21.0"
@@ -10612,6 +10556,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.npm.taobao.org/lodash.toarray/download/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
@@ -14183,10 +14132,10 @@ react-attr-converter@^0.3.1:
   resolved "https://registry.npm.taobao.org/react-attr-converter/download/react-attr-converter-0.3.1.tgz#4a2abf6d907b7ddae4d862dfec80e489ce41ad6e"
   integrity sha1-Siq/bZB7fdrk2GLf7IDkic5BrW4=
 
-react-docgen-typescript@^1.20.5:
-  version "1.20.5"
-  resolved "https://registry.npm.taobao.org/react-docgen-typescript/download/react-docgen-typescript-1.20.5.tgz#fb8d78a707243498436c2952bd3f6f488a68d4f3"
-  integrity sha1-+414pwckNJhDbClSvT9vSIpo1PM=
+react-docgen-typescript-dumi-tmp@^1.22.1-0:
+  version "1.22.1-0"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript-dumi-tmp/-/react-docgen-typescript-dumi-tmp-1.22.1-0.tgz#6f452de05c5c114a6e1dd60b34930afaa7ae39a0"
+  integrity sha512-wjuAm1yj+ZZucovow2VF0MXkH2SGZ+squZxfNdnam3oyUbHy/xZaU1ZabCn7rY+13ZFx0/NLda+ZuBgF3g8vBA==
 
 react-dom@16.x, react-dom@^16.12.0:
   version "16.14.0"
