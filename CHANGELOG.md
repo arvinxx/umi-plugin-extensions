@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.6.0...v0.6.1) (2021-10-15)
+
+
+### 🐛 Bug Fixes
+
+* 修正版本号无法大于 10 的bug ([b4e9cd4](https://github.com/arvinxx/umi-plugin-extensions/commit/b4e9cd4))
+
 # [0.6.0](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.5.0...v0.6.0) (2021-04-26)
 
 
