@@ -37,7 +37,7 @@ export const CSPKeyMap = {
 export const validateVersion = (version: string) => {
   // 测试是否属于 X.Y.Z.a
   // https://regex101.com/r/xijWEc/3
-  const regex = /^\d(\.\d){0,3}$/;
+  const regex = /^\d+(\.\d+){0,3}$/;
 
   //  说明不是正常的版本号
   if (!regex.exec(version)) {
