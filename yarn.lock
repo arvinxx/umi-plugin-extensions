@@ -13496,10 +13496,15 @@ prettier-plugin-style-order@^0.2.2:
     postcss-sorting "5.0.1"
     resolve-cwd "^3.0.0"
 
-prettier@2.2.1, prettier@^2.2.1:
+prettier@2.2.1:
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/prettier/download/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
   integrity sha1-eVoaeN1S8HPaDNQrIfnJE4GSP/U=
+
+prettier@^2.2.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
+  integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
 
 pretty-format@^24.3.0:
   version "24.9.0"
