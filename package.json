@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@ant-design/pro-skeleton": "^1.0.0-beta.2",
-    "@commitlint/cli": "^12.0.0",
+    "@commitlint/cli": "^17.0.1",
     "@testing-library/react": "^9.4.0",
     "@testing-library/react-hooks": "^5.0.0",
     "@types/fs-extra": "^9.0.6",
