@@ -76,7 +76,7 @@
     "@testing-library/react-hooks": "^5.0.0",
     "@types/fs-extra": "^9.0.6",
     "@types/generate-json-webpack-plugin": "^0.3.2",
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^28.1.4",
     "@types/lodash": "^4.14.168",
     "@umijs/fabric": "^2.4.8",
     "@umijs/preset-dumi": "^1.0.38",
