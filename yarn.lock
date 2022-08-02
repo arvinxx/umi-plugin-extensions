@@ -3230,9 +3230,9 @@
     "@umijs/utils" "3.4.8"
 
 "@umijs/test-utils@^3.3.7":
-  version "3.4.8"
-  resolved "https://registry.yarnpkg.com/@umijs/test-utils/-/test-utils-3.4.8.tgz#4f5f4c5a1c2ce577a87c4247cfbd1d3f3603b385"
-  integrity sha512-ExOVzigLE08ODkt+Cnc1hQnuvEZnXwha8uPbfrMne3TY20whI+askWjDwuVAPSP1UX6D5glTIpw0aDkzswOr5g==
+  version "3.5.32"
+  resolved "https://registry.yarnpkg.com/@umijs/test-utils/-/test-utils-3.5.32.tgz#37e5d5af6f3e1ba40e12b7345f47555b7c093a15"
+  integrity sha512-FlYV5BdpR/YOqyRUMn3jtCj7SgnOh+WJeEKhDoU1cBh3q40AuJm6+oJv1AnJW/kiux2Japz389d4eV5XX7+qVg==
 
 "@umijs/test@^3.0.10":
   version "3.4.8"
