@@ -13,6 +13,7 @@ specifiers:
   '@types/generate-json-webpack-plugin': ^0.3.2
   '@types/jest': ^26.0.20
   '@types/lodash': ^4.14.168
+  '@types/node': ^18.7.2
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   '@umijs/fabric': ^2.4.8
@@ -69,6 +70,7 @@ devDependencies:
   '@types/generate-json-webpack-plugin': 0.3.4
   '@types/jest': 26.0.24
   '@types/lodash': 4.14.182
+  '@types/node': 18.7.2
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
   '@umijs/fabric': 2.12.2

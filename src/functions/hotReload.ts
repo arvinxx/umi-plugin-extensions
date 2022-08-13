@@ -1,7 +1,7 @@
 import type { IApi } from 'umi';
-import { isDev, updateHotLoad } from '../utils';
 import { join, resolve } from 'path';
 import fse from 'fs-extra';
+import { isDev, updateHotLoad } from '../utils';
 
 /**
  *  处理脚本自动更新
@@ -17,7 +17,7 @@ export default (api: IApi) => {
     copyPlugin.tap((args) => {
       const { patterns } = args[0];
       patterns.push({
-        from: resolve('./node_modules/crx-hotreload/hot-reload.js'),
+        from: resolve(__dirname, '../utils/hot-reload.js'),
         to: api.paths.absOutputPath,
       });
       return args;
