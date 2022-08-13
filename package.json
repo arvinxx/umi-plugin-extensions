@@ -87,7 +87,7 @@
     "@types/react-dom": "^18.0.0",
     "@umijs/fabric": "^2.4.8",
     "@umijs/preset-dumi": "^1.0.38",
-    "@umijs/test": "^3.0.10",
+    "@umijs/test": "^4.0.0",
     "@umijs/test-utils": "^3.3.7",
     "antd": "^4.22.4",
     "babel-plugin-import": "^1.13.3",
