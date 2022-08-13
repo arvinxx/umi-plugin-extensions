@@ -46,7 +46,8 @@
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ",
-    "prettier": "prettier -c --write \"**/**\""
+    "prettier": "prettier -c --write \"**/**\"",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.ts?(x)": [
@@ -95,7 +96,7 @@
     "express": "^4.15.3",
     "father-build": "^1.19.1",
     "gh-pages": "^3.1.0",
-    "husky": "^4.3.8",
+    "husky": "^8.0.1",
     "lint-staged": "^10.0.8",
     "npm-run-all": "^4.1.5",
     "pify": "^5.0.0",
