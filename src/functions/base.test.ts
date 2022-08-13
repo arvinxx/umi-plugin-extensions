@@ -18,7 +18,6 @@ test('normal tmp', async () => {
     },
   });
 
-  // eslint-disable-next-line global-require,import/no-dynamic-require
   const reactNode = require(join(cwd, '.umi-test', 'umi.ts')).default;
   const { container } = render(reactNode);
   expect(container.textContent).toEqual('');
