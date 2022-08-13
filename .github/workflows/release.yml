@@ -10,26 +10,30 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
+          cache: 'pnpm'
 
-      - uses: c-hive/gha-yarn-cache@v1
-
-      - name: install
-        run: yarn
+      - name: Install deps
+        run: pnpm install
 
       - name: Lint
-        run: yarn lint && yarn tsc
+        run: pnpm run lint && pnpm run tsc
 
       - name: Test
-        run: yarn build && yarn test
+        run: pnpm run build && pnpm run test
 
       - name: release
-        run: yarn release
+        run: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
