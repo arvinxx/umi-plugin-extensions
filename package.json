@@ -78,7 +78,7 @@
     "@types/generate-json-webpack-plugin": "^0.3.2",
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.168",
-    "@umijs/fabric": "^2.4.8",
+    "@umijs/fabric": "^3.0.0",
     "@umijs/preset-dumi": "^1.0.38",
     "@umijs/test": "^3.0.10",
     "@umijs/test-utils": "^3.3.7",
