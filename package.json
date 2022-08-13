@@ -64,6 +64,10 @@
     "types"
   ],
   "types": "types/index.d.ts",
+  "resolutions": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "dependencies": {
     "crx-hotreload": "^1.0.6",
     "fs-extra": "^9.0.1",
@@ -85,7 +89,7 @@
     "@umijs/preset-dumi": "^1.0.38",
     "@umijs/test": "^3.0.10",
     "@umijs/test-utils": "^3.3.7",
-    "antd": "^4.9.4",
+    "antd": "^4.0.0",
     "babel-plugin-import": "^1.13.3",
     "body-parser": "^1.18.2",
     "commitlint-config-gitmoji": "^2.2.0",
@@ -104,8 +108,8 @@
     "pify": "^5.0.0",
     "prettier": "^2.2.1",
     "puppeteer": "^16.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-test-renderer": "^16.9.0",
     "semantic-release": "^17.3.3",
     "semantic-release-config-gitmoji": "^1.2.1",
