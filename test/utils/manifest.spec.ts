@@ -36,7 +36,9 @@ const baseResult = {
   action: {
     default_popup: '__TO_REPLACE_POPUP__',
   },
-  content_security_policy: "script-src 'self'; object-src 'self'",
+  content_security_policy: {
+    extension_pages: "script-src 'self'; object-src 'self'",
+  },
   manifest_version: 1,
   minimum_chrome_version: '79',
   name: '123',
