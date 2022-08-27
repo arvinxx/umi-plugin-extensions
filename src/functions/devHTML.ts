@@ -33,7 +33,7 @@ export default (api: IApi) => {
           // /umi.js -> url/umi.js
           .replace(/\/umi\./g, 'umi.')
           // /@@/devscript.js -> hot-reload.js
-          .replace('/@@/devScripts.js', 'hot-reload.js');
+          .replace(/\/@@/g, `${baseDevURL}/@@`);
 
         extractInlineScript(html).forEach((script) => {
           if (!scriptList.includes(script)) {
@@ -62,13 +62,13 @@ export default (api: IApi) => {
       });
 
       // 将相关的 umi js css 和 dev 文件都保存到本地
-      got(`${baseDevURL}/umi.js`).then((res) => {
+      got(`${baseDevURL}/umi.js`).then((js) => {
         const filePath = join(paths.absOutputPath!, 'umi.js');
-        fse.writeFileSync(filePath, res.body, { encoding: 'utf8' });
+        fse.writeFileSync(filePath, js.body, { encoding: 'utf8' });
       });
-      got(`${baseDevURL}/umi.css`).then((res) => {
+      got(`${baseDevURL}/umi.css`).then((css) => {
         const filePath = join(paths.absOutputPath!, 'umi.css');
-        fse.writeFileSync(filePath, res.body, { encoding: 'utf8' });
+        fse.writeFileSync(filePath, css.body, { encoding: 'utf8' });
       });
     });
   };
