@@ -114,7 +114,10 @@ declare namespace chromeManifest {
      *
      * @see https://developer.chrome.com/docs/apps/contentSecurityPolicy/
      */
-    content_security_policy?: string;
+    content_security_policy?: {
+      extension_pages: string;
+      sandbox?: string;
+    };
     converted_from_user_script?: string;
     current_locale?: string;
     declarative_net_request?: string;

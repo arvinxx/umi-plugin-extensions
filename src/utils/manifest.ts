@@ -78,12 +78,6 @@ export const generateManifestFromConfig = (
 
   const { inlineScript, nonce, url } = contentSecurityPolicy;
 
-  const content_security_policy = getCSPScript({
-    inlineScript,
-    nonce,
-    url,
-  });
-
   const backgroundStr = background?.server_worker ? background : undefined;
 
   // 处理 option 参数项
@@ -131,7 +125,13 @@ export const generateManifestFromConfig = (
     version: validateVersion(version),
     background: backgroundStr,
     manifest_version,
-    content_security_policy,
+    content_security_policy: {
+      extension_pages: getCSPScript({
+        inlineScript,
+        nonce,
+        url,
+      }),
+    },
     minimum_chrome_version,
     content_scripts: content_scripts.length > 0 ? content_scripts : undefined,
   };

@@ -2,7 +2,6 @@ import type { IApi } from 'umi';
 import {
   DevHTML,
   ConfigSchema,
-  CSP,
   ManifestGenerator,
   Base,
   UIPath,
@@ -27,9 +26,6 @@ export default (api: IApi) => {
 
   // 生成 manifest 配置文件
   ManifestGenerator(api);
-
-  // 处理 CSP 的问题
-  CSP(api);
 
   // 将 manifest 中 UI 的中间路径替换成最终生成的路径
   UIPath(api);

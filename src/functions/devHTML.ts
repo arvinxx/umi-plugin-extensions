@@ -2,10 +2,10 @@ import type { IApi } from 'umi';
 import got from 'got';
 import { join } from 'path';
 import fse from 'fs-extra';
-import { baseDevURL, isDev, UIPageKeyMap } from '../utils';
+import { baseDevURL, extractInlineScript, isDev, UIPageKeyMap } from '../utils';
 
 /**
- * 开发阶段生成相应的开发用 HTML 文件
+ * 开发阶段生成相应的开发用 HTML 和 JS 文件
  * @param api
  */
 export default (api: IApi) => {
@@ -26,15 +26,49 @@ export default (api: IApi) => {
         htmlPaths.push(join(paths.absOutputPath!, popup.output));
       }
 
+      const scriptList: string[] = [];
+
       htmlPaths.forEach((htmlPath) => {
-        const html = (res.body as string)
+        let html = (res.body as string)
           // /umi.js -> url/umi.js
-          .replace(/\/umi\./g, `${baseDevURL}/umi.`)
-          // /@@/devscript.js -> url/@@/devscript.js
-          .replace(/\/@@/g, `${baseDevURL}/@@`);
+          .replace(/\/umi\./g, 'umi.')
+          // /@@/devscript.js -> hot-reload.js
+          .replace('/@@/devScripts.js', 'hot-reload.js');
+
+        extractInlineScript(html).forEach((script) => {
+          if (!scriptList.includes(script)) {
+            scriptList.push(script);
+          }
+          html = html.replace(script, '');
+        });
+
+        html = html
+          // 把第一个 script 替换为内联脚本
+          .replace(
+            '<script></script>',
+            '<script src="inlineScript.js"></script>',
+          )
+          // 然后移除其他所有的内联脚本
+          .replaceAll('<script></script>', '');
 
         // 写入 html
         fse.writeFileSync(htmlPath, html, 'utf-8');
+      });
+
+      // 将内联js 转为外部文件
+      const inlineJSFile = join(paths.absOutputPath!, 'inlineScript.js');
+      fse.writeFileSync(inlineJSFile, scriptList.join('\n').trim(), {
+        encoding: 'utf8',
+      });
+
+      // 将相关的 umi js css 和 dev 文件都保存到本地
+      got(`${baseDevURL}/umi.js`).then((res) => {
+        const filePath = join(paths.absOutputPath!, 'umi.js');
+        fse.writeFileSync(filePath, res.body, { encoding: 'utf8' });
+      });
+      got(`${baseDevURL}/umi.css`).then((res) => {
+        const filePath = join(paths.absOutputPath!, 'umi.css');
+        fse.writeFileSync(filePath, res.body, { encoding: 'utf8' });
       });
     });
   };

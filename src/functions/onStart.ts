@@ -8,7 +8,6 @@ import {
   updateBackground,
   isDev,
   updateCSP,
-  getCSPHashFromScript,
   updateContentScripts,
   updateHotLoad,
 } from '../utils';
@@ -26,12 +25,9 @@ export default (api: IApi) => {
   /**
    *
    */
-
   api.onStart(() => {
     gotManifest(async () => {
       const manifest = fse.readJSONSync(filepath) as chromeManifest.Manifest;
-
-      await getCSPHashFromScript(absOutputPath);
 
       await api.utils.delay(500);
 
