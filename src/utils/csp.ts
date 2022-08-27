@@ -1,12 +1,3 @@
-import { createHash } from 'crypto';
-
-/**
- * 从 html 提取 script 并生成 sha 代码
- */
-export const getScriptSHA = (script: string) => {
-  return createHash('sha256').update(script, 'utf8').digest('base64');
-};
-
 /**
  * 从 HTML 中提取 Inline Script
  * @param html
