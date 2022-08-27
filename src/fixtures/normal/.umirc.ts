@@ -17,8 +17,7 @@ export default {
     },
     permissions: ['http://*/*', 'https://*/*'],
     background: {
-      scripts: ['@/background/index'],
-      persistent: true,
+      service_worker: '@/background/index',
     },
     contentScripts: [
       {

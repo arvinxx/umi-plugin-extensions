@@ -18,10 +18,10 @@ declare namespace extensionsPlugin {
     /**
      * manifest 版本
      * @description
-     * manifest 目前出了 3 个版本: 1 已经淘汰了; 2 是目前使用的版本 3 预计在 2021 年开始逐渐启用
-     * @default 2
+     * manifest 目前出了 3 个版本: 1 和 2 已经淘汰; 3 是目前使用的版本
+     * @default 3
      */
-    manifestVersion: chromeManifest.ManifestVersion;
+    manifestVersion: chromeManifest.ManifestVersionV3;
     /**
      * 最低 Chrome 版本号
      */

@@ -33,7 +33,7 @@ const base = {
 
 const baseResult = {
   version: '1.0.0',
-  browser_action: {
+  action: {
     default_popup: '__TO_REPLACE_POPUP__',
   },
   content_security_policy: "script-src 'self'; object-src 'self'",
@@ -72,21 +72,18 @@ describe('generateManifestFromConfig', () => {
           title: 'hello',
           type: 'pageAction',
         },
-        background: { scripts: ['bg'], persistent: true },
+        background: { server_worker: 'bg' },
       }),
     ).toEqual({
       ...baseResult,
-      background: {
-        persistent: true,
-        scripts: ['bg'],
-      },
+      background: { server_worker: 'bg' },
       options_ui: {
         page: '__TO_REPLACE_OPTION__',
         open_in_tab: true,
       },
       browser_action: undefined,
       option_page: undefined,
-      page_action: {
+      action: {
         default_popup: '__TO_REPLACE_POPUP__',
         default_title: 'hello',
       },
@@ -103,7 +100,7 @@ describe('generateManifestFromConfig', () => {
       }),
     ).toEqual({
       ...baseResult,
-      browser_action: {
+      action: {
         default_popup: '__TO_REPLACE_POPUP__',
         default_title: 'hello',
       },
@@ -145,20 +142,17 @@ describe('validateVersion', () => {
 
 test('updateBackground', () => {
   expect(updateBackground({ background: {} })).toEqual({
-    background: { scripts: ['background.js'] },
+    background: { server_worker: 'background.js' },
   });
   expect(updateBackground({})).toEqual({});
 });
 
 test('updateHotLoad', () => {
-  expect(updateHotLoad({ background: { scripts: [] } })).toEqual({
-    background: { scripts: ['hot-reload.js'] },
+  expect(updateHotLoad({ background: { server_worker: '' } })).toEqual({
+    background: { server_worker: '' },
   });
   expect(updateHotLoad({})).toEqual({
-    background: {
-      persistent: true,
-      scripts: ['hot-reload.js'],
-    },
+    background: { server_worker: 'hot-reload.js' },
   });
 });
 

@@ -78,6 +78,7 @@ export const getCSPHashFromScript = async (path: string | undefined) => {
 
         // 将 html 中的 inlineScript 全部记录到 inlineScriptSHAList 中
         extractInlineScript(html).forEach((script) => {
+          console.log(script);
           scriptList.push(getScriptSHA(script));
         });
       })

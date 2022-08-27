@@ -84,8 +84,7 @@ export const generateManifestFromConfig = (
     url,
   });
 
-  const backgroundStr =
-    background && background.scripts.length > 0 ? background : undefined;
+  const backgroundStr = background?.server_worker ? background : undefined;
 
   // 处理 option 参数项
   const option = {};
@@ -101,27 +100,16 @@ export const generateManifestFromConfig = (
   // 处理 popup 的参数项
   const popup = {};
   if (typeof popupUI === 'string') {
-    popup['browser_action'] = {
+    popup['action'] = {
       default_popup: UIPageKeyMap.popup.key,
     };
   }
   if (typeof popupUI === 'object') {
-    switch (popupUI.type) {
-      default:
-      case 'browserAction':
-        popup['browser_action'] = {
-          default_popup: UIPageKeyMap.popup.key,
-          default_icon: popupUI.icon,
-          default_title: popupUI.title,
-        };
-        break;
-      case 'pageAction':
-        popup['page_action'] = {
-          default_popup: UIPageKeyMap.popup.key,
-          default_icon: popupUI.icon,
-          default_title: popupUI.title,
-        };
-    }
+    popup['action'] = {
+      default_popup: UIPageKeyMap.popup.key,
+      default_icon: popupUI.icon,
+      default_title: popupUI.title,
+    };
   }
 
   // 处理 content scripts
@@ -178,7 +166,7 @@ export const updateUIPath = (manifest: string): string => {
 export const updateBackground = (manifest: chromeManifest.Manifest) => {
   const data = manifest;
   if (data.background) {
-    data.background.scripts = ['background.js'];
+    data.background.server_worker = 'background.js';
   }
   return data;
 };
@@ -189,10 +177,10 @@ export const updateBackground = (manifest: chromeManifest.Manifest) => {
  */
 export const updateHotLoad = (manifest: chromeManifest.Manifest) => {
   const data = manifest;
+  // TODO：如何集成新的热加载？
   if (data.background) {
-    data.background.scripts.push('hot-reload.js');
   } else {
-    data.background = { persistent: true, scripts: ['hot-reload.js'] };
+    data.background = { server_worker: 'hot-reload.js' };
   }
   return data;
 };

@@ -44,7 +44,7 @@ export default (api: IApi) => {
     config.devServer = {
       ...config.devServer,
       // 将插件所需的文件全部写入到 dist 目录
-      writeToDisk: (filePath) => {
+      writeToDisk: (filePath: string) => {
         const isUmiFile = filePath.match(/umi\./);
         const isHotUpdateFile = filePath.match(/hot-update\.js.*/);
         return !(isUmiFile || isHotUpdateFile);

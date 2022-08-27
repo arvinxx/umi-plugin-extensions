@@ -17,12 +17,12 @@ export default (api: IApi) => {
     const { background } = <extensionsPlugin.Config>api.config.extensions;
 
     // 如果没有 background 就直接结束
-    if (!background || background?.scripts.length === 0) {
+    if (!background?.server_worker) {
       return config;
     }
 
     // 将 background 作为一个入口插入打包对象中
-    config.entry('background').merge(background.scripts);
+    config.entry('background').merge([background.server_worker]);
     return config;
   });
 

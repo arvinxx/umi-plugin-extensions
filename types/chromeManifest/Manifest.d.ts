@@ -11,9 +11,9 @@ declare namespace chromeManifest {
      * One integer specifying the version of
      * the manifest file format your package requires.
      * As of Chrome 18, developers should specify 2 (without quotes)
-     * @see https://developer.chrome.com/docs/extensions/mv2/manifest/manifest_version/
+     * @see https://developer.chrome.com/docs/extensions/mv3/manifest/
      */
-    manifest_version: ManifestVersion;
+    manifest_version: ManifestVersionV3;
     /**
      * Specifies the subdirectory of `_locales` that
      * contains the default strings for this extension.
@@ -300,6 +300,7 @@ declare namespace chromeManifest {
   }
 
   export type ManifestVersion = 1 | 2 | 3;
+  export type ManifestVersionV3 = 3;
 
   export interface IconStruct {
     16?: string;
@@ -332,9 +333,20 @@ declare namespace chromeManifest {
     default_popup?: string;
   }
 
+  /**
+   * Background pages have been a fundamental component of the Chrome Extension platform since its introduction.
+   * To put it simply, background pages provide extension authors with an environment that lives independent of any other window or tab.
+   * This allows extensions to observe and take action in response to events.
+   */
   export interface Background {
-    scripts: string[];
-    persistent: boolean;
+    /**
+     * In Manifest V3, the Chrome extension platform moves from background pages to service workers.
+     * As stated in Service Workers: an Introduction, a "service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction."
+     * This is the technology that enables native-like experiences such as push notifications, rich offline support, background sync, and "Add to Home Screen" on the open web.
+     * Service workers were inspired in part by background pages in Chrome Extensions, but they iterate and improve on this model by tuning it for web-scale.
+     */
+    server_worker: string;
+    type?: string;
   }
 
   export interface ChromeUrlOverrides {
