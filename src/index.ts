@@ -1,14 +1,13 @@
 import type { IApi } from 'umi';
 import {
-  DevHTML,
-  ConfigSchema,
-  ManifestGenerator,
-  Base,
-  UIPath,
   Background,
-  onStart,
+  Base,
+  ConfigSchema,
   ContentScripts,
   HotReload,
+  ManifestGenerator,
+  onStart,
+  UIPath,
 } from './functions';
 
 export default (api: IApi) => {
@@ -19,7 +18,7 @@ export default (api: IApi) => {
   ConfigSchema(api);
 
   // 生成开发所需的 html 文件
-  DevHTML(api);
+  // DevHTML(api);
 
   // dev 时第一次生成 manifest 的处理方法
   onStart(api);

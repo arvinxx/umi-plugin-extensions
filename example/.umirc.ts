@@ -17,7 +17,7 @@ export default defineConfig({
       page: '@/pages/options',
       openInTab: true,
     },
-    popupUI: '@/pages/index',
+    popupUI: '@/pages/popup',
     permissions: ['storage'],
     host_permissions: ['http://*/*', 'https://*/*'],
     background: {
@@ -26,7 +26,7 @@ export default defineConfig({
     contentScripts: [
       {
         matches: ['https://github.com/*'],
-        entries: ['@/contentScripts/github'],
+        entries: ['./contentScripts/github'],
       },
       {
         matches: ['https://baidu.com/*', 'https://www.baidu.com/*'],
