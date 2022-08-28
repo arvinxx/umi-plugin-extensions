@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.7.0-beta.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.6.2...v0.7.0-beta.1) (2022-08-27)
+
+### ✨ Features
+
+- Manifest V3 版 background 和 schema 适配 ([4d8575f](https://github.com/arvinxx/umi-plugin-extensions/commit/4d8575f))
+- 解决开发时 CSP 问题 ([08175d6](https://github.com/arvinxx/umi-plugin-extensions/commit/08175d6))
+
 ## [0.6.2](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.6.1...v0.6.2) (2022-08-13)
 
 ### 🐛 Bug Fixes
