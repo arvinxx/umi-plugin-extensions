@@ -1,4 +1,4 @@
-declare namespace extensionsPlugin {
+export declare namespace extensionsPlugin {
   /**
    * 从 Chrome Manifest 模块中提取的必要类型
    */

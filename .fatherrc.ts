@@ -1,6 +1,6 @@
-export default {
-  target: 'node',
-  entry: 'src/index.ts',
-  cjs: { type: 'babel', lazy: true },
-  disableTypeCheck: true,
-};
+import { defineConfig } from 'father';
+
+export default defineConfig({
+  platform: 'node',
+  cjs: { output: 'lib' },
+});
