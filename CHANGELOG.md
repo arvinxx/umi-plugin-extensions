@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.0.0-beta.2](https://github.com/arvinxx/umi-plugin-extensions/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-11-27)
+
+### 🐛 Bug Fixes
+
+- 修正安装后找不到 webpack 依赖的问题 ([68c1dba](https://github.com/arvinxx/umi-plugin-extensions/commit/68c1dba))
+
 # [1.0.0-beta.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.7.0-beta.1...v1.0.0-beta.1) (2022-11-27)
 
 ### ✨ Features
