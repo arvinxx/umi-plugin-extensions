@@ -58,7 +58,7 @@
     "webpack": "^5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12",
+    "@commitlint/cli": "^17.0.0",
     "@testing-library/react": "^13",
     "@types/fs-extra": "^9",
     "@types/generate-json-webpack-plugin": "^0.3.2",
