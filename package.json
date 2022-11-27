@@ -56,7 +56,7 @@
   "dependencies": {
     "fs-extra": "^10",
     "generate-json-webpack-plugin": "^2",
-    "got": "^11",
+    "got": "^12.0.0",
     "webpack": "^5"
   },
   "devDependencies": {
