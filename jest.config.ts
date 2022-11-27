@@ -8,7 +8,7 @@ export default async () => {
       // config opts for esbuild , it will pass to esbuild directly
       jsTransformerOpts: { jsx: 'automatic' },
     }),
-    setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+    setupFilesAfterEnv: ['<rootDir>/tests/jest-setup.ts'],
     collectCoverageFrom: [
       'src/**/*.{ts,js,tsx,jsx}',
       '!src/.umi/**',
