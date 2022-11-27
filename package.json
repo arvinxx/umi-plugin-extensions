@@ -73,7 +73,7 @@
     "@umijs/max": "^4",
     "@umijs/test": "^4",
     "commitlint-config-gitmoji": "^2",
-    "concurrently": "^6",
+    "concurrently": "^7.0.0",
     "conventional-changelog-gitmoji-config": "^1",
     "cross-env": "^7",
     "eslint": "^8",
