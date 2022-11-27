@@ -1,8 +1,6 @@
 import {
   generateManifestFromConfig,
   validateVersion,
-  updateUIPath,
-  updateCSP,
   updateBackground,
   updateHotLoad,
   updateContentScripts,
@@ -18,7 +16,7 @@ const base = {
   optionsUI: '123',
   permissions: [],
   popupUI: '435',
-  manifestVersion: 1,
+  manifestVersion: 3,
   contentScripts: [
     {
       matches: ['https://github.com/*'],
@@ -33,15 +31,17 @@ const base = {
 
 const baseResult = {
   version: '1.0.0',
-  browser_action: {
-    default_popup: '__TO_REPLACE_POPUP__',
+  action: {
+    default_popup: 'popup.html',
   },
-  content_security_policy: "script-src 'self'; object-src 'self'",
-  manifest_version: 1,
+  content_security_policy: {
+    extension_pages: "script-src 'self'; object-src 'self'",
+  },
+  manifest_version: 3,
   minimum_chrome_version: '79',
   name: '123',
   options_ui: {
-    page: '__TO_REPLACE_OPTION__',
+    page: 'options.html',
   },
   permissions: [],
   content_scripts: [
@@ -72,22 +72,19 @@ describe('generateManifestFromConfig', () => {
           title: 'hello',
           type: 'pageAction',
         },
-        background: { scripts: ['bg'], persistent: true },
+        background: { server_worker: 'bg' },
       }),
     ).toEqual({
       ...baseResult,
-      background: {
-        persistent: true,
-        scripts: ['bg'],
-      },
+      background: { server_worker: 'bg' },
       options_ui: {
-        page: '__TO_REPLACE_OPTION__',
+        page: 'options.html',
         open_in_tab: true,
       },
       browser_action: undefined,
       option_page: undefined,
-      page_action: {
-        default_popup: '__TO_REPLACE_POPUP__',
+      action: {
+        default_popup: 'popup.html',
         default_title: 'hello',
       },
     });
@@ -103,8 +100,8 @@ describe('generateManifestFromConfig', () => {
       }),
     ).toEqual({
       ...baseResult,
-      browser_action: {
-        default_popup: '__TO_REPLACE_POPUP__',
+      action: {
+        default_popup: 'popup.html',
         default_title: 'hello',
       },
     });
@@ -145,20 +142,17 @@ describe('validateVersion', () => {
 
 test('updateBackground', () => {
   expect(updateBackground({ background: {} })).toEqual({
-    background: { scripts: ['background.js'] },
+    background: { server_worker: 'background.js' },
   });
   expect(updateBackground({})).toEqual({});
 });
 
 test('updateHotLoad', () => {
-  expect(updateHotLoad({ background: { scripts: [] } })).toEqual({
-    background: { scripts: ['hot-reload.js'] },
+  expect(updateHotLoad({ background: { server_worker: '' } })).toEqual({
+    background: { server_worker: '' },
   });
   expect(updateHotLoad({})).toEqual({
-    background: {
-      persistent: true,
-      scripts: ['hot-reload.js'],
-    },
+    background: { server_worker: 'hot-reload.js' },
   });
 });
 
@@ -169,14 +163,4 @@ test('updateContentScripts', () => {
       { js: ['contentScript_0.js'], css: ['contentScript_0.css'] },
     ],
   });
-});
-
-test('updateUIPath', () => {
-  expect(
-    updateUIPath('x __TO_REPLACE_POPUP__  __TO_REPLACE_OPTION__ x'),
-  ).toEqual('x    x');
-});
-
-test('updateCSP', () => {
-  expect(updateCSP('__TO_REPLACE_INLINE_SCRIPT__')).toEqual('');
 });

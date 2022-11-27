@@ -1,26 +1,7 @@
 import fse from 'fs-extra';
 import * as path from 'path';
 
-import {
-  getCSPScript,
-  getScriptSHA,
-  extractInlineScript,
-} from '../../src/utils';
-
-describe('getScriptSHA', () => {
-  it('case1', () => {
-    expect(
-      getScriptSHA('\n' + '      window.routerBase = "/";\n' + '    '),
-    ).toEqual('YM8uI2F+VfHULiDF1T+UCYmPwssvvWleyz5k2gtmTQo=');
-  });
-  it('case2', () => {
-    expect(
-      getScriptSHA(`
-      //! umi version: 3.3.3
-    `),
-    ).toEqual('g3hjaXGjDuIE5N9wBAzFtJfpVSr27ys0zwyijmBdiL0=');
-  });
-});
+import { getCSPScript, extractInlineScript } from '../../src/utils';
 
 test('extractInlineScript', () => {
   const html = fse.readFileSync(path.join(__dirname, './test.html'), {

@@ -1,5 +1,39 @@
 # Changelog
 
+# [1.0.0-beta.3](https://github.com/arvinxx/umi-plugin-extensions/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2022-11-27)
+
+### ✨ Features
+
+- 支持继承应用配置的 mpa config ([95d389f](https://github.com/arvinxx/umi-plugin-extensions/commit/95d389f))
+
+# [1.0.0-beta.2](https://github.com/arvinxx/umi-plugin-extensions/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-11-27)
+
+### 🐛 Bug Fixes
+
+- 修正安装后找不到 webpack 依赖的问题 ([68c1dba](https://github.com/arvinxx/umi-plugin-extensions/commit/68c1dba))
+
+# [1.0.0-beta.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.7.0-beta.1...v1.0.0-beta.1) (2022-11-27)
+
+### ✨ Features
+
+- 完整支持 umi4 ([e17b11c](https://github.com/arvinxx/umi-plugin-extensions/commit/e17b11c))
+
+### 🎫 Chores
+
+- 移除依赖注入的功能 ([6df8d1c](https://github.com/arvinxx/umi-plugin-extensions/commit/6df8d1c))
+
+### 💥 BREAKING CHANGES
+
+- 不再支持 umi3 的写法
+- 由于 Manifest V3 不再支持动态化注入脚本的能力，因此移除相关模块功能
+
+# [0.7.0-beta.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.6.2...v0.7.0-beta.1) (2022-08-27)
+
+### ✨ Features
+
+- Manifest V3 版 background 和 schema 适配 ([4d8575f](https://github.com/arvinxx/umi-plugin-extensions/commit/4d8575f))
+- 解决开发时 CSP 问题 ([08175d6](https://github.com/arvinxx/umi-plugin-extensions/commit/08175d6))
+
 ## [0.6.2](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.6.1...v0.6.2) (2022-08-13)
 
 ### 🐛 Bug Fixes

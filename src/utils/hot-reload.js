@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @ts-ignore
 // copy form: https://github.com/xpl/crx-hotreload
 const filesInDirectory = (dir) =>

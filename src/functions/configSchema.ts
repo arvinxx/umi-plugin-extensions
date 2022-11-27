@@ -1,23 +1,12 @@
 import type { IApi } from 'umi';
-import { join } from 'path';
-import fse from 'fs-extra';
 import { baseDevURL, isDev } from '../utils';
-
-declare module 'umi' {
-  // @ts-ignore
-  interface BaseIConfig {
-    extensions: extensionsPlugin.Config;
-  }
-}
 
 /**
  * 定义插件结构
  * @param api
  */
 export default (api: IApi) => {
-  const pkg = fse.readJSONSync(
-    join(api.paths.absSrcPath!, '..', 'package.json'),
-  );
+  const pkg = api.pkg;
 
   //  manifest 结构
   api.describe({
@@ -27,13 +16,11 @@ export default (api: IApi) => {
         name: pkg.name || 'umi extension template',
         version: pkg.version || '1.0.0',
         description: pkg.description || '基于 Umi 的 Chrome 插件开发脚手架',
-        manifestVersion: 2,
-        minimumChromeVersion: '80',
+        manifestVersion: 3,
+        minimumChromeVersion: '88',
         permissions: [],
-        background: {
-          scripts: [],
-          persistent: true,
-        },
+        host_permissions: [],
+        background: {},
         contentScripts: [],
         icons: {},
         contentSecurityPolicy: {
@@ -152,6 +139,7 @@ export default (api: IApi) => {
           manifestVersion: joi.number(),
           minimumChromeVersion: joi.string(),
           permissions,
+          host_permissions: joi.array().items(joi.string()),
           contentSecurityPolicy: joi.object({
             nonce: stringArr,
             inlineScript: stringArr,
@@ -159,8 +147,7 @@ export default (api: IApi) => {
           }),
           contentScripts: joi.array().items(contentScript),
           background: joi.object({
-            scripts: stringArr,
-            persistent: joi.boolean(),
+            service_worker: joi.string(),
           }),
           optionsUI: joi.alternatives(
             joi.string(),

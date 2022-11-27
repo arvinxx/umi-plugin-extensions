@@ -6,8 +6,6 @@ export default defineConfig({
   extensions: {
     name: 'Umi Extension Plugin',
     description: '用于 Chrome 插件开发的 Umi 插件',
-    manifestVersion: 2,
-    minimumChromeVersion: '80',
     icons: {
       16: 'logo/logo@16.png',
       32: 'logo/logo@32.png',
@@ -19,21 +17,16 @@ export default defineConfig({
       page: '@/pages/options',
       openInTab: true,
     },
-    popupUI: '@/pages/index',
-    permissions: ['http://*/*', 'https://*/*'],
+    popupUI: '@/pages/popup',
+    permissions: ['storage'],
+    host_permissions: ['http://*/*', 'https://*/*'],
     background: {
-      scripts: ['@/background/index'],
-      persistent: true,
+      service_worker: '@/background/index',
     },
     contentScripts: [
       {
-        matches: ['http://*/*', 'https://*/*'],
-        entries: ['jquery', 'require.js'],
-        runAt: 'document_end',
-      },
-      {
         matches: ['https://github.com/*'],
-        entries: ['@/contentScripts/github'],
+        entries: ['./contentScripts/github'],
       },
       {
         matches: ['https://baidu.com/*', 'https://www.baidu.com/*'],
@@ -41,7 +34,12 @@ export default defineConfig({
       },
     ],
     extends: {
-      web_accessible_resources: ['*'],
+      web_accessible_resources: [
+        {
+          resources: ['test1.png', 'test2.png'],
+          matches: ['https://web-accessible-resources-1.glitch.me/*'],
+        },
+      ],
     },
   },
 });

@@ -2,17 +2,16 @@ import type { IApi } from 'umi';
 
 import { join } from 'path';
 
+import fse from 'fs-extra';
+import got from 'got';
 import {
-  gotManifest,
-  updateUIPath,
-  updateBackground,
+  baseDevURL,
+  delay,
   isDev,
-  updateCSP,
-  getCSPHashFromScript,
+  updateBackground,
   updateContentScripts,
   updateHotLoad,
 } from '../utils';
-import fse from 'fs-extra';
 
 /**
  *  只在初始化的时候使用 manifest
@@ -26,23 +25,27 @@ export default (api: IApi) => {
   /**
    *
    */
+  api.onDevCompileDone({
+    name: 'gotManifest',
+    fn: () => {
+      got(`${baseDevURL}/manifest.json`)
+        .then(async () => {
+          const manifest = fse.readJSONSync(
+            filepath,
+          ) as chromeManifest.Manifest;
 
-  api.onStart(() => {
-    gotManifest(async () => {
-      const manifest = fse.readJSONSync(filepath) as chromeManifest.Manifest;
+          await delay(500);
 
-      await getCSPHashFromScript(absOutputPath);
+          const newManifest = updateContentScripts(
+            updateHotLoad(updateBackground(manifest)),
+          );
 
-      await api.utils.delay(500);
-
-      const newManifest = updateContentScripts(
-        updateHotLoad(updateBackground(manifest)),
-      );
-
-      fse.writeFileSync(
-        filepath,
-        updateCSP(updateUIPath(JSON.stringify(newManifest))),
-      );
-    });
+          fse.writeFileSync(filepath, JSON.stringify(newManifest));
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+    stage: 1000,
   });
 };

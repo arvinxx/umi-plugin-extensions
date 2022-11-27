@@ -2,9 +2,9 @@ import { join } from 'path';
 import { Service } from 'umi';
 import { render } from '@testing-library/react';
 
-const fixtures = join(__dirname, '../fixtures');
+const fixtures = join(__dirname, '../../tests/fixtures');
 
-test('normal tmp', async () => {
+test.skip('normal tmp', async () => {
   const cwd = join(fixtures, 'base');
   const service = new Service({
     cwd,

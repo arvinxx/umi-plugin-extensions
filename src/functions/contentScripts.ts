@@ -1,8 +1,8 @@
-import { join } from 'path';
 import fse from 'fs-extra';
+import { join } from 'path';
 
 import type { IApi } from 'umi';
-import { getDependencyPath, updateContentScripts } from '../utils';
+import { updateContentScripts } from '../utils';
 
 /**
  *  将 contentScripts 添加到打包对象中
@@ -25,7 +25,16 @@ export default (api: IApi) => {
     contentScripts.forEach((item, index) => {
       const entry = `contentScript_${index}`;
 
-      const entries = item.entries.map((e) => getDependencyPath(e, cwd));
+      const entries = item.entries.map((e) => {
+        const finalCwd = cwd || process.cwd();
+
+        // 有 alias 则从 src 下找
+        if (e.startsWith('@/') || e.startsWith('.')) {
+          return join(finalCwd, 'src', e.replace(/^@\//, ''));
+        }
+
+        return join(finalCwd, 'node_modules', e);
+      });
 
       config.entry(entry).merge(entries);
     });

@@ -6,7 +6,8 @@ node_modules
 .DS_Store
 /lib
 dist
-.idea
 coverage
 /document/docs/api
 .eslintcache
+
+.dumi
