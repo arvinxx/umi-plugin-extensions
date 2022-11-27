@@ -1,0 +1,26 @@
+{
+  "name": "umi-plugin-extensions-document",
+  "version": "0.7.0-beta.1",
+  "description": "a umi plugin to build chrome extensions",
+  "license": "MIT",
+  "scripts": {
+    "build": "dumi build",
+    "dev": "dumi dev",
+    "prepare": "dumi setup",
+    "start": "npm run dev"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ]
+  },
+  "devDependencies": {
+    "dumi": "^2"
+  },
+  "authors": []
+}

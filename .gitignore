@@ -9,3 +9,5 @@ dist
 coverage
 /document/docs/api
 .eslintcache
+
+.dumi
