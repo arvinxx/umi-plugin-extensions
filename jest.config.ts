@@ -10,7 +10,7 @@ export default async () => {
     }),
     setupFilesAfterEnv: ['<rootDir>/tests/jest-setup.ts'],
     collectCoverageFrom: [
-      'src/**/*.{ts,js,tsx,jsx}',
+      'src/**/*.ts',
       '!src/.umi/**',
       '!src/.umi-test/**',
       '!src/.umi-production/**',
