@@ -16,7 +16,7 @@ const base = {
   optionsUI: '123',
   permissions: [],
   popupUI: '435',
-  manifestVersion: 1,
+  manifestVersion: 3,
   contentScripts: [
     {
       matches: ['https://github.com/*'],
@@ -32,16 +32,16 @@ const base = {
 const baseResult = {
   version: '1.0.0',
   action: {
-    default_popup: '__TO_REPLACE_POPUP__',
+    default_popup: 'popup.html',
   },
   content_security_policy: {
     extension_pages: "script-src 'self'; object-src 'self'",
   },
-  manifest_version: 1,
+  manifest_version: 3,
   minimum_chrome_version: '79',
   name: '123',
   options_ui: {
-    page: '__TO_REPLACE_OPTION__',
+    page: 'options.html',
   },
   permissions: [],
   content_scripts: [
@@ -78,13 +78,13 @@ describe('generateManifestFromConfig', () => {
       ...baseResult,
       background: { server_worker: 'bg' },
       options_ui: {
-        page: '__TO_REPLACE_OPTION__',
+        page: 'options.html',
         open_in_tab: true,
       },
       browser_action: undefined,
       option_page: undefined,
       action: {
-        default_popup: '__TO_REPLACE_POPUP__',
+        default_popup: 'popup.html',
         default_title: 'hello',
       },
     });
@@ -101,7 +101,7 @@ describe('generateManifestFromConfig', () => {
     ).toEqual({
       ...baseResult,
       action: {
-        default_popup: '__TO_REPLACE_POPUP__',
+        default_popup: 'popup.html',
         default_title: 'hello',
       },
     });
