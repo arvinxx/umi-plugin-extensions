@@ -1,11 +1,9 @@
 import type { IApi } from 'umi';
-import { join } from 'path';
-import fse from 'fs-extra';
+import { extensionsPlugin } from '../../types/extensionsPlugin';
 import { baseDevURL, isDev } from '../utils';
 
 declare module 'umi' {
-  // @ts-ignore
-  interface BaseIConfig {
+  export interface BaseIConfig {
     extensions: extensionsPlugin.Config;
   }
 }
@@ -15,9 +13,7 @@ declare module 'umi' {
  * @param api
  */
 export default (api: IApi) => {
-  const pkg = fse.readJSONSync(
-    join(api.paths.absSrcPath!, '..', 'package.json'),
-  );
+  const pkg = api.pkg;
 
   //  manifest 结构
   api.describe({

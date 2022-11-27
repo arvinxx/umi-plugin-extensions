@@ -1,34 +1,4 @@
 import { getCSPScript } from './csp';
-import got from 'got';
-import { baseDevURL } from './env';
-
-interface IUIPageKeyMap {
-  popup: {
-    key: '__TO_REPLACE_POPUP__';
-    output: string;
-  };
-  option: {
-    key: '__TO_REPLACE_OPTION__';
-    output: string;
-  };
-}
-
-export const UIPageKeyMap: IUIPageKeyMap = {
-  popup: {
-    key: '__TO_REPLACE_POPUP__',
-    output: '',
-  },
-  option: {
-    key: '__TO_REPLACE_OPTION__',
-    output: '',
-  },
-};
-
-export const CSPKeyMap = {
-  // 为替换文本准备的钩子字符串
-  key: '__TO_REPLACE_INLINE_SCRIPT__',
-  output: '',
-};
 
 /**
  * 检查版本格式
@@ -83,11 +53,11 @@ export const generateManifestFromConfig = (
   // 处理 option 参数项
   const option = {};
   if (typeof optionsUI === 'string') {
-    option['options_ui'] = { page: UIPageKeyMap.option.key };
+    option['options_ui'] = { page: 'options.html' };
   }
   if (typeof optionsUI === 'object') {
     option['options_ui'] = {
-      page: UIPageKeyMap.option.key,
+      page: 'options.html',
       open_in_tab: optionsUI.openInTab,
     };
   }
@@ -95,12 +65,12 @@ export const generateManifestFromConfig = (
   const popup = {};
   if (typeof popupUI === 'string') {
     popup['action'] = {
-      default_popup: UIPageKeyMap.popup.key,
+      default_popup: 'popup.html',
     };
   }
   if (typeof popupUI === 'object') {
     popup['action'] = {
-      default_popup: UIPageKeyMap.popup.key,
+      default_popup: 'popup.html',
       default_icon: popupUI.icon,
       default_title: popupUI.title,
     };
@@ -135,28 +105,6 @@ export const generateManifestFromConfig = (
     minimum_chrome_version,
     content_scripts: content_scripts.length > 0 ? content_scripts : undefined,
   };
-};
-
-/**
- * 专门用于 onStart 方法的
- * @param fn
- */
-/* istanbul ignore next */
-export const gotManifest = (fn: any) => {
-  /* istanbul ignore next */
-  got(`${baseDevURL}/manifest.json`).then(fn).catch();
-};
-
-/**
- * 更新 manifest 中和 UI 路径相关的内容
- * @param manifest
- */
-export const updateUIPath = (manifest: string): string => {
-  const { option, popup } = UIPageKeyMap;
-
-  return manifest
-    .replace(option.key, option.output)
-    .replace(popup.key, popup.output);
 };
 
 /**
@@ -199,11 +147,4 @@ export const updateContentScripts = (manifest: chromeManifest.Manifest) => {
     });
   }
   return data;
-};
-
-/**
- * 写入 inline script 的 hash
- */
-export const updateCSP = (manifest: string) => {
-  return manifest.replace(CSPKeyMap.key, CSPKeyMap.output);
 };

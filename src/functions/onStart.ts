@@ -10,9 +10,7 @@ import {
   isDev,
   updateBackground,
   updateContentScripts,
-  updateCSP,
   updateHotLoad,
-  updateUIPath,
 } from '../utils';
 
 /**
@@ -42,10 +40,7 @@ export default (api: IApi) => {
             updateHotLoad(updateBackground(manifest)),
           );
 
-          fse.writeFileSync(
-            filepath,
-            updateCSP(updateUIPath(JSON.stringify(newManifest))),
-          );
+          fse.writeFileSync(filepath, JSON.stringify(newManifest));
         })
         .catch((e) => {
           console.log(e);

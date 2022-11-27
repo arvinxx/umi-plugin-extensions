@@ -1,8 +1,6 @@
 import {
   generateManifestFromConfig,
   validateVersion,
-  updateUIPath,
-  updateCSP,
   updateBackground,
   updateHotLoad,
   updateContentScripts,
@@ -165,14 +163,4 @@ test('updateContentScripts', () => {
       { js: ['contentScript_0.js'], css: ['contentScript_0.css'] },
     ],
   });
-});
-
-test('updateUIPath', () => {
-  expect(
-    updateUIPath('x __TO_REPLACE_POPUP__  __TO_REPLACE_OPTION__ x'),
-  ).toEqual('x    x');
-});
-
-test('updateCSP', () => {
-  expect(updateCSP('__TO_REPLACE_INLINE_SCRIPT__')).toEqual('');
 });
