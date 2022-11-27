@@ -9,7 +9,7 @@ export default (api: IApi) => {
   api.modifyConfig((config) => {
     return {
       ...config,
-      mpa: {},
+      mpa: config.mpa ?? {},
       mfsu: false,
       writeToDisk: true,
       codeSplitting: false,
