@@ -1,12 +1,6 @@
 import type { IApi } from 'umi';
 import { baseDevURL, isDev } from '../utils';
 
-declare module 'umi' {
-  export interface BaseIConfig {
-    extensions: extensionsPlugin.Config;
-  }
-}
-
 /**
  * 定义插件结构
  * @param api
