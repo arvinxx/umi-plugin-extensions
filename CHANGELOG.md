@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.0.0-beta.3](https://github.com/arvinxx/umi-plugin-extensions/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2022-11-27)
+
+### ✨ Features
+
+- 支持继承应用配置的 mpa config ([95d389f](https://github.com/arvinxx/umi-plugin-extensions/commit/95d389f))
+
 # [1.0.0-beta.2](https://github.com/arvinxx/umi-plugin-extensions/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-11-27)
 
 ### 🐛 Bug Fixes
