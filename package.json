@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-extensions",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0",
   "description": "a umi plugin to build chrome extensions",
   "homepage": "https://github.com/arvinxx/umi-plugin-extensions#readme",
   "repository": {
