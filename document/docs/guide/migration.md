@@ -1,9 +1,10 @@
 ---
-title: 从 0.x 迁移
+title: 迁移指南
 order: 1
+group:
+  order: 10
+  title: 其他
 ---
-
-# 版本迁移
 
 ## 从 0.x 迁移到 1.0
 
@@ -11,7 +12,6 @@ order: 1
 
 1. 不再支持动态加载脚本（V3 限制），`contentScripts` 不再支持动态插入;
 2. `background` 使用 `scripts` 配置调整为 `service_worker`，并移除 `persistent` 配置；
-3.
 
 ```diff
 

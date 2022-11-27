@@ -19,7 +19,7 @@ npm i -D umi-plugin-extensions
 或
 
 ```bash
-yarn add -D umi-plugin-extensions
+pnpm i -D umi-plugin-extensions
 ```
 
 ## 配置

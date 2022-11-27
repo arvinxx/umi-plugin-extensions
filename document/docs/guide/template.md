@@ -24,8 +24,8 @@ order: 2
 git clone https://github.com/arvinxx/umi-chrome-extension-template.git
 ```
 
-安装依赖，推荐使用 yarn
+安装依赖，推荐使用 pnpm
 
 ```shell
-yarn
+pnpm
 ```

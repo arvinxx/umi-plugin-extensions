@@ -1,6 +1,9 @@
 ---
 title: 参考资料
-order: 4
+order: 2
+group:
+  order: 10
+  title: 其他
 ---
 
 # 学习和参考资料
