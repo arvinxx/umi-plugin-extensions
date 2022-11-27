@@ -1,5 +1,4 @@
 import type { IApi } from 'umi';
-import { extensionsPlugin } from '../../types/extensionsPlugin';
 import { baseDevURL, isDev } from '../utils';
 
 declare module 'umi' {
