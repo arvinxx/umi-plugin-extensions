@@ -52,7 +52,7 @@
     ]
   },
   "dependencies": {
-    "fs-extra": "^10",
+    "fs-extra": "^11.0.0",
     "generate-json-webpack-plugin": "^2",
     "got": "^11",
     "webpack": "^5"
