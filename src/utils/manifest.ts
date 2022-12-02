@@ -32,7 +32,7 @@ export const validateVersion = (version: string) => {
  */
 export const generateManifestFromConfig = (
   config: extensionsPlugin.Config,
-): chromeManifest.Manifest => {
+): chrome.runtime.Manifest => {
   const {
     contentSecurityPolicy,
     background,
@@ -48,7 +48,7 @@ export const generateManifestFromConfig = (
 
   const { inlineScript, nonce, url } = contentSecurityPolicy;
 
-  const backgroundStr = background?.server_worker ? background : undefined;
+  const backgroundStr = background?.service_worker ? background : undefined;
 
   // 处理 option 参数项
   const option = {};
@@ -77,16 +77,15 @@ export const generateManifestFromConfig = (
   }
 
   // 处理 content scripts
-  const content_scripts: chromeManifest.ContentScript[] = contentScripts.map(
-    (item) => {
+  const content_scripts: chrome.runtime.ManifestV3['content_scripts'] =
+    contentScripts.map((item) => {
       return {
         matches: item.matches!,
         run_at: item.runAt!,
         js: [],
         css: [],
       };
-    },
-  );
+    });
   return {
     ...manifest,
     ...option,
@@ -111,10 +110,10 @@ export const generateManifestFromConfig = (
  * 更新 background 脚本地址
  * @param manifest
  */
-export const updateBackground = (manifest: chromeManifest.Manifest) => {
+export const updateBackground = (manifest: chrome.runtime.ManifestV3) => {
   const data = manifest;
   if (data.background) {
-    data.background.server_worker = 'background.js';
+    data.background.service_worker = 'background.js';
   }
   return data;
 };
@@ -123,12 +122,12 @@ export const updateBackground = (manifest: chromeManifest.Manifest) => {
  * 更新热加载方法
  * @param manifest
  */
-export const updateHotLoad = (manifest: chromeManifest.Manifest) => {
+export const updateHotLoad = (manifest: chrome.runtime.ManifestV3) => {
   const data = manifest;
   // TODO：如何集成新的热加载？
   if (data.background) {
   } else {
-    data.background = { server_worker: 'hot-reload.js' };
+    data.background = { service_worker: 'hot-reload.js' };
   }
   return data;
 };
@@ -137,7 +136,7 @@ export const updateHotLoad = (manifest: chromeManifest.Manifest) => {
  * 更新 contentScripts 脚本地址
  * @param manifest
  */
-export const updateContentScripts = (manifest: chromeManifest.Manifest) => {
+export const updateContentScripts = (manifest: chrome.runtime.ManifestV3) => {
   const data = manifest;
   if (data.content_scripts) {
     data.content_scripts = data.content_scripts.map((item, index) => {

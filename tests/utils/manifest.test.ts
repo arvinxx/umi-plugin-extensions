@@ -72,11 +72,11 @@ describe('generateManifestFromConfig', () => {
           title: 'hello',
           type: 'pageAction',
         },
-        background: { server_worker: 'bg' },
+        background: { service_worker: 'bg' },
       }),
     ).toEqual({
       ...baseResult,
-      background: { server_worker: 'bg' },
+      background: { service_worker: 'bg' },
       options_ui: {
         page: 'options.html',
         open_in_tab: true,
@@ -142,17 +142,17 @@ describe('validateVersion', () => {
 
 test('updateBackground', () => {
   expect(updateBackground({ background: {} })).toEqual({
-    background: { server_worker: 'background.js' },
+    background: { service_worker: 'background.js' },
   });
   expect(updateBackground({})).toEqual({});
 });
 
 test('updateHotLoad', () => {
-  expect(updateHotLoad({ background: { server_worker: '' } })).toEqual({
-    background: { server_worker: '' },
+  expect(updateHotLoad({ background: { service_worker: '' } })).toEqual({
+    background: { service_worker: '' },
   });
   expect(updateHotLoad({})).toEqual({
-    background: { server_worker: 'hot-reload.js' },
+    background: { service_worker: 'hot-reload.js' },
   });
 });
 

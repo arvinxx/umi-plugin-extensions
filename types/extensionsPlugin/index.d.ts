@@ -3,7 +3,7 @@ declare namespace extensionsPlugin {
    * 从 Chrome Manifest 模块中提取的必要类型
    */
   export type BaseManifest = Pick<
-    chromeManifest.Manifest,
+    chrome.runtime.ManifestV3,
     'name' | 'version' | 'background' | 'permissions' | 'icons'
   >;
 
@@ -21,7 +21,7 @@ declare namespace extensionsPlugin {
      * manifest 目前出了 3 个版本: 1 和 2 已经淘汰; 3 是目前使用的版本
      * @default 3
      */
-    manifestVersion: chromeManifest.ManifestVersionV3;
+    manifestVersion: chrome.runtime.ManifestV3['manifest_version'];
     /**
      * 最低 Chrome 版本号
      */
@@ -44,7 +44,7 @@ declare namespace extensionsPlugin {
     /**
      * 在这里书写原有的 manifest
      */
-    extends?: Partial<chromeManifest.Manifest>;
+    extends?: Partial<chrome.runtime.ManifestV3>;
   }
 
   /**
@@ -56,10 +56,22 @@ declare namespace extensionsPlugin {
     url: string[];
   }
 
+  export interface IconStruct {
+    16?: string;
+    32?: string;
+    48?: string;
+    128: string;
+  }
+
+  /**
+   * Icon 类型
+   */
+  export type IconType = IconStruct | string;
+
   export interface PopupUI {
     page: string;
     title?: string;
-    icon?: chromeManifest.IconType;
+    icon?: IconType;
     /**
      * popUp UI 的范围是 browser 还是 page
      * @default browser
