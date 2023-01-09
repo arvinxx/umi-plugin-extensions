@@ -32,7 +32,7 @@ export default (api: IApi) => {
         .then(async () => {
           const manifest = fse.readJSONSync(
             filepath,
-          ) as chrome.runtime.ManifestV3;
+          ) as chromeManifest.Manifest;
 
           await delay(500);
 

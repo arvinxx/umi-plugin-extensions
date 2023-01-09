@@ -45,7 +45,7 @@ export default (api: IApi) => {
   const filepath = join(paths.absOutputPath!, 'manifest.json');
 
   const done = () => {
-    const manifest: chrome.runtime.ManifestV3 = fse.readJSONSync(filepath);
+    const manifest: chromeManifest.Manifest = fse.readJSONSync(filepath);
     fse.writeJSONSync(filepath, updateContentScripts(manifest));
   };
 
