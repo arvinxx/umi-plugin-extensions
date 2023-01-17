@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/arvinxx/umi-plugin-extensions/compare/v1.0.0...v1.0.1) (2023-01-17)
+
+### 🐛 Bug Fixes
+
+- fix misspelled manifest entry ([17c2ce0](https://github.com/arvinxx/umi-plugin-extensions/commit/17c2ce0))
+- fix misspelled manifest entry and consolidate types ([447a18d](https://github.com/arvinxx/umi-plugin-extensions/commit/447a18d))
+- revert types/index.d.ts ([a7d5a7c](https://github.com/arvinxx/umi-plugin-extensions/commit/a7d5a7c))
+
 # [1.0.0](https://github.com/arvinxx/umi-plugin-extensions/compare/v0.6.2...v1.0.0) (2022-11-27)
 
 ### ✨ Features
