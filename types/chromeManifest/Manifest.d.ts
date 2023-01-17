@@ -348,7 +348,7 @@ declare namespace chromeManifest {
      * This is the technology that enables native-like experiences such as push notifications, rich offline support, background sync, and "Add to Home Screen" on the open web.
      * Service workers were inspired in part by background pages in Chrome Extensions, but they iterate and improve on this model by tuning it for web-scale.
      */
-    server_worker: string;
+    service_worker: string;
     type?: string;
   }
 

@@ -48,7 +48,7 @@ export const generateManifestFromConfig = (
 
   const { inlineScript, nonce, url } = contentSecurityPolicy;
 
-  const backgroundStr = background?.server_worker ? background : undefined;
+  const backgroundStr = background?.service_worker ? background : undefined;
 
   // 处理 option 参数项
   const option = {};
@@ -114,7 +114,7 @@ export const generateManifestFromConfig = (
 export const updateBackground = (manifest: chromeManifest.Manifest) => {
   const data = manifest;
   if (data.background) {
-    data.background.server_worker = 'background.js';
+    data.background.service_worker = 'background.js';
   }
   return data;
 };
@@ -128,7 +128,7 @@ export const updateHotLoad = (manifest: chromeManifest.Manifest) => {
   // TODO：如何集成新的热加载？
   if (data.background) {
   } else {
-    data.background = { server_worker: 'hot-reload.js' };
+    data.background = { service_worker: 'hot-reload.js' };
   }
   return data;
 };
